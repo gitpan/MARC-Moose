@@ -1,4 +1,5 @@
 package Marc::Parser;
+# ABSTRACT: A Marc record parser base class
 
 use namespace::autoclean;
 use Moose;
@@ -36,19 +37,51 @@ __END__
 
 =head1 NAME
 
-Marc::Parser
+Marc::Parser - A Marc record parser base class
 
 =head1 VERSION
 
-version 0.001
+version 0.002
+
+=head1 METHODS
+
+=head2 begin
+
+=head2 end
+
+=head2 parse
+
+Return a Marc::Record object build from a parsed string
+
+=head1 SEE ALSO
+
+=over 4
+
+=item *
+
+L<Marc>
+
+=item *
+
+L<Marc::Parser::Iso2709>
+
+=item *
+
+L<Marc::Parser::Marcxml>
+
+=item *
+
+L<Marc::Parser::Isis>
+
+=back
 
 =head1 AUTHOR
 
-Frédéric Demians <f.demians@tamil.fr>
+Frederic Demians <f.demians@tamil.fr>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2010 by Frédéric Demians.
+This software is copyright (c) 2010 by Frederic Demians.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

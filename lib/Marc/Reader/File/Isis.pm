@@ -1,4 +1,5 @@
 package Marc::Reader::File::Isis;
+# ABSTRACT: Marc file reader for ISIS (DOS) encoded records
 
 use namespace::autoclean;
 use Moose;
@@ -44,19 +45,44 @@ __END__
 
 =head1 NAME
 
-Marc::Reader::File::Isis
+Marc::Reader::File::Isis - Marc file reader for ISIS (DOS) encoded records
 
 =head1 VERSION
 
-version 0.001
+version 0.002
+
+=head1 METHODS
+
+=head2 read
+
+Read next available L<Marc::Record> from reader file using
+L<Marc::Parser::Isis> parser.
+
+=head1 SEE ALSO
+
+=over 4
+
+=item *
+
+L<Marc>
+
+=item *
+
+L<Marc::Reader::File>
+
+=item *
+
+L<Marc::Parser::Isis>
+
+=back
 
 =head1 AUTHOR
 
-Frédéric Demians <f.demians@tamil.fr>
+Frederic Demians <f.demians@tamil.fr>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2010 by Frédéric Demians.
+This software is copyright (c) 2010 by Frederic Demians.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

@@ -21,7 +21,7 @@ Marc - MARC bibliographic records set of tools
 
 =head1 VERSION
 
-version 0.001
+version 0.002
 
 =head1 DESCRIPTION
 
@@ -45,37 +45,91 @@ version 0.001
 
 =over 4
 
+=item *
 
+L<Marc>
+
+=item *
+
+L<Marc::Record>
+
+=item *
+
+L<Marc::Field>
+
+=item *
+
+L<Marc::Field::Std>
+
+=item *
+
+L<Marc::Field::Control>
+
+=item *
+
+L<Marc::Reader>
+
+=item *
+
+L<Marc::Reader::File>
+
+=item *
+
+L<Marc::Reader::File::Iso2709>
+
+=item *
+
+L<Marc::Reader::File::Isis>
+
+=item *
+
+L<Marc::Writer>
+
+=item *
+
+L<Marc::Writer:File>
+
+=item *
+
+L<Marc::Parser>
+
+=item *
+
+L<Marc::Parser::Iso2709>
+
+=item *
+
+L<Marc::Parser::Isis>
+
+=item *
+
+L<Marc::Formater>
+
+=item *
+
+L<Marc::Formater::Iso2709>
+
+=item *
+
+L<Marc::Formater::Marcxml>
+
+=item *
+
+L<Marc::Formater::Text>
+
+=item *
+
+L<Marc::Formater::Yaml>
 
 =back
 
-* L<Marc>
-* L<Marc::Record>
-* L<Marc::Field>
-* L<Marc::Field::Std>
-* L<Marc::Field::Control>
-* L<Marc::Reader>
-* L<Marc::Reader::File>
-* L<Marc::Reader::File::Iso2709>
-* L<Marc::Reader::File::Isis>
-* L<Marc::Writer>
-* L<Marc::Writer:File>
-* L<Marc::Parser>
-* L<Marc::Parser::Iso2709>
-* L<Marc::Parser::Isis>
-* L<Marc::Formater>
-* L<Marc::Formater::Iso2709>
-* L<Marc::Formater::Marcxml>
-* L<Marc::Formater::Text>
-* L<Marc::Formater::Yaml>
-
 =head1 AUTHOR
 
-Frédéric Demians <f.demians@tamil.fr>
+Frederic Demians <f.demians@tamil.fr>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2010 by Frédéric Demians.
+This software is copyright (c) 2010 by Frederic Demians.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

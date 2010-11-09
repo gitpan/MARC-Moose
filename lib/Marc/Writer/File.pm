@@ -1,4 +1,5 @@
 package Marc::Writer::File;
+# ABSTRACT: File Marc record writer
 
 use namespace::autoclean;
 use Moose;
@@ -54,24 +55,55 @@ __PACKAGE__->meta->make_immutable;
 1;
 
 
+
 __END__
 =pod
 
 =head1 NAME
 
-Marc::Writer::File
+Marc::Writer::File - File Marc record writer
 
 =head1 VERSION
 
-version 0.001
+version 0.002
+
+=head1 ATTRIBUTES
+
+=head2 file
+
+Name of the file into which writing Marc::Record records using I<write> method.
+Before writing into the file, record is formatted using a formater.
+
+=head2 binmode
+
+Binmode of the result file. Example:
+
+ my $writer = Marc::Writer->new(
+   binmode  => 'utf8',
+   file     => 'output.iso2709',
+   formater => Marc::Formater::Iso2709->new() );
+
+=head1 SEE ALSO
+
+=over 4
+
+=item *
+
+L<Marc>
+
+=item *
+
+L<Marc::Writer>
+
+=back
 
 =head1 AUTHOR
 
-Frédéric Demians <f.demians@tamil.fr>
+Frederic Demians <f.demians@tamil.fr>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2010 by Frédéric Demians.
+This software is copyright (c) 2010 by Frederic Demians.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

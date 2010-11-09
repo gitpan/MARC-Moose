@@ -10,7 +10,7 @@ use ExtUtils::MakeMaker 6.31;
 
 my %WriteMakefileArgs = (
   'ABSTRACT' => 'MARC bibliographic records set of tools',
-  'AUTHOR' => 'Frédéric Demians <f.demians@tamil.fr>',
+  'AUTHOR' => 'Frederic Demians <f.demians@tamil.fr>',
   'BUILD_REQUIRES' => {
     'FindBin' => '0',
     'Test::More' => '0'
@@ -32,7 +32,7 @@ my %WriteMakefileArgs = (
     'namespace::autoclean' => '0',
     'overload' => '0'
   },
-  'VERSION' => '0.001',
+  'VERSION' => '0.002',
   'test' => {
     'TESTS' => 't/*.t'
   }

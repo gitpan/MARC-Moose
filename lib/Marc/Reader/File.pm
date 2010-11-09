@@ -1,4 +1,5 @@
 package Marc::Reader::File;
+# ABSTRACT: A Marc::Reader from a file
 
 use namespace::autoclean;
 use Moose;
@@ -48,19 +49,40 @@ __END__
 
 =head1 NAME
 
-Marc::Reader::File
+Marc::Reader::File - A Marc::Reader from a file
 
 =head1 VERSION
 
-version 0.001
+version 0.002
+
+=head1 ATTRIBUTES
+
+=head2 file
+
+Name of the file to read Marc::Record from. A error is thrown if the file
+does't exist.
+
+=head1 SEE ALSO
+
+=over 4
+
+=item *
+
+L<Marc>
+
+=item *
+
+L<Marc::Reader>
+
+=back
 
 =head1 AUTHOR
 
-Frédéric Demians <f.demians@tamil.fr>
+Frederic Demians <f.demians@tamil.fr>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2010 by Frédéric Demians.
+This software is copyright (c) 2010 by Frederic Demians.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

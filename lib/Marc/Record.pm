@@ -116,26 +116,26 @@ Marc::Record - Marc bibliographic record
 
 =head1 VERSION
 
-version 0.001
+version 0.002
 
 =head1 DESCRIPTION
 
 Marc::Record is an object, Moose based object, representing a Marc
 bibliographic record. It can be a MARC21, UNIMARC, or whatever biblio record.
 
-=head2 ATTRIBUTES
+=head1 ATTRIBUTES
 
-=head3 leader
+=head2 leader
 
 Read-only string. The leader is fixed by set_leader_length method.
 
-=head3 fields
+=head2 fields
 
 ArrayRef on Marc::Field objects: Marc:Fields::Control and Marc::Field::Std.
 
-=head2 METHODS
+=head1 METHODS
 
-=head3 append( I<field> )
+=head2 append( I<field> )
 
 Append a Marc::Field in the record. The record is appended at the end of
 numerical section, ie if you append for example a 710 field, it will be placed
@@ -149,7 +149,7 @@ fields list.
               [ u => 'Translation' ] ]
  ) );
 
-=head3 field( I<tag> )
+=head2 field( I<tag> )
 
 Returns a list of tags that match the field specifier, or an empty list if
 nothing matched.  In scalar context, returns the first matching tag, or undef
@@ -159,7 +159,7 @@ The field specifier can be a simple number (i.e. "245"), or use the "."
 notation of wildcarding (i.e. subject tags are "6.."). All fields are returned
 if "..." is specified.
 
-=head3 set_leader_length( I<length>, I<offset> )
+=head2 set_leader_length( I<length>, I<offset> )
 
 This method is called to reset leader length of record and offset of data
 section. This means something only for ISO2709 formated records. So this method
@@ -191,19 +191,23 @@ Called by Marc::Formater::Iso2709.
 
 =over 4
 
+=item *
 
+L<Marc>
+
+=item *
+
+L<Marc::Field>
 
 =back
 
-* L<Marc>
-
 =head1 AUTHOR
 
-Frédéric Demians <f.demians@tamil.fr>
+Frederic Demians <f.demians@tamil.fr>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2010 by Frédéric Demians.
+This software is copyright (c) 2010 by Frederic Demians.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
