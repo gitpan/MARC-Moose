@@ -31,7 +31,7 @@ Marc::Formater::Yaml - Marc record formater into YAML representation
 
 =head1 VERSION
 
-version 0.002
+version 0.003
 
 =head1 AUTHOR
 

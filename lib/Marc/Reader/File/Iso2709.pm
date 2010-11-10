@@ -51,7 +51,7 @@ Marc::Reader::File::Iso2709 - File reader for Marc record from ISO2709 file
 
 =head1 VERSION
 
-version 0.002
+version 0.003
 
 =head1 AUTHOR
 

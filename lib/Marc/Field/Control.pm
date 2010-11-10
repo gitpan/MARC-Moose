@@ -28,7 +28,7 @@ Marc::Field::Control - Control Marc field (tag < 010)
 
 =head1 VERSION
 
-version 0.002
+version 0.003
 
 =head1 AUTHOR
 
