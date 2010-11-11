@@ -52,7 +52,7 @@ Marc::Field::Std - Standard Marc Field (tag >= 010)
 
 =head1 VERSION
 
-version 0.003
+version 0.004
 
 =head1 AUTHOR
 

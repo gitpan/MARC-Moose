@@ -27,12 +27,13 @@ my %WriteMakefileArgs = (
     'Moose' => '1.00',
     'Moose::Util::TypeConstraints' => '0',
     'Text::Iconv' => '1.7',
+    'XML::Simple' => '0',
     'XML::Writer' => '0.606',
     'YAML' => '0',
     'namespace::autoclean' => '0',
     'overload' => '0'
   },
-  'VERSION' => '0.003',
+  'VERSION' => '0.004',
   'test' => {
     'TESTS' => 't/*.t'
   }

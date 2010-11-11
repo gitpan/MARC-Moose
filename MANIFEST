@@ -16,13 +16,17 @@ lib/Marc/Formater/Yaml.pm
 lib/Marc/Parser.pm
 lib/Marc/Parser/Isis.pm
 lib/Marc/Parser/Iso2709.pm
+lib/Marc/Parser/Marcxml.pm
 lib/Marc/Reader.pm
 lib/Marc/Reader/File.pm
 lib/Marc/Reader/File/Isis.pm
 lib/Marc/Reader/File/Iso2709.pm
+lib/Marc/Reader/File/Marcxml.pm
 lib/Marc/Record.pm
 lib/Marc/Writer.pm
 lib/Marc/Writer/File.pm
+t/biblios.xml
 t/marc_load.t
 t/marc_valid.t
+t/parser.t
 weaver.ini

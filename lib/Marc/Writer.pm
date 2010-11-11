@@ -52,7 +52,7 @@ Marc::Writer - A base object to write somewhere Marc records
 
 =head1 VERSION
 
-version 0.003
+version 0.004
 
 =head1 AUTHOR
 

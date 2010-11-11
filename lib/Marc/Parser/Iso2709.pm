@@ -80,7 +80,7 @@ Marc::Parser::Iso2709 - Parser for ISO2709 Marc records
 
 =head1 VERSION
 
-version 0.003
+version 0.004
 
 =head1 SEE ALSO
 =for :list

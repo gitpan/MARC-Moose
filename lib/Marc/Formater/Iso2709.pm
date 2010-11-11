@@ -56,7 +56,7 @@ Marc::Formater::Iso2709 - Marc record formater into ISO 2709 format
 
 =head1 VERSION
 
-version 0.003
+version 0.004
 
 =head1 AUTHOR
 

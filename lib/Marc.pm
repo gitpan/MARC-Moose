@@ -21,7 +21,7 @@ Marc - MARC bibliographic records set of tools
 
 =head1 VERSION
 
-version 0.003
+version 0.004
 
 =head1 DESCRIPTION
 

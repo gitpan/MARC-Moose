@@ -53,7 +53,7 @@ Marc::Reader::File - A Marc::Reader from a file
 
 =head1 VERSION
 
-version 0.003
+version 0.004
 
 =head1 ATTRIBUTES
 
