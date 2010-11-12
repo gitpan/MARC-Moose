@@ -56,7 +56,7 @@ MARC::Moose::Formater::Iso2709 - MARC::Moose record formater into ISO 2709 forma
 
 =head1 VERSION
 
-version 0.006
+version 0.007
 
 =head1 AUTHOR
 

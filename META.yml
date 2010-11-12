@@ -3,7 +3,9 @@ abstract: 'Moose based MARC records set of tools'
 author:
   - 'Frederic Demians <f.demians@tamil.fr>'
 build_requires:
+  MARC::File::XML: 0
   Test::More: 0
+  Time::HiRes: 0
 configure_requires:
   ExtUtils::MakeMaker: 6.31
 dynamic_config: 0
@@ -23,4 +25,4 @@ requires:
   YAML: 0
   namespace::autoclean: 0
   overload: 0
-version: 0.006
+version: 0.007

@@ -12,7 +12,9 @@ my %WriteMakefileArgs = (
   'ABSTRACT' => 'Moose based MARC records set of tools',
   'AUTHOR' => 'Frederic Demians <f.demians@tamil.fr>',
   'BUILD_REQUIRES' => {
-    'Test::More' => '0'
+    'MARC::File::XML' => '0',
+    'Test::More' => '0',
+    'Time::HiRes' => '0'
   },
   'CONFIGURE_REQUIRES' => {
     'ExtUtils::MakeMaker' => '6.31'
@@ -32,7 +34,7 @@ my %WriteMakefileArgs = (
     'namespace::autoclean' => '0',
     'overload' => '0'
   },
-  'VERSION' => '0.006',
+  'VERSION' => '0.007',
   'test' => {
     'TESTS' => 't/*.t'
   }

@@ -1,4 +1,4 @@
-package MARC::Moose::Parser::MARC::MoosexmlSax;
+package MARC::Moose::Parser::MarcxmlSax;
 # ABSTRACT: Parser for MARXML records using SAX parser
 
 use namespace::autoclean;
@@ -50,16 +50,17 @@ __END__
 
 =head1 NAME
 
-MARC::Moose::Parser::MARC::MoosexmlSax - Parser for MARXML records using SAX parser
+MARC::Moose::Parser::MarcxmlSax - Parser for MARXML records using SAX parser
 
 =head1 VERSION
 
-version 0.006
+version 0.007
 
 =head1 SEE ALSO
 =for :list
 * L<MARC::Moose>
 * L<MARC::Moose::Parser>
+* L<MARC::Moose::Parser::Marcxml>
 
 =head1 AUTHOR
 

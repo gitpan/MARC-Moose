@@ -50,7 +50,7 @@ MARC::Moose::Field::Std - Standard Marc Field (tag >= 010)
 
 =head1 VERSION
 
-version 0.006
+version 0.007
 
 =head1 AUTHOR
 
