@@ -82,7 +82,7 @@ MARC::Moose::Parser::Marcxml - Parser for MARXML records
 
 =head1 VERSION
 
-version 0.005
+version 0.006
 
 =head1 SEE ALSO
 =for :list

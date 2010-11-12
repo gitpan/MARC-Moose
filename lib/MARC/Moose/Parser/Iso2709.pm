@@ -80,7 +80,7 @@ MARC::Moose::Parser::Iso2709 - Parser for ISO2709 records
 
 =head1 VERSION
 
-version 0.005
+version 0.006
 
 =head1 SEE ALSO
 =for :list

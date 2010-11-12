@@ -12,7 +12,7 @@ license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
   version: 1.4
-name: Marc
+name: marc-moose
 requires:
   Carp: 0
   Moose: 1.00
@@ -23,4 +23,4 @@ requires:
   YAML: 0
   namespace::autoclean: 0
   overload: 0
-version: 0.005
+version: 0.006

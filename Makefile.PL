@@ -17,10 +17,10 @@ my %WriteMakefileArgs = (
   'CONFIGURE_REQUIRES' => {
     'ExtUtils::MakeMaker' => '6.31'
   },
-  'DISTNAME' => 'Marc',
+  'DISTNAME' => 'marc-moose',
   'EXE_FILES' => [],
   'LICENSE' => 'perl',
-  'NAME' => 'Marc',
+  'NAME' => 'marc::moose',
   'PREREQ_PM' => {
     'Carp' => '0',
     'Moose' => '1.00',
@@ -32,7 +32,7 @@ my %WriteMakefileArgs = (
     'namespace::autoclean' => '0',
     'overload' => '0'
   },
-  'VERSION' => '0.005',
+  'VERSION' => '0.006',
   'test' => {
     'TESTS' => 't/*.t'
   }

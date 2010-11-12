@@ -49,7 +49,7 @@ MARC::Moose::Reader::File::Isis - A file reader for ISIS (DOS) encoded records
 
 =head1 VERSION
 
-version 0.005
+version 0.006
 
 =head1 METHODS
 
