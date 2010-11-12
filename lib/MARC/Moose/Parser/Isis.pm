@@ -1,15 +1,15 @@
-package Marc::Parser::Isis;
-# ABSTRACT: Marc ISIS records parser
+package MARC::Moose::Parser::Isis;
+# ABSTRACT: ISIS records parser
 use Moose;
 
-extends 'Marc::Parser';
+extends 'MARC::Moose::Parser';
 
 use Carp;
 use YAML;
 use Text::Iconv 1.7;
-use Marc::Record;
-use Marc::Field::Std;
-use Marc::Field::Control;
+use MARC::Moose::Record;
+use MARC::Moose::Field::Std;
+use MARC::Moose::Field::Control;
 
 
 has fh => ( is => 'rw' );
@@ -25,7 +25,7 @@ has converter => (
 override 'parse' => sub {
     my ($self, $raw) = @_;
 
-    my $record = Marc::Record->new();
+    my $record = MARC::Moose::Record->new();
 
     my $leader = substr($raw, 0, 24);
     $record->_leader($leader);
@@ -61,7 +61,7 @@ override 'parse' => sub {
                 next if length($_) <= 2;
                 push @sf, [ substr($_, 0, 1), substr($_, 1) ];
             }
-            $record->append( Marc::Field::Std->new(
+            $record->append( MARC::Moose::Field::Std->new(
                 tag  => $tag,
                 ind1 => $i1,
                 ind2 => $i2,
@@ -73,8 +73,8 @@ override 'parse' => sub {
             # stored in a pseudo subfield $7
             $record->append(
                 $tag + 0 < 10
-                ? Marc::Field::Control->new( tag => $tag, value => $value ) 
-                : Marc::Field::Std->new( tag => $tag, subf => [ [ Z => $value ] ]) );
+                ? MARC::Moose::Field::Control->new( tag => $tag, value => $value ) 
+                : MARC::Moose::Field::Std->new( tag => $tag, subf => [ [ Z => $value ] ]) );
         }
     }
 
@@ -91,25 +91,26 @@ __END__
 
 =head1 NAME
 
-Marc::Parser::Isis - Marc ISIS records parser
+MARC::Moose::Parser::Isis - ISIS records parser
 
 =head1 VERSION
 
-version 0.004
+version 0.005
 
 =head1 ATTRIBUTES
 
 =head2 converter
 
-Converter used in order to convert characters encoding from the source records. This uses L<Text::Iconv>.
+Converter used in order to convert characters encoding from the source records.
+This uses L<Text::Iconv>.
 
 So:
 
- my $parser = Marc::Parser::Isis->new();
+ my $parser = MARC::Moose::Parser::Isis->new();
 
 is equivalent to:
 
- my $parser = Marc::Parser::Isis->new(
+ my $parser = MARC::Moose::Parser::Isis->new(
    converter => Text::Iconv->new( "cp857", "utf8" );
 
 =head1 SEE ALSO
@@ -118,11 +119,11 @@ is equivalent to:
 
 =item *
 
-L<Marc>
+L<MARC::Moose>
 
 =item *
 
-L<Marc::Parser>
+L<MARC::Moose::Parser>
 
 =item *
 

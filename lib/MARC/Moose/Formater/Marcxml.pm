@@ -1,13 +1,13 @@
-package Marc::Formater::Marcxml;
-#ABSTRACT: Marc record formater into MARCXML
+package MARC::Moose::Formater::Marcxml;
+#ABSTRACT: MARC::Moose record formater into MARCXML
 
 use namespace::autoclean;
 use Moose;
 
-extends 'Marc::Formater';
+extends 'MARC::Moose::Formater';
 
-use Marc::Field::Control;
-use Marc::Field::Std;
+use MARC::Moose::Field::Control;
+use MARC::Moose::Field::Std;
 use XML::Writer 0.606;
 
 
@@ -33,7 +33,7 @@ override 'format' => sub {
     $w->endTag();
 
     for my $field ( @{$record->fields} ) {
-        if ( ref($field) eq 'Marc::Field::Control' ) {
+        if ( ref($field) eq 'MARC::Moose::Field::Control' ) {
             $w->startTag( "controlfield", tag => $field->tag );
             $w->characters( $field->value );
             $w->endTag();
@@ -63,11 +63,11 @@ __END__
 
 =head1 NAME
 
-Marc::Formater::Marcxml - Marc record formater into MARCXML
+MARC::Moose::Formater::Marcxml - MARC::Moose record formater into MARCXML
 
 =head1 VERSION
 
-version 0.004
+version 0.005
 
 =head1 AUTHOR
 

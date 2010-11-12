@@ -1,5 +1,5 @@
-package Marc::Parser;
-# ABSTRACT: A Marc record parser base class
+package MARC::Moose::Parser;
+# ABSTRACT: A record parser base class
 
 use namespace::autoclean;
 use Moose;
@@ -24,7 +24,7 @@ sub end {
 
 
 sub parse {
-    return Marc::Record->new();
+    return MARC::Moose::Record->new();
 };
 
 __PACKAGE__->meta->make_immutable;
@@ -37,11 +37,11 @@ __END__
 
 =head1 NAME
 
-Marc::Parser - A Marc record parser base class
+MARC::Moose::Parser - A record parser base class
 
 =head1 VERSION
 
-version 0.004
+version 0.005
 
 =head1 METHODS
 
@@ -51,7 +51,7 @@ version 0.004
 
 =head2 parse
 
-Return a Marc::Record object build from a parsed string
+Return a MARC::Moose::Record object build from a parsed string
 
 =head1 SEE ALSO
 
@@ -59,19 +59,19 @@ Return a Marc::Record object build from a parsed string
 
 =item *
 
-L<Marc>
+L<MARC::Moose>
 
 =item *
 
-L<Marc::Parser::Iso2709>
+L<MARC::Moose::Parser::Iso2709>
 
 =item *
 
-L<Marc::Parser::Marcxml>
+L<MARC::Moose::Parser::MARC::Moosexml>
 
 =item *
 
-L<Marc::Parser::Isis>
+L<MARC::Moose::Parser::Isis>
 
 =back
 

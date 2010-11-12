@@ -1,20 +1,20 @@
-package Marc::Reader::File::Marcxml;
-# ABSTRACT: File reader for Marc record from MARCXML file
+package MARC::Moose::Reader::File::Iso2709;
+# ABSTRACT: File reader for MARC::Moose record from ISO2709 file
 
 use namespace::autoclean;
 use Moose;
 
 use Carp;
-use Marc::Record;
-use Marc::Parser::Marcxml;
+use MARC::Moose::Record;
+use MARC::Moose::Parser::Iso2709;
 
-extends 'Marc::Reader::File';
+extends 'MARC::Moose::Reader::File';
 
 
 has parser => ( 
     is => 'rw', 
-    isa => 'Marc::Parser',
-    default => sub { Marc::Parser::Marcxml->new() },
+    isa => 'MARC::Moose::Parser',
+    default => sub { MARC::Moose::Parser::Iso2709->new() },
 );
 
 
@@ -27,11 +27,11 @@ override 'read' => sub {
 
     return if eof($fh);
 
-    local $/ = "</record>"; # End of record
+    local $/ = "\x1D"; # End of record
     my $raw = <$fh>;
-    
-    # Skip <collection if present
-    $raw =~ s/<(\/*)collection.*>//;
+
+    # remove illegal garbage that sometimes occurs between records
+    $raw =~ s/^[ \x00\x0a\x0d\x1a]+//;
 
     return $self->parser->parse( $raw );
 };
@@ -46,11 +46,11 @@ __END__
 
 =head1 NAME
 
-Marc::Reader::File::Marcxml - File reader for Marc record from MARCXML file
+MARC::Moose::Reader::File::Iso2709 - File reader for MARC::Moose record from ISO2709 file
 
 =head1 VERSION
 
-version 0.004
+version 0.005
 
 =head1 AUTHOR
 

@@ -1,4 +1,4 @@
-package Marc::Field;
+package MARC::Moose::Field;
 # ABSTRACT: Marc field base object
 
 use namespace::autoclean;
@@ -29,11 +29,11 @@ __END__
 
 =head1 NAME
 
-Marc::Field - Marc field base object
+MARC::Moose::Field - Marc field base object
 
 =head1 VERSION
 
-version 0.004
+version 0.005
 
 =head1 SEE ALSO
 
@@ -43,8 +43,8 @@ version 0.004
 
 =back
 
-* L<Marc::Field::Control>
-* L<Marc::Field::Std>
+* L<MARC::Moose::Field::Control>
+* L<MARC::Moose::Field::Std>
 
 =head1 AUTHOR
 

@@ -1,10 +1,10 @@
-package Marc::Field::Std;
+package MARC::Moose::Field::Std;
 # ABSTRACT: Standard Marc Field (tag >= 010)
 
 use namespace::autoclean;
 use Moose;
 
-extends 'Marc::Field';
+extends 'MARC::Moose::Field';
 
 use overload
     '%{}' => \&subfield;
@@ -36,9 +36,7 @@ sub subfield {
     return wantarray ? @values : $values[0];
 }
 
-
-
-#__PACKAGE__->meta->make_immutable;
+__PACKAGE__->meta->make_immutable;
 
 1;
 
@@ -48,11 +46,11 @@ __END__
 
 =head1 NAME
 
-Marc::Field::Std - Standard Marc Field (tag >= 010)
+MARC::Moose::Field::Std - Standard Marc Field (tag >= 010)
 
 =head1 VERSION
 
-version 0.004
+version 0.005
 
 =head1 AUTHOR
 

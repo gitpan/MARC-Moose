@@ -1,13 +1,13 @@
-package Marc::Formater::Iso2709;
-# ABSTRACT: Marc record formater into ISO 2709 format
+package MARC::Moose::Formater::Iso2709;
+# ABSTRACT: MARC::Moose record formater into ISO 2709 format
 
 use namespace::autoclean;
 use Moose;
 
-extends 'Marc::Formater';
+extends 'MARC::Moose::Formater';
 
-use Marc::Field::Control;
-use Marc::Field::Std;
+use MARC::Moose::Field::Control;
+use MARC::Moose::Field::Std;
 
 
 
@@ -18,7 +18,7 @@ override 'format' => sub {
     use YAML;
     for my $field ( @{$record->fields} ) {
         my $str = do {
-            if ( ref($field) eq 'Marc::Field::Control' ) {
+            if ( ref($field) eq 'MARC::Moose::Field::Control' ) {
                 $field->value . "\x1E";
             }
             else {
@@ -52,11 +52,11 @@ __END__
 
 =head1 NAME
 
-Marc::Formater::Iso2709 - Marc record formater into ISO 2709 format
+MARC::Moose::Formater::Iso2709 - MARC::Moose record formater into ISO 2709 format
 
 =head1 VERSION
 
-version 0.004
+version 0.005
 
 =head1 AUTHOR
 

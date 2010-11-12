@@ -1,37 +1,34 @@
-package Marc::Formater::Yaml;
-# ABSTRACT: Marc record formater into YAML representation
+package MARC::Moose::Field::Control;
+# ABSTRACT: Control Marc field (tag < 010)
 
 use namespace::autoclean;
 use Moose;
 
-extends 'Marc::Formater';
+extends 'MARC::Moose::Field';
 
-use Marc::Field::Control;
-use Marc::Field::Std;
-use YAML;
+has value => ( is => 'rw', isa => 'Str' );
 
+override 'as_formatted' => sub {
+    my $self = shift;
 
-
-override 'format' => sub {
-    my ($self, $record) = @_;
-
-    return Dump($record);
+    join ' ', ( $self->tag, $self->value );
 };
 
 __PACKAGE__->meta->make_immutable;
 
 1;
 
+
 __END__
 =pod
 
 =head1 NAME
 
-Marc::Formater::Yaml - Marc record formater into YAML representation
+MARC::Moose::Field::Control - Control Marc field (tag < 010)
 
 =head1 VERSION
 
-version 0.004
+version 0.005
 
 =head1 AUTHOR
 

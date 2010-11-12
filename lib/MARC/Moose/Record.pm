@@ -1,5 +1,5 @@
-package Marc::Record;
-# ABSTRACT: Marc bibliographic record
+package MARC::Moose::Record;
+# ABSTRACT: MARC::Moose bibliographic record
 
 use namespace::autoclean;
 use Moose;
@@ -44,8 +44,8 @@ sub append {
     my ($self, $field_to_add) = @_;
 
     # Control field correctness
-    carp  "Append a non Marc::Field"
-        unless ref($field_to_add) =~ /^Marc::Field/; 
+    carp  "Append a non MARC::Moose::Field"
+        unless ref($field_to_add) =~ /^MARC::Moose::Field/; 
 
     my $tag_first = substr($field_to_add->tag, 0, 1);
     my @sf;
@@ -112,15 +112,15 @@ __END__
 
 =head1 NAME
 
-Marc::Record - Marc bibliographic record
+MARC::Moose::Record - MARC::Moose bibliographic record
 
 =head1 VERSION
 
-version 0.004
+version 0.005
 
 =head1 DESCRIPTION
 
-Marc::Record is an object, Moose based object, representing a Marc
+MARC::Moose::Record is an object, Moose based object, representing a MARC::Moose
 bibliographic record. It can be a MARC21, UNIMARC, or whatever biblio record.
 
 =head1 ATTRIBUTES
@@ -131,19 +131,20 @@ Read-only string. The leader is fixed by set_leader_length method.
 
 =head2 fields
 
-ArrayRef on Marc::Field objects: Marc:Fields::Control and Marc::Field::Std.
+ArrayRef on MARC::Moose::Field objects: MARC::Moose:Fields::Control and
+MARC::Moose::Field::Std.
 
 =head1 METHODS
 
 =head2 append( I<field> )
 
-Append a Marc::Field in the record. The record is appended at the end of
+Append a MARC::Moose::Field in the record. The record is appended at the end of
 numerical section, ie if you append for example a 710 field, it will be placed
 at the end of the 7xx fields section, just before 8xx section or at the end of
 fields list.
 
  $record->append(
-   Marc::Field::Std->new(
+   MARC::Moose::Field::Std->new(
     tag  => '100',
     subf => [ [ a => 'Poe, Edgar Allan' ],
               [ u => 'Translation' ] ]
@@ -167,22 +168,22 @@ is exlusively called by any formater which has to build a valid ISO2709 data
 stream. It also forces leader position 10 and 20-23 since this variable values
 aren't variable at all for any ordinary MARC record.
 
-Called by Marc::Formater::Iso2709.
+Called by L<MARC::Moose::Formater::Iso2709>.
 
  $record->set_leader_length( $length, $offset );
 
 =head1 SYNOPSYS
 
- use Marc::Record;
- use Marc::Reader::File;
- use Marc::Parser::Iso2709;
- use Marc::Formater::Text;
+ use MARC::Moose::Record;
+ use MARC::Moose::Reader::File;
+ use MARC::Moose::Parser::Iso2709;
+ use MARC::Moose::Formater::Text;
 
- my $reader = Marc::Reader::File->new(
+ my $reader = MARC::Moose::Reader::File->new(
      file   => 'biblio.iso',
-     parser => Marc::Parser::Iso2709->new()
+     parser => MARC::Moose::Parser::Iso2709->new()
  );
- my $formater = Marc::Formater::Text->new();
+ my $formater = MARC::Moose::Formater::Text->new();
  while ( my $record = $reader->read() ) {
      print $formater->format( $record );
  }
@@ -193,11 +194,11 @@ Called by Marc::Formater::Iso2709.
 
 =item *
 
-L<Marc>
+L<MARC::Moose>
 
 =item *
 
-L<Marc::Field>
+L<MARC::Moose::Field>
 
 =back
 

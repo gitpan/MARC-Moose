@@ -1,13 +1,13 @@
-package Marc::Reader::File;
-# ABSTRACT: A Marc::Reader from a file
+package MARC::Moose::Reader::File;
+# ABSTRACT: A reader from a file
 
 use namespace::autoclean;
 use Moose;
 
 use Carp;
-use Marc::Record;
+use MARC::Moose::Record;
 
-extends 'Marc::Reader';
+extends 'MARC::Moose::Reader';
 
 has file => (
     is => 'rw',
@@ -49,17 +49,17 @@ __END__
 
 =head1 NAME
 
-Marc::Reader::File - A Marc::Reader from a file
+MARC::Moose::Reader::File - A reader from a file
 
 =head1 VERSION
 
-version 0.004
+version 0.005
 
 =head1 ATTRIBUTES
 
 =head2 file
 
-Name of the file to read Marc::Record from. A error is thrown if the file
+Name of the file to read MARC::Moose::Record from. A error is thrown if the file
 does't exist.
 
 =head1 SEE ALSO
@@ -68,11 +68,11 @@ does't exist.
 
 =item *
 
-L<Marc>
+L<MARC::Moose>
 
 =item *
 
-L<Marc::Reader>
+L<MARC::Moose::Reader>
 
 =back
 

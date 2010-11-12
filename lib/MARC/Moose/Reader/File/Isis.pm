@@ -1,20 +1,20 @@
-package Marc::Reader::File::Isis;
-# ABSTRACT: Marc file reader for ISIS (DOS) encoded records
+package MARC::Moose::Reader::File::Isis;
+# ABSTRACT: A file reader for ISIS (DOS) encoded records
 
 use namespace::autoclean;
 use Moose;
 
 use Carp;
-use Marc::Record;
-use Marc::Parser::Isis;
+use MARC::Moose::Record;
+use MARC::Moose::Parser::Isis;
 
-extends 'Marc::Reader::File';
+extends 'MARC::Moose::Reader::File';
 
 
 has parser => ( 
     is => 'rw', 
-    isa => 'Marc::Parser',
-    default => sub { Marc::Parser::Isis->new() },
+    isa => 'MARC::Moose::Parser',
+    default => sub { MARC::Moose::Parser::Isis->new() },
 );
 
 
@@ -45,18 +45,18 @@ __END__
 
 =head1 NAME
 
-Marc::Reader::File::Isis - Marc file reader for ISIS (DOS) encoded records
+MARC::Moose::Reader::File::Isis - A file reader for ISIS (DOS) encoded records
 
 =head1 VERSION
 
-version 0.004
+version 0.005
 
 =head1 METHODS
 
 =head2 read
 
-Read next available L<Marc::Record> from reader file using
-L<Marc::Parser::Isis> parser.
+Read next available L<MARC::Moose::Record> from reader file using
+L<MARC::Moose::Parser::Isis> parser.
 
 =head1 SEE ALSO
 
@@ -64,15 +64,15 @@ L<Marc::Parser::Isis> parser.
 
 =item *
 
-L<Marc>
+L<MARC::Moose>
 
 =item *
 
-L<Marc::Reader::File>
+L<MARC::Moose::Reader::File>
 
 =item *
 
-L<Marc::Parser::Isis>
+L<MARC::Moose::Parser::Isis>
 
 =back
 

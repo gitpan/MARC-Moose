@@ -1,4 +1,4 @@
-package Marc::Formater;
+package MARC::Moose::Formater;
 # ABSTRACT: Base class to format Marc record
 
 use namespace::autoclean;
@@ -33,11 +33,11 @@ __END__
 
 =head1 NAME
 
-Marc::Formater - Base class to format Marc record
+MARC::Moose::Formater - Base class to format Marc record
 
 =head1 VERSION
 
-version 0.004
+version 0.005
 
 =head1 DESCRIPTION
 
@@ -75,11 +75,11 @@ Returns a string containing a representation of a Marc record.
 
 =back
 
-* L<Marc>
-* L<Marc::Formater::Iso2709>
-* L<Marc::Formater::Marcxml>
-* L<Marc::Formater::Text>
-* L<Marc::Formater::Yaml>
+* L<MARC::Moose>
+* L<MARC::Moose::Formater::Iso2709>
+* L<MARC::Moose::Formater::Marcxml>
+* L<MARC::Moose::Formater::Text>
+* L<MARC::Moose::Formater::Yaml>
 
 =head1 AUTHOR
 

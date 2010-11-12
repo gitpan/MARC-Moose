@@ -9,10 +9,9 @@ use ExtUtils::MakeMaker 6.31;
 
 
 my %WriteMakefileArgs = (
-  'ABSTRACT' => 'MARC bibliographic records set of tools',
+  'ABSTRACT' => 'Moose based MARC records set of tools',
   'AUTHOR' => 'Frederic Demians <f.demians@tamil.fr>',
   'BUILD_REQUIRES' => {
-    'FindBin' => '0',
     'Test::More' => '0'
   },
   'CONFIGURE_REQUIRES' => {
@@ -33,7 +32,7 @@ my %WriteMakefileArgs = (
     'namespace::autoclean' => '0',
     'overload' => '0'
   },
-  'VERSION' => '0.004',
+  'VERSION' => '0.005',
   'test' => {
     'TESTS' => 't/*.t'
   }

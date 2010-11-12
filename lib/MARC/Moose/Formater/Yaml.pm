@@ -1,44 +1,37 @@
-package Marc::Reader;
-# ABSTRACT: A reader returning Marc records
+package MARC::Moose::Formater::Yaml;
+# ABSTRACT: Marc record formater into YAML representation
 
 use namespace::autoclean;
 use Moose;
 
-has count => (
-    is => 'rw',
-    isa => 'Int',
-    default => 0
-);
+extends 'MARC::Moose::Formater';
+
+use MARC::Moose::Field::Control;
+use MARC::Moose::Field::Std;
+use YAML;
 
 
-has parser => (
-    is => 'rw',
-);
 
+override 'format' => sub {
+    my ($self, $record) = @_;
 
-sub read {
-    my $self = shift;
-
-    $self->count( $self->count + 1 );
-
-    return 1;
-}
+    return Dump($record);
+};
 
 __PACKAGE__->meta->make_immutable;
 
 1;
-
 
 __END__
 =pod
 
 =head1 NAME
 
-Marc::Reader - A reader returning Marc records
+MARC::Moose::Formater::Yaml - Marc record formater into YAML representation
 
 =head1 VERSION
 
-version 0.004
+version 0.005
 
 =head1 AUTHOR
 

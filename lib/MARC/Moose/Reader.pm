@@ -1,20 +1,30 @@
-package Marc::Field::Control;
-# ABSTRACT: Control Marc field (tag < 010)
+package MARC::Moose::Reader;
+# ABSTRACT: A reader returning MARC::Moose records
 
 use namespace::autoclean;
 use Moose;
 
-extends 'Marc::Field';
+has count => (
+    is => 'rw',
+    isa => 'Int',
+    default => 0
+);
 
-has value => ( is => 'rw', isa => 'Str' );
 
-override 'as_formatted' => sub {
+has parser => (
+    is => 'rw',
+);
+
+
+sub read {
     my $self = shift;
 
-    join ' ', ( $self->tag, $self->value );
-};
+    $self->count( $self->count + 1 );
 
-#__PACKAGE__->meta->make_immutable;
+    return 1;
+}
+
+__PACKAGE__->meta->make_immutable;
 
 1;
 
@@ -24,11 +34,11 @@ __END__
 
 =head1 NAME
 
-Marc::Field::Control - Control Marc field (tag < 010)
+MARC::Moose::Reader - A reader returning MARC::Moose records
 
 =head1 VERSION
 
-version 0.004
+version 0.005
 
 =head1 AUTHOR
 
