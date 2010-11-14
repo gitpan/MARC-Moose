@@ -13,11 +13,13 @@ my %WriteMakefileArgs = (
   'AUTHOR' => 'Frederic Demians <f.demians@tamil.fr>',
   'BUILD_REQUIRES' => {
     'MARC::File::XML' => '0',
+    'Module::Build' => '0.3601',
     'Test::More' => '0',
     'Time::HiRes' => '0'
   },
   'CONFIGURE_REQUIRES' => {
-    'ExtUtils::MakeMaker' => '6.31'
+    'ExtUtils::MakeMaker' => '6.31',
+    'Module::Build' => '0.3601'
   },
   'DISTNAME' => 'marc-moose',
   'EXE_FILES' => [],
@@ -26,7 +28,6 @@ my %WriteMakefileArgs = (
   'PREREQ_PM' => {
     'Carp' => '0',
     'Moose' => '1.00',
-    'Moose::Util::TypeConstraints' => '0',
     'Text::Iconv' => '1.7',
     'XML::Simple' => '0',
     'XML::Writer' => '0.606',
@@ -34,7 +35,7 @@ my %WriteMakefileArgs = (
     'namespace::autoclean' => '0',
     'overload' => '0'
   },
-  'VERSION' => '0.007',
+  'VERSION' => '0.008',
   'test' => {
     'TESTS' => 't/*.t'
   }

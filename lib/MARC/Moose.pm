@@ -1,4 +1,7 @@
 package MARC::Moose;
+BEGIN {
+  $MARC::Moose::VERSION = '0.008';
+}
 # ABSTRACT: Moose based MARC records set of tools
 
 use namespace::autoclean;
@@ -21,7 +24,7 @@ MARC::Moose - Moose based MARC records set of tools
 
 =head1 VERSION
 
-version 0.007
+version 0.008
 
 =head1 DESCRIPTION
 

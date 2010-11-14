@@ -1,3 +1,4 @@
+Build.PL
 LICENSE
 MANIFEST
 META.yml
@@ -26,6 +27,575 @@ lib/MARC/Moose/Reader/File/Marcxml.pm
 lib/MARC/Moose/Record.pm
 lib/MARC/Moose/Writer.pm
 lib/MARC/Moose/Writer/File.pm
+nytprof.out
+nytprof/AutoLoader-pm-block.html
+nytprof/AutoLoader-pm-line.html
+nytprof/AutoLoader-pm-sub.html
+nytprof/B-Hooks-EndOfScope-pm-block.html
+nytprof/B-Hooks-EndOfScope-pm-line.html
+nytprof/B-Hooks-EndOfScope-pm-sub.html
+nytprof/Carp-Heavy-pm-block.html
+nytprof/Carp-Heavy-pm-line.html
+nytprof/Carp-Heavy-pm-sub.html
+nytprof/Carp-pm-block.html
+nytprof/Carp-pm-line.html
+nytprof/Carp-pm-sub.html
+nytprof/Class-Accessor-pm-block.html
+nytprof/Class-Accessor-pm-line.html
+nytprof/Class-Accessor-pm-sub.html
+nytprof/Class-MOP-Attribute-pm-block.html
+nytprof/Class-MOP-Attribute-pm-line.html
+nytprof/Class-MOP-Attribute-pm-sub.html
+nytprof/Class-MOP-Class-Immutable-Trait-pm-block.html
+nytprof/Class-MOP-Class-Immutable-Trait-pm-line.html
+nytprof/Class-MOP-Class-Immutable-Trait-pm-sub.html
+nytprof/Class-MOP-Class-pm-block.html
+nytprof/Class-MOP-Class-pm-line.html
+nytprof/Class-MOP-Class-pm-sub.html
+nytprof/Class-MOP-Deprecated-pm-block.html
+nytprof/Class-MOP-Deprecated-pm-line.html
+nytprof/Class-MOP-Deprecated-pm-sub.html
+nytprof/Class-MOP-Instance-pm-block.html
+nytprof/Class-MOP-Instance-pm-line.html
+nytprof/Class-MOP-Instance-pm-sub.html
+nytprof/Class-MOP-Method-Accessor-pm-block.html
+nytprof/Class-MOP-Method-Accessor-pm-line.html
+nytprof/Class-MOP-Method-Accessor-pm-sub.html
+nytprof/Class-MOP-Method-Constructor-pm-block.html
+nytprof/Class-MOP-Method-Constructor-pm-line.html
+nytprof/Class-MOP-Method-Constructor-pm-sub.html
+nytprof/Class-MOP-Method-Generated-pm-block.html
+nytprof/Class-MOP-Method-Generated-pm-line.html
+nytprof/Class-MOP-Method-Generated-pm-sub.html
+nytprof/Class-MOP-Method-Inlined-pm-block.html
+nytprof/Class-MOP-Method-Inlined-pm-line.html
+nytprof/Class-MOP-Method-Inlined-pm-sub.html
+nytprof/Class-MOP-Method-Meta-pm-block.html
+nytprof/Class-MOP-Method-Meta-pm-line.html
+nytprof/Class-MOP-Method-Meta-pm-sub.html
+nytprof/Class-MOP-Method-Wrapped-pm-block.html
+nytprof/Class-MOP-Method-Wrapped-pm-line.html
+nytprof/Class-MOP-Method-Wrapped-pm-sub.html
+nytprof/Class-MOP-Method-pm-block.html
+nytprof/Class-MOP-Method-pm-line.html
+nytprof/Class-MOP-Method-pm-sub.html
+nytprof/Class-MOP-MiniTrait-pm-block.html
+nytprof/Class-MOP-MiniTrait-pm-line.html
+nytprof/Class-MOP-MiniTrait-pm-sub.html
+nytprof/Class-MOP-Mixin-AttributeCore-pm-block.html
+nytprof/Class-MOP-Mixin-AttributeCore-pm-line.html
+nytprof/Class-MOP-Mixin-AttributeCore-pm-sub.html
+nytprof/Class-MOP-Mixin-HasAttributes-pm-block.html
+nytprof/Class-MOP-Mixin-HasAttributes-pm-line.html
+nytprof/Class-MOP-Mixin-HasAttributes-pm-sub.html
+nytprof/Class-MOP-Mixin-HasMethods-pm-block.html
+nytprof/Class-MOP-Mixin-HasMethods-pm-line.html
+nytprof/Class-MOP-Mixin-HasMethods-pm-sub.html
+nytprof/Class-MOP-Mixin-pm-block.html
+nytprof/Class-MOP-Mixin-pm-line.html
+nytprof/Class-MOP-Mixin-pm-sub.html
+nytprof/Class-MOP-Module-pm-block.html
+nytprof/Class-MOP-Module-pm-line.html
+nytprof/Class-MOP-Module-pm-sub.html
+nytprof/Class-MOP-Object-pm-block.html
+nytprof/Class-MOP-Object-pm-line.html
+nytprof/Class-MOP-Object-pm-sub.html
+nytprof/Class-MOP-Package-pm-block.html
+nytprof/Class-MOP-Package-pm-line.html
+nytprof/Class-MOP-Package-pm-sub.html
+nytprof/Class-MOP-pm-block.html
+nytprof/Class-MOP-pm-line.html
+nytprof/Class-MOP-pm-sub.html
+nytprof/Config-pm-block.html
+nytprof/Config-pm-line.html
+nytprof/Config-pm-sub.html
+nytprof/Data-Dumper-pm-block.html
+nytprof/Data-Dumper-pm-line.html
+nytprof/Data-Dumper-pm-sub.html
+nytprof/Data-OptList-pm-block.html
+nytprof/Data-OptList-pm-line.html
+nytprof/Data-OptList-pm-sub.html
+nytprof/Devel-GlobalDestruction-pm-block.html
+nytprof/Devel-GlobalDestruction-pm-line.html
+nytprof/Devel-GlobalDestruction-pm-sub.html
+nytprof/DynaLoader-pm-block.html
+nytprof/DynaLoader-pm-line.html
+nytprof/DynaLoader-pm-sub.html
+nytprof/Encode-Alias-pm-block.html
+nytprof/Encode-Alias-pm-line.html
+nytprof/Encode-Alias-pm-sub.html
+nytprof/Encode-Config-pm-block.html
+nytprof/Encode-Config-pm-line.html
+nytprof/Encode-Config-pm-sub.html
+nytprof/Encode-Encoding-pm-block.html
+nytprof/Encode-Encoding-pm-line.html
+nytprof/Encode-Encoding-pm-sub.html
+nytprof/Encode-pm-block.html
+nytprof/Encode-pm-line.html
+nytprof/Encode-pm-sub.html
+nytprof/Exporter-Heavy-pm-block.html
+nytprof/Exporter-Heavy-pm-line.html
+nytprof/Exporter-Heavy-pm-sub.html
+nytprof/Exporter-pm-block.html
+nytprof/Exporter-pm-line.html
+nytprof/Exporter-pm-sub.html
+nytprof/Fcntl-pm-block.html
+nytprof/Fcntl-pm-line.html
+nytprof/Fcntl-pm-sub.html
+nytprof/File-Basename-pm-block.html
+nytprof/File-Basename-pm-line.html
+nytprof/File-Basename-pm-sub.html
+nytprof/File-Spec-Unix-pm-block.html
+nytprof/File-Spec-Unix-pm-line.html
+nytprof/File-Spec-Unix-pm-sub.html
+nytprof/File-Spec-pm-block.html
+nytprof/File-Spec-pm-line.html
+nytprof/File-Spec-pm-sub.html
+nytprof/FileHandle-pm-block.html
+nytprof/FileHandle-pm-line.html
+nytprof/FileHandle-pm-sub.html
+nytprof/IO-File-pm-block.html
+nytprof/IO-File-pm-line.html
+nytprof/IO-File-pm-sub.html
+nytprof/IO-Handle-pm-block.html
+nytprof/IO-Handle-pm-line.html
+nytprof/IO-Handle-pm-sub.html
+nytprof/IO-Seekable-pm-block.html
+nytprof/IO-Seekable-pm-line.html
+nytprof/IO-Seekable-pm-sub.html
+nytprof/IO-pm-block.html
+nytprof/IO-pm-line.html
+nytprof/IO-pm-sub.html
+nytprof/List-MoreUtils-pm-block.html
+nytprof/List-MoreUtils-pm-line.html
+nytprof/List-MoreUtils-pm-sub.html
+nytprof/List-Util-pm-block.html
+nytprof/List-Util-pm-line.html
+nytprof/List-Util-pm-sub.html
+nytprof/MARC-Charset-Code-pm-block.html
+nytprof/MARC-Charset-Code-pm-line.html
+nytprof/MARC-Charset-Code-pm-sub.html
+nytprof/MARC-Charset-Constants-pm-block.html
+nytprof/MARC-Charset-Constants-pm-line.html
+nytprof/MARC-Charset-Constants-pm-sub.html
+nytprof/MARC-Charset-Table-pm-block.html
+nytprof/MARC-Charset-Table-pm-line.html
+nytprof/MARC-Charset-Table-pm-sub.html
+nytprof/MARC-Charset-pm-block.html
+nytprof/MARC-Charset-pm-line.html
+nytprof/MARC-Charset-pm-sub.html
+nytprof/MARC-Field-pm-block.html
+nytprof/MARC-Field-pm-line.html
+nytprof/MARC-Field-pm-sub.html
+nytprof/MARC-File-SAX-pm-block.html
+nytprof/MARC-File-SAX-pm-line.html
+nytprof/MARC-File-SAX-pm-sub.html
+nytprof/MARC-File-XML-pm-block.html
+nytprof/MARC-File-XML-pm-line.html
+nytprof/MARC-File-XML-pm-sub.html
+nytprof/MARC-File-pm-block.html
+nytprof/MARC-File-pm-line.html
+nytprof/MARC-File-pm-sub.html
+nytprof/MARC-Moose-Field-Control-pm-block.html
+nytprof/MARC-Moose-Field-Control-pm-line.html
+nytprof/MARC-Moose-Field-Control-pm-sub.html
+nytprof/MARC-Moose-Field-Std-pm-block.html
+nytprof/MARC-Moose-Field-Std-pm-line.html
+nytprof/MARC-Moose-Field-Std-pm-sub.html
+nytprof/MARC-Moose-Field-pm-block.html
+nytprof/MARC-Moose-Field-pm-line.html
+nytprof/MARC-Moose-Field-pm-sub.html
+nytprof/MARC-Moose-Parser-Marcxml-pm-block.html
+nytprof/MARC-Moose-Parser-Marcxml-pm-line.html
+nytprof/MARC-Moose-Parser-Marcxml-pm-sub.html
+nytprof/MARC-Moose-Parser-MarcxmlSax-pm-block.html
+nytprof/MARC-Moose-Parser-MarcxmlSax-pm-line.html
+nytprof/MARC-Moose-Parser-MarcxmlSax-pm-sub.html
+nytprof/MARC-Moose-Parser-pm-block.html
+nytprof/MARC-Moose-Parser-pm-line.html
+nytprof/MARC-Moose-Parser-pm-sub.html
+nytprof/MARC-Moose-Record-pm-block.html
+nytprof/MARC-Moose-Record-pm-line.html
+nytprof/MARC-Moose-Record-pm-sub.html
+nytprof/MARC-Record-pm-block.html
+nytprof/MARC-Record-pm-line.html
+nytprof/MARC-Record-pm-sub.html
+nytprof/MRO-Compat-pm-block.html
+nytprof/MRO-Compat-pm-line.html
+nytprof/MRO-Compat-pm-sub.html
+nytprof/Moose-Deprecated-pm-block.html
+nytprof/Moose-Deprecated-pm-line.html
+nytprof/Moose-Deprecated-pm-sub.html
+nytprof/Moose-Error-Default-pm-block.html
+nytprof/Moose-Error-Default-pm-line.html
+nytprof/Moose-Error-Default-pm-sub.html
+nytprof/Moose-Exporter-pm-block.html
+nytprof/Moose-Exporter-pm-line.html
+nytprof/Moose-Exporter-pm-sub.html
+nytprof/Moose-Meta-Attribute-Native-pm-block.html
+nytprof/Moose-Meta-Attribute-Native-pm-line.html
+nytprof/Moose-Meta-Attribute-Native-pm-sub.html
+nytprof/Moose-Meta-Attribute-pm-block.html
+nytprof/Moose-Meta-Attribute-pm-line.html
+nytprof/Moose-Meta-Attribute-pm-sub.html
+nytprof/Moose-Meta-Class-Immutable-Trait-pm-block.html
+nytprof/Moose-Meta-Class-Immutable-Trait-pm-line.html
+nytprof/Moose-Meta-Class-Immutable-Trait-pm-sub.html
+nytprof/Moose-Meta-Class-pm-block.html
+nytprof/Moose-Meta-Class-pm-line.html
+nytprof/Moose-Meta-Class-pm-sub.html
+nytprof/Moose-Meta-Instance-pm-block.html
+nytprof/Moose-Meta-Instance-pm-line.html
+nytprof/Moose-Meta-Instance-pm-sub.html
+nytprof/Moose-Meta-Method-Accessor-pm-block.html
+nytprof/Moose-Meta-Method-Accessor-pm-line.html
+nytprof/Moose-Meta-Method-Accessor-pm-sub.html
+nytprof/Moose-Meta-Method-Augmented-pm-block.html
+nytprof/Moose-Meta-Method-Augmented-pm-line.html
+nytprof/Moose-Meta-Method-Augmented-pm-sub.html
+nytprof/Moose-Meta-Method-Constructor-pm-block.html
+nytprof/Moose-Meta-Method-Constructor-pm-line.html
+nytprof/Moose-Meta-Method-Constructor-pm-sub.html
+nytprof/Moose-Meta-Method-Delegation-pm-block.html
+nytprof/Moose-Meta-Method-Delegation-pm-line.html
+nytprof/Moose-Meta-Method-Delegation-pm-sub.html
+nytprof/Moose-Meta-Method-Destructor-pm-block.html
+nytprof/Moose-Meta-Method-Destructor-pm-line.html
+nytprof/Moose-Meta-Method-Destructor-pm-sub.html
+nytprof/Moose-Meta-Method-Meta-pm-block.html
+nytprof/Moose-Meta-Method-Meta-pm-line.html
+nytprof/Moose-Meta-Method-Meta-pm-sub.html
+nytprof/Moose-Meta-Method-Overridden-pm-block.html
+nytprof/Moose-Meta-Method-Overridden-pm-line.html
+nytprof/Moose-Meta-Method-Overridden-pm-sub.html
+nytprof/Moose-Meta-Method-pm-block.html
+nytprof/Moose-Meta-Method-pm-line.html
+nytprof/Moose-Meta-Method-pm-sub.html
+nytprof/Moose-Meta-Mixin-AttributeCore-pm-block.html
+nytprof/Moose-Meta-Mixin-AttributeCore-pm-line.html
+nytprof/Moose-Meta-Mixin-AttributeCore-pm-sub.html
+nytprof/Moose-Meta-Object-Trait-pm-block.html
+nytprof/Moose-Meta-Object-Trait-pm-line.html
+nytprof/Moose-Meta-Object-Trait-pm-sub.html
+nytprof/Moose-Meta-Role-Application-RoleSummation-pm-block.html
+nytprof/Moose-Meta-Role-Application-RoleSummation-pm-line.html
+nytprof/Moose-Meta-Role-Application-RoleSummation-pm-sub.html
+nytprof/Moose-Meta-Role-Application-ToClass-pm-block.html
+nytprof/Moose-Meta-Role-Application-ToClass-pm-line.html
+nytprof/Moose-Meta-Role-Application-ToClass-pm-sub.html
+nytprof/Moose-Meta-Role-Application-ToInstance-pm-block.html
+nytprof/Moose-Meta-Role-Application-ToInstance-pm-line.html
+nytprof/Moose-Meta-Role-Application-ToInstance-pm-sub.html
+nytprof/Moose-Meta-Role-Application-ToRole-pm-block.html
+nytprof/Moose-Meta-Role-Application-ToRole-pm-line.html
+nytprof/Moose-Meta-Role-Application-ToRole-pm-sub.html
+nytprof/Moose-Meta-Role-Application-pm-block.html
+nytprof/Moose-Meta-Role-Application-pm-line.html
+nytprof/Moose-Meta-Role-Application-pm-sub.html
+nytprof/Moose-Meta-Role-Attribute-pm-block.html
+nytprof/Moose-Meta-Role-Attribute-pm-line.html
+nytprof/Moose-Meta-Role-Attribute-pm-sub.html
+nytprof/Moose-Meta-Role-Composite-pm-block.html
+nytprof/Moose-Meta-Role-Composite-pm-line.html
+nytprof/Moose-Meta-Role-Composite-pm-sub.html
+nytprof/Moose-Meta-Role-Method-Conflicting-pm-block.html
+nytprof/Moose-Meta-Role-Method-Conflicting-pm-line.html
+nytprof/Moose-Meta-Role-Method-Conflicting-pm-sub.html
+nytprof/Moose-Meta-Role-Method-Required-pm-block.html
+nytprof/Moose-Meta-Role-Method-Required-pm-line.html
+nytprof/Moose-Meta-Role-Method-Required-pm-sub.html
+nytprof/Moose-Meta-Role-Method-pm-block.html
+nytprof/Moose-Meta-Role-Method-pm-line.html
+nytprof/Moose-Meta-Role-Method-pm-sub.html
+nytprof/Moose-Meta-Role-pm-block.html
+nytprof/Moose-Meta-Role-pm-line.html
+nytprof/Moose-Meta-Role-pm-sub.html
+nytprof/Moose-Meta-TypeCoercion-Union-pm-block.html
+nytprof/Moose-Meta-TypeCoercion-Union-pm-line.html
+nytprof/Moose-Meta-TypeCoercion-Union-pm-sub.html
+nytprof/Moose-Meta-TypeCoercion-pm-block.html
+nytprof/Moose-Meta-TypeCoercion-pm-line.html
+nytprof/Moose-Meta-TypeCoercion-pm-sub.html
+nytprof/Moose-Meta-TypeConstraint-Class-pm-block.html
+nytprof/Moose-Meta-TypeConstraint-Class-pm-line.html
+nytprof/Moose-Meta-TypeConstraint-Class-pm-sub.html
+nytprof/Moose-Meta-TypeConstraint-DuckType-pm-block.html
+nytprof/Moose-Meta-TypeConstraint-DuckType-pm-line.html
+nytprof/Moose-Meta-TypeConstraint-DuckType-pm-sub.html
+nytprof/Moose-Meta-TypeConstraint-Enum-pm-block.html
+nytprof/Moose-Meta-TypeConstraint-Enum-pm-line.html
+nytprof/Moose-Meta-TypeConstraint-Enum-pm-sub.html
+nytprof/Moose-Meta-TypeConstraint-Parameterizable-pm-block.html
+nytprof/Moose-Meta-TypeConstraint-Parameterizable-pm-line.html
+nytprof/Moose-Meta-TypeConstraint-Parameterizable-pm-sub.html
+nytprof/Moose-Meta-TypeConstraint-Parameterized-pm-block.html
+nytprof/Moose-Meta-TypeConstraint-Parameterized-pm-line.html
+nytprof/Moose-Meta-TypeConstraint-Parameterized-pm-sub.html
+nytprof/Moose-Meta-TypeConstraint-Registry-pm-block.html
+nytprof/Moose-Meta-TypeConstraint-Registry-pm-line.html
+nytprof/Moose-Meta-TypeConstraint-Registry-pm-sub.html
+nytprof/Moose-Meta-TypeConstraint-Role-pm-block.html
+nytprof/Moose-Meta-TypeConstraint-Role-pm-line.html
+nytprof/Moose-Meta-TypeConstraint-Role-pm-sub.html
+nytprof/Moose-Meta-TypeConstraint-Union-pm-block.html
+nytprof/Moose-Meta-TypeConstraint-Union-pm-line.html
+nytprof/Moose-Meta-TypeConstraint-Union-pm-sub.html
+nytprof/Moose-Meta-TypeConstraint-pm-block.html
+nytprof/Moose-Meta-TypeConstraint-pm-line.html
+nytprof/Moose-Meta-TypeConstraint-pm-sub.html
+nytprof/Moose-Object-pm-block.html
+nytprof/Moose-Object-pm-line.html
+nytprof/Moose-Object-pm-sub.html
+nytprof/Moose-Util-MetaRole-pm-block.html
+nytprof/Moose-Util-MetaRole-pm-line.html
+nytprof/Moose-Util-MetaRole-pm-sub.html
+nytprof/Moose-Util-TypeConstraints-OptimizedConstraints-pm-block.html
+nytprof/Moose-Util-TypeConstraints-OptimizedConstraints-pm-line.html
+nytprof/Moose-Util-TypeConstraints-OptimizedConstraints-pm-sub.html
+nytprof/Moose-Util-TypeConstraints-pm-block.html
+nytprof/Moose-Util-TypeConstraints-pm-line.html
+nytprof/Moose-Util-TypeConstraints-pm-sub.html
+nytprof/Moose-Util-pm-block.html
+nytprof/Moose-Util-pm-line.html
+nytprof/Moose-Util-pm-sub.html
+nytprof/Moose-pm-block.html
+nytprof/Moose-pm-line.html
+nytprof/Moose-pm-sub.html
+nytprof/POSIX-pm-block.html
+nytprof/POSIX-pm-line.html
+nytprof/POSIX-pm-sub.html
+nytprof/Package-DeprecationManager-pm-block.html
+nytprof/Package-DeprecationManager-pm-line.html
+nytprof/Package-DeprecationManager-pm-sub.html
+nytprof/Package-Stash-pm-block.html
+nytprof/Package-Stash-pm-line.html
+nytprof/Package-Stash-pm-sub.html
+nytprof/Params-Util-pm-block.html
+nytprof/Params-Util-pm-line.html
+nytprof/Params-Util-pm-sub.html
+nytprof/SDBM_File-pm-block.html
+nytprof/SDBM_File-pm-line.html
+nytprof/SDBM_File-pm-sub.html
+nytprof/Scalar-Util-pm-block.html
+nytprof/Scalar-Util-pm-line.html
+nytprof/Scalar-Util-pm-sub.html
+nytprof/SelectSaver-pm-block.html
+nytprof/SelectSaver-pm-line.html
+nytprof/SelectSaver-pm-sub.html
+nytprof/Storable-pm-block.html
+nytprof/Storable-pm-line.html
+nytprof/Storable-pm-sub.html
+nytprof/Sub-Exporter-pm-block.html
+nytprof/Sub-Exporter-pm-line.html
+nytprof/Sub-Exporter-pm-sub.html
+nytprof/Sub-Install-pm-block.html
+nytprof/Sub-Install-pm-line.html
+nytprof/Sub-Install-pm-sub.html
+nytprof/Sub-Name-pm-block.html
+nytprof/Sub-Name-pm-line.html
+nytprof/Sub-Name-pm-sub.html
+nytprof/Symbol-pm-block.html
+nytprof/Symbol-pm-line.html
+nytprof/Symbol-pm-sub.html
+nytprof/Tie-Hash-pm-block.html
+nytprof/Tie-Hash-pm-line.html
+nytprof/Tie-Hash-pm-sub.html
+nytprof/Time-HiRes-pm-block.html
+nytprof/Time-HiRes-pm-line.html
+nytprof/Time-HiRes-pm-sub.html
+nytprof/Try-Tiny-pm-block.html
+nytprof/Try-Tiny-pm-line.html
+nytprof/Try-Tiny-pm-sub.html
+nytprof/Unicode-Normalize-pm-block.html
+nytprof/Unicode-Normalize-pm-line.html
+nytprof/Unicode-Normalize-pm-sub.html
+nytprof/Variable-Magic-pm-block.html
+nytprof/Variable-Magic-pm-line.html
+nytprof/Variable-Magic-pm-sub.html
+nytprof/XML-LibXML-Boolean-pm-block.html
+nytprof/XML-LibXML-Boolean-pm-line.html
+nytprof/XML-LibXML-Boolean-pm-sub.html
+nytprof/XML-LibXML-Common-pm-block.html
+nytprof/XML-LibXML-Common-pm-line.html
+nytprof/XML-LibXML-Common-pm-sub.html
+nytprof/XML-LibXML-Literal-pm-block.html
+nytprof/XML-LibXML-Literal-pm-line.html
+nytprof/XML-LibXML-Literal-pm-sub.html
+nytprof/XML-LibXML-NodeList-pm-block.html
+nytprof/XML-LibXML-NodeList-pm-line.html
+nytprof/XML-LibXML-NodeList-pm-sub.html
+nytprof/XML-LibXML-Number-pm-block.html
+nytprof/XML-LibXML-Number-pm-line.html
+nytprof/XML-LibXML-Number-pm-sub.html
+nytprof/XML-LibXML-SAX-Parser-pm-block.html
+nytprof/XML-LibXML-SAX-Parser-pm-line.html
+nytprof/XML-LibXML-SAX-Parser-pm-sub.html
+nytprof/XML-LibXML-XPathContext-pm-block.html
+nytprof/XML-LibXML-XPathContext-pm-line.html
+nytprof/XML-LibXML-XPathContext-pm-sub.html
+nytprof/XML-LibXML-pm-block.html
+nytprof/XML-LibXML-pm-line.html
+nytprof/XML-LibXML-pm-sub.html
+nytprof/XML-SAX-Base-pm-block.html
+nytprof/XML-SAX-Base-pm-line.html
+nytprof/XML-SAX-Base-pm-sub.html
+nytprof/XML-SAX-DocumentLocator-pm-block.html
+nytprof/XML-SAX-DocumentLocator-pm-line.html
+nytprof/XML-SAX-DocumentLocator-pm-sub.html
+nytprof/XML-SAX-Exception-pm-block.html
+nytprof/XML-SAX-Exception-pm-line.html
+nytprof/XML-SAX-Exception-pm-sub.html
+nytprof/XML-SAX-ParserFactory-pm-block.html
+nytprof/XML-SAX-ParserFactory-pm-line.html
+nytprof/XML-SAX-ParserFactory-pm-sub.html
+nytprof/XML-SAX-pm-block.html
+nytprof/XML-SAX-pm-line.html
+nytprof/XML-SAX-pm-sub.html
+nytprof/XML-Simple-pm-block.html
+nytprof/XML-Simple-pm-line.html
+nytprof/XML-Simple-pm-sub.html
+nytprof/XSLoader-pm-block.html
+nytprof/XSLoader-pm-line.html
+nytprof/XSLoader-pm-sub.html
+nytprof/YAML-Base-pm-block.html
+nytprof/YAML-Base-pm-line.html
+nytprof/YAML-Base-pm-sub.html
+nytprof/YAML-Node-pm-block.html
+nytprof/YAML-Node-pm-line.html
+nytprof/YAML-Node-pm-sub.html
+nytprof/YAML-Tag-pm-block.html
+nytprof/YAML-Tag-pm-line.html
+nytprof/YAML-Tag-pm-sub.html
+nytprof/YAML-pm-block.html
+nytprof/YAML-pm-line.html
+nytprof/YAML-pm-sub.html
+'nytprof/accessor _leader of attribute leader defined at -home-tamil-util-marc-moose-lib-MARC-Moose-Record-pm-block.html'
+'nytprof/accessor _leader of attribute leader defined at -home-tamil-util-marc-moose-lib-MARC-Moose-Record-pm-line.html'
+'nytprof/accessor _leader of attribute leader defined at -home-tamil-util-marc-moose-lib-MARC-Moose-Record-pm-sub.html'
+'nytprof/accessor _leader of attribute leader defined at -usr-local-share-perl-5-10-0-MARC-Moose-Record-pm-block.html'
+'nytprof/accessor _leader of attribute leader defined at -usr-local-share-perl-5-10-0-MARC-Moose-Record-pm-line.html'
+'nytprof/accessor _leader of attribute leader defined at -usr-local-share-perl-5-10-0-MARC-Moose-Record-pm-sub.html'
+'nytprof/accessor fields defined at -home-tamil-util-marc-moose-lib-MARC-Moose-Record-pm-block.html'
+'nytprof/accessor fields defined at -home-tamil-util-marc-moose-lib-MARC-Moose-Record-pm-line.html'
+'nytprof/accessor fields defined at -home-tamil-util-marc-moose-lib-MARC-Moose-Record-pm-sub.html'
+'nytprof/accessor fields defined at -usr-local-share-perl-5-10-0-MARC-Moose-Record-pm-block.html'
+'nytprof/accessor fields defined at -usr-local-share-perl-5-10-0-MARC-Moose-Record-pm-line.html'
+'nytprof/accessor fields defined at -usr-local-share-perl-5-10-0-MARC-Moose-Record-pm-sub.html'
+'nytprof/accessor ind1 defined at -home-tamil-util-marc-moose-lib-MARC-Moose-Field-Std-pm-block.html'
+'nytprof/accessor ind1 defined at -home-tamil-util-marc-moose-lib-MARC-Moose-Field-Std-pm-line.html'
+'nytprof/accessor ind1 defined at -home-tamil-util-marc-moose-lib-MARC-Moose-Field-Std-pm-sub.html'
+'nytprof/accessor ind1 defined at -usr-local-share-perl-5-10-0-MARC-Moose-Field-Std-pm-block.html'
+'nytprof/accessor ind1 defined at -usr-local-share-perl-5-10-0-MARC-Moose-Field-Std-pm-line.html'
+'nytprof/accessor ind1 defined at -usr-local-share-perl-5-10-0-MARC-Moose-Field-Std-pm-sub.html'
+'nytprof/accessor ind2 defined at -home-tamil-util-marc-moose-lib-MARC-Moose-Field-Std-pm-block.html'
+'nytprof/accessor ind2 defined at -home-tamil-util-marc-moose-lib-MARC-Moose-Field-Std-pm-line.html'
+'nytprof/accessor ind2 defined at -home-tamil-util-marc-moose-lib-MARC-Moose-Field-Std-pm-sub.html'
+'nytprof/accessor ind2 defined at -usr-local-share-perl-5-10-0-MARC-Moose-Field-Std-pm-block.html'
+'nytprof/accessor ind2 defined at -usr-local-share-perl-5-10-0-MARC-Moose-Field-Std-pm-line.html'
+'nytprof/accessor ind2 defined at -usr-local-share-perl-5-10-0-MARC-Moose-Field-Std-pm-sub.html'
+'nytprof/accessor leader defined at -home-tamil-util-marc-moose-lib-MARC-Moose-Record-pm-block.html'
+'nytprof/accessor leader defined at -home-tamil-util-marc-moose-lib-MARC-Moose-Record-pm-line.html'
+'nytprof/accessor leader defined at -home-tamil-util-marc-moose-lib-MARC-Moose-Record-pm-sub.html'
+'nytprof/accessor leader defined at -usr-local-share-perl-5-10-0-MARC-Moose-Record-pm-block.html'
+'nytprof/accessor leader defined at -usr-local-share-perl-5-10-0-MARC-Moose-Record-pm-line.html'
+'nytprof/accessor leader defined at -usr-local-share-perl-5-10-0-MARC-Moose-Record-pm-sub.html'
+'nytprof/accessor subf defined at -home-tamil-util-marc-moose-lib-MARC-Moose-Field-Std-pm-block.html'
+'nytprof/accessor subf defined at -home-tamil-util-marc-moose-lib-MARC-Moose-Field-Std-pm-line.html'
+'nytprof/accessor subf defined at -home-tamil-util-marc-moose-lib-MARC-Moose-Field-Std-pm-sub.html'
+'nytprof/accessor subf defined at -usr-local-share-perl-5-10-0-MARC-Moose-Field-Std-pm-block.html'
+'nytprof/accessor subf defined at -usr-local-share-perl-5-10-0-MARC-Moose-Field-Std-pm-line.html'
+'nytprof/accessor subf defined at -usr-local-share-perl-5-10-0-MARC-Moose-Field-Std-pm-sub.html'
+'nytprof/accessor tag defined at -home-tamil-util-marc-moose-lib-MARC-Moose-Field-pm-block.html'
+'nytprof/accessor tag defined at -home-tamil-util-marc-moose-lib-MARC-Moose-Field-pm-line.html'
+'nytprof/accessor tag defined at -home-tamil-util-marc-moose-lib-MARC-Moose-Field-pm-sub.html'
+'nytprof/accessor tag defined at -usr-local-share-perl-5-10-0-MARC-Moose-Field-pm-block.html'
+'nytprof/accessor tag defined at -usr-local-share-perl-5-10-0-MARC-Moose-Field-pm-line.html'
+'nytprof/accessor tag defined at -usr-local-share-perl-5-10-0-MARC-Moose-Field-pm-sub.html'
+'nytprof/accessor value defined at -home-tamil-util-marc-moose-lib-MARC-Moose-Field-Control-pm-block.html'
+'nytprof/accessor value defined at -home-tamil-util-marc-moose-lib-MARC-Moose-Field-Control-pm-line.html'
+'nytprof/accessor value defined at -home-tamil-util-marc-moose-lib-MARC-Moose-Field-Control-pm-sub.html'
+'nytprof/accessor value defined at -usr-local-share-perl-5-10-0-MARC-Moose-Field-Control-pm-block.html'
+'nytprof/accessor value defined at -usr-local-share-perl-5-10-0-MARC-Moose-Field-Control-pm-line.html'
+'nytprof/accessor value defined at -usr-local-share-perl-5-10-0-MARC-Moose-Field-Control-pm-sub.html'
+'nytprof/accessor xs defined at -home-tamil-util-marc-moose-lib-MARC-Moose-Parser-MarcxmlSax-pm-block.html'
+'nytprof/accessor xs defined at -home-tamil-util-marc-moose-lib-MARC-Moose-Parser-MarcxmlSax-pm-line.html'
+'nytprof/accessor xs defined at -home-tamil-util-marc-moose-lib-MARC-Moose-Parser-MarcxmlSax-pm-sub.html'
+'nytprof/accessor xs defined at -usr-local-share-perl-5-10-0-MARC-Moose-Parser-MarcxmlSax-pm-block.html'
+'nytprof/accessor xs defined at -usr-local-share-perl-5-10-0-MARC-Moose-Parser-MarcxmlSax-pm-line.html'
+'nytprof/accessor xs defined at -usr-local-share-perl-5-10-0-MARC-Moose-Parser-MarcxmlSax-pm-sub.html'
+nytprof/asc.png
+nytprof/auto-POSIX-autosplit-ix-block.html
+nytprof/auto-POSIX-autosplit-ix-line.html
+nytprof/auto-POSIX-autosplit-ix-sub.html
+nytprof/auto-Storable-autosplit-ix-block.html
+nytprof/auto-Storable-autosplit-ix-line.html
+nytprof/auto-Storable-autosplit-ix-sub.html
+nytprof/base-pm-block.html
+nytprof/base-pm-line.html
+nytprof/base-pm-sub.html
+nytprof/bg.png
+nytprof/bytes-pm-block.html
+nytprof/bytes-pm-line.html
+nytprof/bytes-pm-sub.html
+nytprof/charnames-pm-block.html
+nytprof/charnames-pm-line.html
+nytprof/charnames-pm-sub.html
+nytprof/constant-pm-block.html
+nytprof/constant-pm-line.html
+nytprof/constant-pm-sub.html
+nytprof/desc.png
+'nytprof/generated method (unknown origin)-block.html'
+'nytprof/generated method (unknown origin)-line.html'
+'nytprof/generated method (unknown origin)-sub.html'
+nytprof/if-pm-block.html
+nytprof/if-pm-line.html
+nytprof/if-pm-sub.html
+nytprof/index-subs-excl.html
+nytprof/index-subs-incl.html
+nytprof/index.html
+nytprof/integer-pm-block.html
+nytprof/integer-pm-line.html
+nytprof/integer-pm-sub.html
+nytprof/jquery-min.js
+nytprof/jquery-tablesorter-min.js
+nytprof/metaclass-pm-block.html
+nytprof/metaclass-pm-line.html
+nytprof/metaclass-pm-sub.html
+nytprof/mro-pm-block.html
+nytprof/mro-pm-line.html
+nytprof/mro-pm-sub.html
+nytprof/namespace-autoclean-pm-block.html
+nytprof/namespace-autoclean-pm-line.html
+nytprof/namespace-autoclean-pm-sub.html
+nytprof/namespace-clean-pm-block.html
+nytprof/namespace-clean-pm-line.html
+nytprof/namespace-clean-pm-sub.html
+nytprof/overload-pm-block.html
+nytprof/overload-pm-line.html
+nytprof/overload-pm-sub.html
+nytprof/re-pm-block.html
+nytprof/re-pm-line.html
+nytprof/re-pm-sub.html
+nytprof/strict-pm-block.html
+nytprof/strict-pm-line.html
+nytprof/strict-pm-sub.html
+nytprof/style-tablesorter.css
+nytprof/style.css
+nytprof/t-test-parsing-block.html
+nytprof/t-test-parsing-line.html
+nytprof/t-test-parsing-sub.html
+nytprof/utf8-pm-block.html
+nytprof/utf8-pm-line.html
+nytprof/utf8-pm-sub.html
+nytprof/vars-pm-block.html
+nytprof/vars-pm-line.html
+nytprof/vars-pm-sub.html
+nytprof/warnings-pm-block.html
+nytprof/warnings-pm-line.html
+nytprof/warnings-pm-sub.html
+nytprof/warnings-register-pm-block.html
+nytprof/warnings-register-pm-line.html
+nytprof/warnings-register-pm-sub.html
 t/biblios.xml
 t/marc_load.t
 t/marc_valid.t

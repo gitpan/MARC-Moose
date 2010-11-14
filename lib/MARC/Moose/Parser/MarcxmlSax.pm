@@ -1,4 +1,7 @@
 package MARC::Moose::Parser::MarcxmlSax;
+BEGIN {
+  $MARC::Moose::Parser::MarcxmlSax::VERSION = '0.008';
+}
 # ABSTRACT: Parser for MARXML records using SAX parser
 
 use namespace::autoclean;
@@ -54,13 +57,25 @@ MARC::Moose::Parser::MarcxmlSax - Parser for MARXML records using SAX parser
 
 =head1 VERSION
 
-version 0.007
+version 0.008
 
 =head1 SEE ALSO
-=for :list
-* L<MARC::Moose>
-* L<MARC::Moose::Parser>
-* L<MARC::Moose::Parser::Marcxml>
+
+=over 4
+
+=item *
+
+L<MARC::Moose>
+
+=item *
+
+L<MARC::Moose::Parser>
+
+=item *
+
+L<MARC::Moose::Parser::Marcxml>
+
+=back
 
 =head1 AUTHOR
 

@@ -1,4 +1,7 @@
 package MARC::Moose::Writer;
+BEGIN {
+  $MARC::Moose::Writer::VERSION = '0.008';
+}
 # ABSTRACT: A base object to write somewhere MARC::Moose records
 
 use namespace::autoclean;
@@ -52,7 +55,7 @@ MARC::Moose::Writer - A base object to write somewhere MARC::Moose records
 
 =head1 VERSION
 
-version 0.007
+version 0.008
 
 =head1 AUTHOR
 

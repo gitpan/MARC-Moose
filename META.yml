@@ -4,10 +4,12 @@ author:
   - 'Frederic Demians <f.demians@tamil.fr>'
 build_requires:
   MARC::File::XML: 0
+  Module::Build: 0.3601
   Test::More: 0
   Time::HiRes: 0
 configure_requires:
   ExtUtils::MakeMaker: 6.31
+  Module::Build: 0.3601
 dynamic_config: 0
 generated_by: 'Dist::Zilla version 4.102342, CPAN::Meta::Converter version 2.102400'
 license: perl
@@ -18,11 +20,10 @@ name: marc-moose
 requires:
   Carp: 0
   Moose: 1.00
-  Moose::Util::TypeConstraints: 0
   Text::Iconv: 1.7
   XML::Simple: 0
   XML::Writer: 0.606
   YAML: 0
   namespace::autoclean: 0
   overload: 0
-version: 0.007
+version: 0.008

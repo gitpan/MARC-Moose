@@ -1,4 +1,7 @@
 package MARC::Moose::Formater::Marcxml;
+BEGIN {
+  $MARC::Moose::Formater::Marcxml::VERSION = '0.008';
+}
 #ABSTRACT: MARC::Moose record formater into MARCXML
 
 use namespace::autoclean;
@@ -67,7 +70,7 @@ MARC::Moose::Formater::Marcxml - MARC::Moose record formater into MARCXML
 
 =head1 VERSION
 
-version 0.007
+version 0.008
 
 =head1 AUTHOR
 

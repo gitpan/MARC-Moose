@@ -1,4 +1,7 @@
 package MARC::Moose::Reader::File::Iso2709;
+BEGIN {
+  $MARC::Moose::Reader::File::Iso2709::VERSION = '0.008';
+}
 # ABSTRACT: File reader for MARC::Moose record from ISO2709 file
 
 use namespace::autoclean;
@@ -50,7 +53,7 @@ MARC::Moose::Reader::File::Iso2709 - File reader for MARC::Moose record from ISO
 
 =head1 VERSION
 
-version 0.007
+version 0.008
 
 =head1 AUTHOR
 

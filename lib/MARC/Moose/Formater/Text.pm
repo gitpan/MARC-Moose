@@ -1,4 +1,7 @@
 package MARC::Moose::Formater::Text;
+BEGIN {
+  $MARC::Moose::Formater::Text::VERSION = '0.008';
+}
 # ABSTRACT: Record formater into a text representation
 
 use namespace::autoclean;
@@ -39,7 +42,7 @@ MARC::Moose::Formater::Text - Record formater into a text representation
 
 =head1 VERSION
 
-version 0.007
+version 0.008
 
 =head1 AUTHOR
 

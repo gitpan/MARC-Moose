@@ -1,4 +1,7 @@
 package MARC::Moose::Parser;
+BEGIN {
+  $MARC::Moose::Parser::VERSION = '0.008';
+}
 # ABSTRACT: A record parser base class
 
 use namespace::autoclean;
@@ -41,7 +44,7 @@ MARC::Moose::Parser - A record parser base class
 
 =head1 VERSION
 
-version 0.007
+version 0.008
 
 =head1 METHODS
 

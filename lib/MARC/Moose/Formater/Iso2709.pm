@@ -1,4 +1,7 @@
 package MARC::Moose::Formater::Iso2709;
+BEGIN {
+  $MARC::Moose::Formater::Iso2709::VERSION = '0.008';
+}
 # ABSTRACT: MARC::Moose record formater into ISO 2709 format
 
 use namespace::autoclean;
@@ -56,7 +59,7 @@ MARC::Moose::Formater::Iso2709 - MARC::Moose record formater into ISO 2709 forma
 
 =head1 VERSION
 
-version 0.007
+version 0.008
 
 =head1 AUTHOR
 

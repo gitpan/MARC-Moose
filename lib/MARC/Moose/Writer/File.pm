@@ -1,4 +1,7 @@
 package MARC::Moose::Writer::File;
+BEGIN {
+  $MARC::Moose::Writer::File::VERSION = '0.008';
+}
 # ABSTRACT: File record writer
 
 use namespace::autoclean;
@@ -65,7 +68,7 @@ MARC::Moose::Writer::File - File record writer
 
 =head1 VERSION
 
-version 0.007
+version 0.008
 
 =head1 ATTRIBUTES
 

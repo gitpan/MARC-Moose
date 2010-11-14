@@ -1,4 +1,7 @@
 package MARC::Moose::Field::Std;
+BEGIN {
+  $MARC::Moose::Field::Std::VERSION = '0.008';
+}
 # ABSTRACT: Standard Marc Field (tag >= 010)
 
 use namespace::autoclean;
@@ -50,7 +53,7 @@ MARC::Moose::Field::Std - Standard Marc Field (tag >= 010)
 
 =head1 VERSION
 
-version 0.007
+version 0.008
 
 =head1 AUTHOR
 

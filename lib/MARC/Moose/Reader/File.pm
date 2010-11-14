@@ -1,4 +1,7 @@
 package MARC::Moose::Reader::File;
+BEGIN {
+  $MARC::Moose::Reader::File::VERSION = '0.008';
+}
 # ABSTRACT: A reader from a file
 
 use namespace::autoclean;
@@ -53,7 +56,7 @@ MARC::Moose::Reader::File - A reader from a file
 
 =head1 VERSION
 
-version 0.007
+version 0.008
 
 =head1 ATTRIBUTES
 
