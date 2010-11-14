@@ -26,4 +26,4 @@ requires:
   YAML: 0
   namespace::autoclean: 0
   overload: 0
-version: 0.008
+version: 0.009
