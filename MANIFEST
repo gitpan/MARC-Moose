@@ -19,6 +19,8 @@ lib/MARC/Moose/Parser/Isis.pm
 lib/MARC/Moose/Parser/Iso2709.pm
 lib/MARC/Moose/Parser/Marcxml.pm
 lib/MARC/Moose/Parser/MarcxmlSax.pm
+lib/MARC/Moose/Parser/MarcxmlSaxHandler.pm
+lib/MARC/Moose/Parser/MarcxmlSaxSimple.pm
 lib/MARC/Moose/Reader.pm
 lib/MARC/Moose/Reader/File.pm
 lib/MARC/Moose/Reader/File/Isis.pm

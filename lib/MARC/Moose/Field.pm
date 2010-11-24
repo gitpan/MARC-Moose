@@ -1,14 +1,20 @@
 package MARC::Moose::Field;
 BEGIN {
-  $MARC::Moose::Field::VERSION = '0.009';
+  $MARC::Moose::Field::VERSION = '0.010';
 }
 # ABSTRACT: Marc field base object
 
 use namespace::autoclean;
 use Moose;
+use Moose::Util::TypeConstraints;
 
 
-has tag => ( is => 'rw', required => 1, );
+subtype 'Tag'
+    => as 'Str'
+    => where { $_ =~ /^\d{3}$/ }
+    => message { 'A 3 digit is required' };
+
+has tag => ( is => 'rw', isa => 'Tag', required => 1, );
 
 
 sub as_formatted {
@@ -30,7 +36,7 @@ MARC::Moose::Field - Marc field base object
 
 =head1 VERSION
 
-version 0.009
+version 0.010
 
 =head1 SEE ALSO
 

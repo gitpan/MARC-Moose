@@ -118,6 +118,6 @@ sub parse_with_marc {
 }
 
 parse_with_marc_moose();
-#parse_with_marc_moose_sax();
-#parse_with_marc();
+parse_with_marc_moose_sax();
+parse_with_marc();
 

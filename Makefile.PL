@@ -28,14 +28,17 @@ my %WriteMakefileArgs = (
   'PREREQ_PM' => {
     'Carp' => '0',
     'Moose' => '1.00',
+    'Moose::Util::TypeConstraints' => '0',
     'Text::Iconv' => '1.7',
+    'XML::SAX' => '0',
+    'XML::SAX::Base' => '0',
     'XML::Simple' => '0',
     'XML::Writer' => '0.606',
     'YAML' => '0',
     'namespace::autoclean' => '0',
     'overload' => '0'
   },
-  'VERSION' => '0.009',
+  'VERSION' => '0.010',
   'test' => {
     'TESTS' => 't/*.t'
   }

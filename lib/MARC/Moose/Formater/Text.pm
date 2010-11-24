@@ -1,6 +1,6 @@
 package MARC::Moose::Formater::Text;
 BEGIN {
-  $MARC::Moose::Formater::Text::VERSION = '0.009';
+  $MARC::Moose::Formater::Text::VERSION = '0.010';
 }
 # ABSTRACT: Record formater into a text representation
 
@@ -21,7 +21,7 @@ override 'format' => sub {
          map {
              $_->tag .
              ( ref($_) eq 'MARC::Moose::Field::Control' 
-               ? $_->value
+               ? ' ' . $_->value
                : ' ' . $_->ind1 . $_->ind2 . ' '  .
                join ' ', map { ('$' . $_->[0], $_->[1] ) } @{$_->subf}
              );
@@ -42,7 +42,7 @@ MARC::Moose::Formater::Text - Record formater into a text representation
 
 =head1 VERSION
 
-version 0.009
+version 0.010
 
 =head1 AUTHOR
 

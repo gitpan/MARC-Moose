@@ -21,7 +21,7 @@ my %module_build_args = (
     'Frederic Demians <f.demians@tamil.fr>'
   ],
   'dist_name' => 'marc-moose',
-  'dist_version' => '0.009',
+  'dist_version' => '0.010',
   'license' => 'perl',
   'module_name' => 'marc::moose',
   'recommends' => {},
@@ -29,7 +29,10 @@ my %module_build_args = (
   'requires' => {
     'Carp' => '0',
     'Moose' => '1.00',
+    'Moose::Util::TypeConstraints' => '0',
     'Text::Iconv' => '1.7',
+    'XML::SAX' => '0',
+    'XML::SAX::Base' => '0',
     'XML::Simple' => '0',
     'XML::Writer' => '0.606',
     'YAML' => '0',

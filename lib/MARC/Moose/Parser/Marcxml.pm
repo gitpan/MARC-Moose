@@ -1,6 +1,6 @@
 package MARC::Moose::Parser::Marcxml;
 BEGIN {
-  $MARC::Moose::Parser::Marcxml::VERSION = '0.009';
+  $MARC::Moose::Parser::Marcxml::VERSION = '0.010';
 }
 # ABSTRACT: Parser for MARXML records
 
@@ -78,12 +78,25 @@ MARC::Moose::Parser::Marcxml - Parser for MARXML records
 
 =head1 VERSION
 
-version 0.009
+version 0.010
+
+=head1 DESCRIPTION
+
+This MARCXML parser doesn't use a SAX parser. This results in better performances.
 
 =head1 SEE ALSO
-=for :list
-* L<MARC::Moose>
-* L<MARC::Moose::Parser>
+
+=over 4
+
+=item *
+
+L<MARC::Moose>
+
+=item *
+
+L<MARC::Moose::Parser>
+
+=back
 
 =head1 AUTHOR
 
