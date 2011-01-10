@@ -21,7 +21,7 @@ my %module_build_args = (
     'Frederic Demians <f.demians@tamil.fr>'
   ],
   'dist_name' => 'marc-moose',
-  'dist_version' => '0.011',
+  'dist_version' => '0.012',
   'license' => 'perl',
   'module_name' => 'marc::moose',
   'recommends' => {},
@@ -36,6 +36,7 @@ my %module_build_args = (
     'XML::Simple' => '0',
     'XML::Writer' => '0.606',
     'YAML' => '0',
+    'YAML::Syck' => '0',
     'namespace::autoclean' => '0',
     'overload' => '0'
   },

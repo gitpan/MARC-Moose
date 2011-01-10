@@ -1,6 +1,6 @@
 package MARC::Moose::Record;
 BEGIN {
-  $MARC::Moose::Record::VERSION = '0.011';
+  $MARC::Moose::Record::VERSION = '0.012';
 }
 # ABSTRACT: MARC::Moose bibliographic record
 
@@ -71,7 +71,6 @@ sub field {
     my @specs = @_;  
 
     my @list;
-    use YAML;
     for my $tag ( @specs ) {
         my $regex = $_field_regex{ $tag };
         # Compile & stash it if necessary
@@ -86,7 +85,9 @@ sub field {
             }
         }
     }
-    return @list;
+    wantarray
+        ? @list
+        : @list ? $list[0] : undef;
 }
 
 
@@ -119,7 +120,7 @@ MARC::Moose::Record - MARC::Moose bibliographic record
 
 =head1 VERSION
 
-version 0.011
+version 0.012
 
 =head1 DESCRIPTION
 

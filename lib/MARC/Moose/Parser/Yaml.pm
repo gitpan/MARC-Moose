@@ -1,11 +1,15 @@
-package MARC::Moose::Parser;
+package MARC::Moose::Parser::Yaml;
 BEGIN {
-  $MARC::Moose::Parser::VERSION = '0.012';
+  $MARC::Moose::Parser::Yaml::VERSION = '0.012';
 }
-# ABSTRACT: A record parser base class
+# ABSTRACT: Parser for YAML records
 
 use namespace::autoclean;
 use Moose;
+
+extends 'MARC::Moose::Parser';
+
+use YAML::Syck;
 
 
 # FIXME Experimental. Not used yet.
@@ -16,18 +20,13 @@ use Moose;
 #);
 
 
-sub begin {
-    return "";
-}
 
+override 'parse' => sub {
+    my ($self, $raw) = @_;
 
-sub end {
-    return "";
-}
-
-
-sub parse {
-    return MARC::Moose::Record->new();
+    #print "\nRAW: $raw\n";
+    return unless $raw;
+    return Load( $raw );
 };
 
 __PACKAGE__->meta->make_immutable;
@@ -40,43 +39,16 @@ __END__
 
 =head1 NAME
 
-MARC::Moose::Parser - A record parser base class
+MARC::Moose::Parser::Yaml - Parser for YAML records
 
 =head1 VERSION
 
 version 0.012
 
-=head1 METHODS
-
-=head2 begin
-
-=head2 end
-
-=head2 parse
-
-Return a MARC::Moose::Record object build from a parsed string
-
 =head1 SEE ALSO
-
-=over 4
-
-=item *
-
-L<MARC::Moose>
-
-=item *
-
-L<MARC::Moose::Parser::Iso2709>
-
-=item *
-
-L<MARC::Moose::Parser::MARC::Moosexml>
-
-=item *
-
-L<MARC::Moose::Parser::Isis>
-
-=back
+=for :list
+* L<MARC::Moose>
+* L<MARC::Moose::Parser>
 
 =head1 AUTHOR
 

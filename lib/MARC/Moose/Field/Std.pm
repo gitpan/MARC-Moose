@@ -1,6 +1,6 @@
 package MARC::Moose::Field::Std;
 BEGIN {
-  $MARC::Moose::Field::Std::VERSION = '0.011';
+  $MARC::Moose::Field::Std::VERSION = '0.012';
 }
 # ABSTRACT: Standard Marc Field (tag >= 010)
 
@@ -31,6 +31,8 @@ override 'as_formatted' => sub {
 sub subfield {
     my ($self, $letter) = @_;
 
+    return undef unless $letter;
+
     my @values;
     for ( @{$self->subf} ) {
         push @values, $_->[1] if $_->[0] eq $letter;
@@ -53,7 +55,26 @@ MARC::Moose::Field::Std - Standard Marc Field (tag >= 010)
 
 =head1 VERSION
 
-version 0.011
+version 0.012
+
+=head1 METHODS
+
+=head2 field( I<letter> )
+
+In scalar context, returns the first I<letter> subfield content. In list
+context, returns all I<letter> subfields content.
+
+For example:
+
+  my $field = MARC::Moose::Field::Std->new(
+    tag => '600',
+    subf => [
+      [ a => 'Part 1' ],
+      [ x => '2010' ],
+      [ a => 'Part 2' ],
+    ] );
+  my $value = $field->subfield('a'); # Get 'Part 1'
+  my @values = $field->subfield('a'); # Get ('Part1', 'Part 2')
 
 =head1 AUTHOR
 

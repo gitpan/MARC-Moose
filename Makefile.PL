@@ -35,10 +35,11 @@ my %WriteMakefileArgs = (
     'XML::Simple' => '0',
     'XML::Writer' => '0.606',
     'YAML' => '0',
+    'YAML::Syck' => '0',
     'namespace::autoclean' => '0',
     'overload' => '0'
   },
-  'VERSION' => '0.011',
+  'VERSION' => '0.012',
   'test' => {
     'TESTS' => 't/*.t'
   }

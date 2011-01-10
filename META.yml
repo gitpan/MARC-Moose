@@ -27,6 +27,7 @@ requires:
   XML::Simple: 0
   XML::Writer: 0.606
   YAML: 0
+  YAML::Syck: 0
   namespace::autoclean: 0
   overload: 0
-version: 0.011
+version: 0.012
