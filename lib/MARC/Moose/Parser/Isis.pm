@@ -1,6 +1,6 @@
 package MARC::Moose::Parser::Isis;
 BEGIN {
-  $MARC::Moose::Parser::Isis::VERSION = '0.012';
+  $MARC::Moose::Parser::Isis::VERSION = '0.013';
 }
 # ABSTRACT: ISIS records parser
 use Moose;
@@ -50,7 +50,7 @@ override 'parse' => sub {
             # We can have indicators inconsistencies, even no indicator at all,
             # even for a tag >= 010...
             if ( $i1 eq '^' ) {
-                $i1 = $i1 = ' ';
+                $i1 = $i2 = ' ';
             }
             elsif ( $i2 eq '^' ) {
                 $i2 = ' ';
@@ -61,7 +61,7 @@ override 'parse' => sub {
             }
             my @sf;
             for ( split /\^/, $value) {
-                next if length($_) <= 2;
+                next if length($_) < 2;
                 push @sf, [ substr($_, 0, 1), substr($_, 1) ];
             }
             $record->append( MARC::Moose::Field::Std->new(
@@ -98,7 +98,7 @@ MARC::Moose::Parser::Isis - ISIS records parser
 
 =head1 VERSION
 
-version 0.012
+version 0.013
 
 =head1 ATTRIBUTES
 
@@ -140,7 +140,7 @@ Frederic Demians <f.demians@tamil.fr>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2010 by Frederic Demians.
+This software is copyright (c) 2011 by Frederic Demians.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

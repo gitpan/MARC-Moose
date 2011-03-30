@@ -11,12 +11,15 @@ lib/MARC/Moose/Field/Control.pm
 lib/MARC/Moose/Field/Std.pm
 lib/MARC/Moose/Formater.pm
 lib/MARC/Moose/Formater/Iso2709.pm
+lib/MARC/Moose/Formater/Json.pm
+lib/MARC/Moose/Formater/Legacy.pm
 lib/MARC/Moose/Formater/Marcxml.pm
 lib/MARC/Moose/Formater/Text.pm
 lib/MARC/Moose/Formater/Yaml.pm
 lib/MARC/Moose/Parser.pm
 lib/MARC/Moose/Parser/Isis.pm
 lib/MARC/Moose/Parser/Iso2709.pm
+lib/MARC/Moose/Parser/Legacy.pm
 lib/MARC/Moose/Parser/Marcxml.pm
 lib/MARC/Moose/Parser/MarcxmlSax.pm
 lib/MARC/Moose/Parser/MarcxmlSaxHandler.pm

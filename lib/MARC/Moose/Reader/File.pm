@@ -1,6 +1,6 @@
 package MARC::Moose::Reader::File;
 BEGIN {
-  $MARC::Moose::Reader::File::VERSION = '0.012';
+  $MARC::Moose::Reader::File::VERSION = '0.013';
 }
 # ABSTRACT: A reader from a file
 
@@ -56,7 +56,7 @@ MARC::Moose::Reader::File - A reader from a file
 
 =head1 VERSION
 
-version 0.012
+version 0.013
 
 =head1 ATTRIBUTES
 
@@ -85,7 +85,7 @@ Frederic Demians <f.demians@tamil.fr>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2010 by Frederic Demians.
+This software is copyright (c) 2011 by Frederic Demians.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

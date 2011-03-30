@@ -21,13 +21,15 @@ my %module_build_args = (
     'Frederic Demians <f.demians@tamil.fr>'
   ],
   'dist_name' => 'marc-moose',
-  'dist_version' => '0.012',
+  'dist_version' => '0.013',
   'license' => 'perl',
   'module_name' => 'marc::moose',
   'recommends' => {},
   'recursive_test_files' => 1,
   'requires' => {
     'Carp' => '0',
+    'JSON' => '0',
+    'MARC::Record' => '0',
     'Moose' => '1.00',
     'Moose::Util::TypeConstraints' => '0',
     'Text::Iconv' => '1.7',

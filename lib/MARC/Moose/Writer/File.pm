@@ -1,6 +1,6 @@
 package MARC::Moose::Writer::File;
 BEGIN {
-  $MARC::Moose::Writer::File::VERSION = '0.012';
+  $MARC::Moose::Writer::File::VERSION = '0.013';
 }
 # ABSTRACT: File record writer
 
@@ -30,18 +30,19 @@ has fh => ( is => 'rw' );
 
 has binmode => ( is => 'rw', isa => 'Str', default => '' );
 
-sub BUILD {
+
+override 'begin' => sub {
     my $self = shift;
     my $fh = $self->fh;
     print $fh $self->formater->begin();
-}
+};
 
 
-sub DEMOLISH {
+override 'end' => sub {
     my $self = shift;
     my $fh = $self->fh;
     print $fh $self->formater->end();
-}
+};
 
 
 override 'write' => sub {
@@ -68,7 +69,7 @@ MARC::Moose::Writer::File - File record writer
 
 =head1 VERSION
 
-version 0.012
+version 0.013
 
 =head1 ATTRIBUTES
 
@@ -107,7 +108,7 @@ Frederic Demians <f.demians@tamil.fr>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2010 by Frederic Demians.
+This software is copyright (c) 2011 by Frederic Demians.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

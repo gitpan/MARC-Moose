@@ -27,6 +27,8 @@ my %WriteMakefileArgs = (
   'NAME' => 'marc::moose',
   'PREREQ_PM' => {
     'Carp' => '0',
+    'JSON' => '0',
+    'MARC::Record' => '0',
     'Moose' => '1.00',
     'Moose::Util::TypeConstraints' => '0',
     'Text::Iconv' => '1.7',
@@ -39,7 +41,7 @@ my %WriteMakefileArgs = (
     'namespace::autoclean' => '0',
     'overload' => '0'
   },
-  'VERSION' => '0.012',
+  'VERSION' => '0.013',
   'test' => {
     'TESTS' => 't/*.t'
   }

@@ -1,6 +1,6 @@
 package MARC::Moose::Parser::Iso2709;
 BEGIN {
-  $MARC::Moose::Parser::Iso2709::VERSION = '0.012';
+  $MARC::Moose::Parser::Iso2709::VERSION = '0.013';
 }
 # ABSTRACT: Parser for ISO2709 records
 
@@ -24,8 +24,6 @@ use MARC::Moose::Field::Std;
 
 override 'parse' => sub {
     my ($self, $raw) = @_;
-
-    #print "\nRAW: $raw\n";
 
     return unless $raw;
 
@@ -83,7 +81,7 @@ MARC::Moose::Parser::Iso2709 - Parser for ISO2709 records
 
 =head1 VERSION
 
-version 0.012
+version 0.013
 
 =head1 SEE ALSO
 =for :list
@@ -96,7 +94,7 @@ Frederic Demians <f.demians@tamil.fr>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2010 by Frederic Demians.
+This software is copyright (c) 2011 by Frederic Demians.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
