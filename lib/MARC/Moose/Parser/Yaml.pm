@@ -1,6 +1,6 @@
 package MARC::Moose::Parser::Yaml;
 BEGIN {
-  $MARC::Moose::Parser::Yaml::VERSION = '0.014';
+  $MARC::Moose::Parser::Yaml::VERSION = '0.015';
 }
 # ABSTRACT: Parser for YAML records
 
@@ -11,6 +11,7 @@ extends 'MARC::Moose::Parser';
 
 use YAML::Syck;
 
+$YAML::Syck::ImplicitUnicode = 1;
 
 # FIXME Experimental. Not used yet.
 #has converter => (
@@ -43,7 +44,7 @@ MARC::Moose::Parser::Yaml - Parser for YAML records
 
 =head1 VERSION
 
-version 0.014
+version 0.015
 
 =head1 SEE ALSO
 =for :list

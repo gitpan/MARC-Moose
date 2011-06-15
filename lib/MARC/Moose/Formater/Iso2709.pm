@@ -1,6 +1,6 @@
 package MARC::Moose::Formater::Iso2709;
 BEGIN {
-  $MARC::Moose::Formater::Iso2709::VERSION = '0.014';
+  $MARC::Moose::Formater::Iso2709::VERSION = '0.015';
 }
 # ABSTRACT: MARC::Moose record formater into ISO 2709 format
 
@@ -31,8 +31,8 @@ override 'format' => sub {
             }
         };
         $fields .= $str;
-        #my $len = bytes::length($str);
-        my $len = length($str);
+        my $len = bytes::length($str);
+        #my $len = length($str);
         $directory .= sprintf( "%03s%04d%05d", $field->tag, $len, $from );
         $from += $len;
     }
@@ -60,7 +60,7 @@ MARC::Moose::Formater::Iso2709 - MARC::Moose record formater into ISO 2709 forma
 
 =head1 VERSION
 
-version 0.014
+version 0.015
 
 =head1 AUTHOR
 

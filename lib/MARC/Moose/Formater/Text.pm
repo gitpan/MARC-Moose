@@ -1,6 +1,6 @@
 package MARC::Moose::Formater::Text;
 BEGIN {
-  $MARC::Moose::Formater::Text::VERSION = '0.014';
+  $MARC::Moose::Formater::Text::VERSION = '0.015';
 }
 # ABSTRACT: Record formater into a text representation
 
@@ -26,7 +26,7 @@ override 'format' => sub {
                join ' ', map { ('$' . $_->[0], $_->[1] ) } @{$_->subf}
              );
          } @{ $record->fields };
-    return $text . "\n\n"; 
+    return $text . "\n"; 
 };
 
 __PACKAGE__->meta->make_immutable;
@@ -42,7 +42,7 @@ MARC::Moose::Formater::Text - Record formater into a text representation
 
 =head1 VERSION
 
-version 0.014
+version 0.015
 
 =head1 AUTHOR
 

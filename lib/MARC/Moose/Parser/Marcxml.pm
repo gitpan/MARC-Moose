@@ -1,6 +1,6 @@
 package MARC::Moose::Parser::Marcxml;
 BEGIN {
-  $MARC::Moose::Parser::Marcxml::VERSION = '0.014';
+  $MARC::Moose::Parser::Marcxml::VERSION = '0.015';
 }
 # ABSTRACT: Parser for MARXML records
 
@@ -16,7 +16,6 @@ use MARC::Moose::Field::Std;
 override 'parse' => sub {
     my ($self, $raw) = @_;
 
-print "RAW: $raw\n";
     return undef unless $raw =~ /<record/;
 
     my @parts = split />/, $raw;
@@ -78,7 +77,7 @@ MARC::Moose::Parser::Marcxml - Parser for MARXML records
 
 =head1 VERSION
 
-version 0.014
+version 0.015
 
 =head1 DESCRIPTION
 
