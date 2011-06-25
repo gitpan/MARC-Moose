@@ -1,6 +1,6 @@
 package MARC::Moose::Parser::Legacy;
 BEGIN {
-  $MARC::Moose::Parser::Legacy::VERSION = '0.015';
+  $MARC::Moose::Parser::Legacy::VERSION = '0.016';
 }
 # ABSTRACT: Parser for MARC::Record legacy records
 
@@ -49,7 +49,7 @@ MARC::Moose::Parser::Legacy - Parser for MARC::Record legacy records
 
 =head1 VERSION
 
-version 0.015
+version 0.016
 
 =head1 SYNOPSYS
 
