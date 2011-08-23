@@ -1,6 +1,6 @@
 package MARC::Moose::Parser::Iso2709;
 BEGIN {
-  $MARC::Moose::Parser::Iso2709::VERSION = '0.016';
+  $MARC::Moose::Parser::Iso2709::VERSION = '0.017';
 }
 # ABSTRACT: Parser for ISO2709 records
 
@@ -9,6 +9,7 @@ use Moose;
 
 extends 'MARC::Moose::Parser';
 
+use MARC::Moose::Record;
 use MARC::Moose::Field::Control;
 use MARC::Moose::Field::Std;
 
@@ -26,6 +27,7 @@ override 'parse' => sub {
     my ($self, $raw) = @_;
 
     return unless $raw;
+    my $utf8_flag = utf8::is_utf8($raw);
 
     my $record = MARC::Moose::Record->new();
 
@@ -44,8 +46,9 @@ override 'parse' => sub {
         my $tag = substr($directory, $off, 3);
         my $len = substr($directory, $off+3, 4) - 1;
         my $pos = substr($directory, $off+7, 5) + 0;
-        next if $pos + $len > length($content);
-        my $value = substr($content, $pos, $len);
+        next if $pos + $len > bytes::length($content);
+        my $value = bytes::substr($content, $pos, $len);
+        utf8::decode($value) if $utf8_flag;
         #$value = $self->converter->convert($value);
         if ( $value =~ /\x1F/ ) { # There are some letters
             my $i1 = substr($value, 0, 1);
@@ -81,7 +84,7 @@ MARC::Moose::Parser::Iso2709 - Parser for ISO2709 records
 
 =head1 VERSION
 
-version 0.016
+version 0.017
 
 =head1 SEE ALSO
 =for :list

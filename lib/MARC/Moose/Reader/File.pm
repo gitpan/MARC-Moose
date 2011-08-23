@@ -1,6 +1,6 @@
 package MARC::Moose::Reader::File;
 BEGIN {
-  $MARC::Moose::Reader::File::VERSION = '0.016';
+  $MARC::Moose::Reader::File::VERSION = '0.017';
 }
 # ABSTRACT: A reader from a file
 
@@ -56,7 +56,7 @@ MARC::Moose::Reader::File - A reader from a file
 
 =head1 VERSION
 
-version 0.016
+version 0.017
 
 =head1 ATTRIBUTES
 

@@ -40,5 +40,7 @@ t/biblios.xml
 t/marc_load.t
 t/marc_valid.t
 t/parser.t
+t/parser_iso.mrc
+t/parser_iso.t
 t/test-parsing
 weaver.ini

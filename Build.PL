@@ -21,7 +21,7 @@ my %module_build_args = (
     'Frederic Demians <f.demians@tamil.fr>'
   ],
   'dist_name' => 'marc-moose',
-  'dist_version' => '0.016',
+  'dist_version' => '0.017',
   'license' => 'perl',
   'module_name' => 'marc::moose',
   'recommends' => {},
