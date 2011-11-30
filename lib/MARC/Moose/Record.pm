@@ -1,6 +1,6 @@
 package MARC::Moose::Record;
 BEGIN {
-  $MARC::Moose::Record::VERSION = '0.017';
+  $MARC::Moose::Record::VERSION = '0.018';
 }
 # ABSTRACT: MARC::Moose bibliographic record
 
@@ -173,7 +173,7 @@ MARC::Moose::Record - MARC::Moose bibliographic record
 
 =head1 VERSION
 
-version 0.017
+version 0.018
 
 =head1 DESCRIPTION
 
@@ -275,6 +275,8 @@ Called by L<MARC::Moose::Formater::Iso2709>.
    
  my $formater = MARC::Moose::Formater::Text->new();
  print $formater->format( $record );
+ # Shortcut:
+ print $record->as('Text');
  
  $record->fields( [ grep { $_->tag < 900 } @{$record->fields} ] );
  print "After local fields removing:\n", $formater->format($record);

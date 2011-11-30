@@ -1,6 +1,6 @@
 package MARC::Moose::Parser;
 BEGIN {
-  $MARC::Moose::Parser::VERSION = '0.017';
+  $MARC::Moose::Parser::VERSION = '0.018';
 }
 # ABSTRACT: A record parser base class
 
@@ -44,7 +44,7 @@ MARC::Moose::Parser - A record parser base class
 
 =head1 VERSION
 
-version 0.017
+version 0.018
 
 =head1 METHODS
 

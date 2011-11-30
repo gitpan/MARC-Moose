@@ -1,6 +1,6 @@
 package MARC::Moose;
 BEGIN {
-  $MARC::Moose::VERSION = '0.017';
+  $MARC::Moose::VERSION = '0.018';
 }
 # ABSTRACT: Moose based MARC records set of tools
 
@@ -24,22 +24,17 @@ MARC::Moose - Moose based MARC records set of tools
 
 =head1 VERSION
 
-version 0.017
+version 0.018
 
 =head1 DESCRIPTION
 
 =head1 SYNOPSYS
 
  use MARC::Moose::Record;
- use MARC::Moose::Reader::File;
- use MARC::Moose::Parser::Iso2709;
- use MARC::Moose::Formater::Text;
+ use MARC::Moose::Reader::File::Iso2709;
 
- my $reader = MARC::Moose::Reader::File->new(
-     file   => 'biblio.iso',
-     parser => MARC::Moose::Parser::Iso2709->new()
- );
- my $formater = MARC::Moose::Formater::Text->new();
+ my $reader = MARC::Moose::Reader::File::Iso2709->new(
+     file   => 'biblio.iso', );
  while ( my $record = $reader->read() ) {
      # Remove some fields
      $record->fields([

@@ -1,6 +1,6 @@
 package MARC::Moose::Reader::File::Marcxml;
 BEGIN {
-  $MARC::Moose::Reader::File::Marcxml::VERSION = '0.017';
+  $MARC::Moose::Reader::File::Marcxml::VERSION = '0.018';
 }
 # ABSTRACT: File reader for MARCXML file
 
@@ -36,6 +36,9 @@ override 'read' => sub {
     # Skip <collection if present
     $raw =~ s/<(\/*)collection.*>//;
 
+    # End of file
+    return unless $raw =~ /<record>/;
+
     return $self->parser->parse( $raw );
 };
 
@@ -53,7 +56,7 @@ MARC::Moose::Reader::File::Marcxml - File reader for MARCXML file
 
 =head1 VERSION
 
-version 0.017
+version 0.018
 
 =head1 AUTHOR
 
