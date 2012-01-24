@@ -1,6 +1,6 @@
 package MARC::Moose::Writer::File;
-BEGIN {
-  $MARC::Moose::Writer::File::VERSION = '0.018';
+{
+  $MARC::Moose::Writer::File::VERSION = '0.019';
 }
 # ABSTRACT: File record writer
 
@@ -11,6 +11,7 @@ use Carp;
 use MARC::Moose::Record;
 
 extends 'MARC::Moose::Writer';
+
 
 has file => (
     is => 'rw',
@@ -27,6 +28,7 @@ has file => (
 );
 
 has fh => ( is => 'rw' );
+
 
 has binmode => ( is => 'rw', isa => 'Str', default => '' );
 
@@ -59,9 +61,10 @@ __PACKAGE__->meta->make_immutable;
 1;
 
 
-
 __END__
 =pod
+
+=encoding UTF-8
 
 =head1 NAME
 
@@ -69,7 +72,11 @@ MARC::Moose::Writer::File - File record writer
 
 =head1 VERSION
 
-version 0.018
+version 0.019
+
+=head1 DESCRIPTION
+
+Override L<MARC::Moose::Writer>. Write record into a file.
 
 =head1 ATTRIBUTES
 
@@ -83,32 +90,18 @@ formater.
 
 Binmode of the result file. Example:
 
- my $writer = MARC::Moose::Writer->new(
+ my $writer = MARC::Moose::Writer::File->new(
    binmode  => 'utf8',
    file     => 'output.iso2709',
    formater => MARC::Moose::Formater::Iso2709->new() );
 
-=head1 SEE ALSO
-
-=over 4
-
-=item *
-
-L<MARC::Moose>
-
-=item *
-
-L<MARC::Moose::Writer>
-
-=back
-
 =head1 AUTHOR
 
-Frederic Demians <f.demians@tamil.fr>
+Frédéric Demians <f.demians@tamil.fr>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2011 by Frederic Demians.
+This software is copyright (c) 2012 by Frédéric Demians.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

@@ -1,6 +1,6 @@
 package MARC::Moose::Parser::Marcxml;
-BEGIN {
-  $MARC::Moose::Parser::Marcxml::VERSION = '0.018';
+{
+  $MARC::Moose::Parser::Marcxml::VERSION = '0.019';
 }
 # ABSTRACT: Parser for MARXML records
 
@@ -16,7 +16,7 @@ use MARC::Moose::Field::Std;
 override 'parse' => sub {
     my ($self, $raw) = @_;
 
-    return undef unless $raw =~ /<record/;
+    return unless $raw =~ /<record/;
 
     my @parts = split />/, $raw;
     my ($tag, $code, $ind1, $ind2);
@@ -71,17 +71,20 @@ __PACKAGE__->meta->make_immutable;
 __END__
 =pod
 
+=encoding UTF-8
+
 =head1 NAME
 
 MARC::Moose::Parser::Marcxml - Parser for MARXML records
 
 =head1 VERSION
 
-version 0.018
+version 0.019
 
 =head1 DESCRIPTION
 
-This MARCXML parser doesn't use a SAX parser. This results in better performances.
+This MARCXML parser doesn't use a SAX parser. It's pure Perl. This results in
+better performances.
 
 =head1 SEE ALSO
 
@@ -99,11 +102,11 @@ L<MARC::Moose::Parser>
 
 =head1 AUTHOR
 
-Frederic Demians <f.demians@tamil.fr>
+Frédéric Demians <f.demians@tamil.fr>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2011 by Frederic Demians.
+This software is copyright (c) 2012 by Frédéric Demians.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

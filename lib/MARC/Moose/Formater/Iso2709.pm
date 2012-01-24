@@ -1,6 +1,6 @@
 package MARC::Moose::Formater::Iso2709;
-BEGIN {
-  $MARC::Moose::Formater::Iso2709::VERSION = '0.018';
+{
+  $MARC::Moose::Formater::Iso2709::VERSION = '0.019';
 }
 # ABSTRACT: MARC::Moose record formater into ISO 2709 format
 
@@ -54,21 +54,23 @@ __PACKAGE__->meta->make_immutable;
 __END__
 =pod
 
+=encoding UTF-8
+
 =head1 NAME
 
 MARC::Moose::Formater::Iso2709 - MARC::Moose record formater into ISO 2709 format
 
 =head1 VERSION
 
-version 0.018
+version 0.019
 
 =head1 AUTHOR
 
-Frederic Demians <f.demians@tamil.fr>
+Frédéric Demians <f.demians@tamil.fr>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2011 by Frederic Demians.
+This software is copyright (c) 2012 by Frédéric Demians.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

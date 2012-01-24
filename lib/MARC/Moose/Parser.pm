@@ -1,6 +1,6 @@
 package MARC::Moose::Parser;
-BEGIN {
-  $MARC::Moose::Parser::VERSION = '0.018';
+{
+  $MARC::Moose::Parser::VERSION = '0.019';
 }
 # ABSTRACT: A record parser base class
 
@@ -16,9 +16,11 @@ use Moose;
 #);
 
 
+
 sub begin {
     return "";
 }
+
 
 
 sub end {
@@ -26,8 +28,9 @@ sub end {
 }
 
 
+
 sub parse {
-    return MARC::Moose::Record->new();
+return MARC::Moose::Record->new();
 };
 
 __PACKAGE__->meta->make_immutable;
@@ -35,8 +38,12 @@ __PACKAGE__->meta->make_immutable;
 1;
 
 
+
+
 __END__
 =pod
+
+=encoding UTF-8
 
 =head1 NAME
 
@@ -44,7 +51,7 @@ MARC::Moose::Parser - A record parser base class
 
 =head1 VERSION
 
-version 0.018
+version 0.019
 
 =head1 METHODS
 
@@ -66,25 +73,41 @@ L<MARC::Moose>
 
 =item *
 
-L<MARC::Moose::Parser::Iso2709>
+L<MARC::Moose::Parser::Isis.pm
 
 =item *
 
-L<MARC::Moose::Parser::MARC::Moosexml>
+L<MARC::Moose::Parser::Iso2709.pm
 
 =item *
 
-L<MARC::Moose::Parser::Isis>
+L<MARC::Moose::Parser::Legacy.pm
+
+=item *
+
+L<MARC::Moose::Parser::Marcxml.pm
+
+=item *
+
+L<MARC::Moose::Parser::MarcxmlSax.pm
+
+=item *
+
+L<MARC::Moose::Parser::MarcxmlSaxSimple.pm
+
+=item *
+
+L<MARC::Moose::Parser::Yaml.pm
 
 =back
 
 =head1 AUTHOR
 
-Frederic Demians <f.demians@tamil.fr>
+Frédéric Demians <f.demians@tamil.fr>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2011 by Frederic Demians.
+This software is copyright (c) 2012 by Frédéric Demians.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

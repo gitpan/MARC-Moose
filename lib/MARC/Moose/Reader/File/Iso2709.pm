@@ -1,6 +1,6 @@
 package MARC::Moose::Reader::File::Iso2709;
-BEGIN {
-  $MARC::Moose::Reader::File::Iso2709::VERSION = '0.018';
+{
+  $MARC::Moose::Reader::File::Iso2709::VERSION = '0.019';
 }
 # ABSTRACT: File reader for MARC::Moose record from ISO2709 file
 
@@ -14,11 +14,7 @@ use MARC::Moose::Parser::Iso2709;
 extends 'MARC::Moose::Reader::File';
 
 
-has parser => ( 
-    is => 'rw', 
-    isa => 'MARC::Moose::Parser',
-    default => sub { MARC::Moose::Parser::Iso2709->new() },
-);
+has '+parser' => ( default => sub { MARC::Moose::Parser::Iso2709->new() } );
 
 
 override 'read' => sub {
@@ -39,6 +35,7 @@ override 'read' => sub {
     return $self->parser->parse( $raw );
 };
 
+
 __PACKAGE__->meta->make_immutable;
 
 1;
@@ -47,21 +44,23 @@ __PACKAGE__->meta->make_immutable;
 __END__
 =pod
 
+=encoding UTF-8
+
 =head1 NAME
 
 MARC::Moose::Reader::File::Iso2709 - File reader for MARC::Moose record from ISO2709 file
 
 =head1 VERSION
 
-version 0.018
+version 0.019
 
 =head1 AUTHOR
 
-Frederic Demians <f.demians@tamil.fr>
+Frédéric Demians <f.demians@tamil.fr>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2011 by Frederic Demians.
+This software is copyright (c) 2012 by Frédéric Demians.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

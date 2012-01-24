@@ -1,6 +1,6 @@
 package MARC::Moose::Field::Std;
-BEGIN {
-  $MARC::Moose::Field::Std::VERSION = '0.018';
+{
+  $MARC::Moose::Field::Std::VERSION = '0.019';
 }
 # ABSTRACT: Standard Marc Field (tag >= 010)
 
@@ -10,11 +10,13 @@ use Moose;
 extends 'MARC::Moose::Field';
 
 use overload
-    '%{}' => \&subfield;
+    '%{}' => \&subfield,
+    '${}' => \&subfield;
 
 
 has ind1 => (is => 'rw', isa => 'Str', default => ' ');
 has ind2 => (is => 'rw', isa => 'Str', default => ' ');
+
 
 has subf => ( is => 'rw', isa => 'ArrayRef', default => sub { [] } );
 
@@ -24,6 +26,7 @@ override 'as_formatted' => sub {
 
     join ' ', (
         $self->tag,
+        $self->ind1 . $self->ind2,
         map { ("\$$_->[0]", $_->[1]) } @{$self->subf} );
 };
 
@@ -31,13 +34,14 @@ override 'as_formatted' => sub {
 sub subfield {
     my ($self, $letter) = @_;
 
-    return undef unless $letter;
+    return unless defined($letter);
 
     my @values;
     for ( @{$self->subf} ) {
         push @values, $_->[1] if $_->[0] eq $letter;
     }
 
+    return unless @values;
     return wantarray ? @values : $values[0];
 }
 
@@ -49,13 +53,28 @@ __PACKAGE__->meta->make_immutable;
 __END__
 =pod
 
+=encoding UTF-8
+
 =head1 NAME
 
 MARC::Moose::Field::Std - Standard Marc Field (tag >= 010)
 
 =head1 VERSION
 
-version 0.018
+version 0.019
+
+=head1 ATTRIBUTES
+
+=head2 subf
+
+An ArrayRef of field subfields. Each subfield is this array is an 2D ArrayRef.
+For example:
+
+  $field->subf( [ [ 'a', 'Part1' ], [ 'b', 'Part2' ] ] );
+
+or
+
+  $field->subf( [ [ a => 'Part1' ], [ b => 'Part2' ] ] );
 
 =head1 METHODS
 
@@ -78,11 +97,11 @@ For example:
 
 =head1 AUTHOR
 
-Frederic Demians <f.demians@tamil.fr>
+Frédéric Demians <f.demians@tamil.fr>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2011 by Frederic Demians.
+This software is copyright (c) 2012 by Frédéric Demians.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

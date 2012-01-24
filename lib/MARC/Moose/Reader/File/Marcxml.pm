@@ -1,6 +1,6 @@
 package MARC::Moose::Reader::File::Marcxml;
-BEGIN {
-  $MARC::Moose::Reader::File::Marcxml::VERSION = '0.018';
+{
+  $MARC::Moose::Reader::File::Marcxml::VERSION = '0.019';
 }
 # ABSTRACT: File reader for MARCXML file
 
@@ -14,11 +14,8 @@ use MARC::Moose::Parser::Marcxml;
 extends 'MARC::Moose::Reader::File';
 
 
-has parser => ( 
-    is => 'rw', 
-    isa => 'MARC::Moose::Parser',
-    default => sub { MARC::Moose::Parser::Marcxml->new() },
-);
+
+has '+parser' => ( default => sub { MARC::Moose::Parser::MarcxmlSax->new() } );
 
 
 override 'read' => sub {
@@ -47,8 +44,12 @@ __PACKAGE__->meta->make_immutable;
 1;
 
 
+
+
 __END__
 =pod
+
+=encoding UTF-8
 
 =head1 NAME
 
@@ -56,15 +57,26 @@ MARC::Moose::Reader::File::Marcxml - File reader for MARCXML file
 
 =head1 VERSION
 
-version 0.018
+version 0.019
+
+=head1 DESCRIPTION
+
+Override L<MARC::Moose::Reader::File>, and read a file containing MARCXML
+records.
+
+=head1 ATTRIBUTES
+
+=head2 parser
+
+By default, a L<MARC::Moose::Parser::MarcxmlSax> parser is used.
 
 =head1 AUTHOR
 
-Frederic Demians <f.demians@tamil.fr>
+Frédéric Demians <f.demians@tamil.fr>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2011 by Frederic Demians.
+This software is copyright (c) 2012 by Frédéric Demians.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

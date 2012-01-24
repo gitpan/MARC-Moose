@@ -1,17 +1,15 @@
 ---
 abstract: 'Moose based MARC records set of tools'
 author:
-  - 'Frederic Demians <f.demians@tamil.fr>'
+  - 'Frédéric Demians <f.demians@tamil.fr>'
 build_requires:
   MARC::File::XML: 0
-  Module::Build: 0.3601
   Test::More: 0
   Time::HiRes: 0
 configure_requires:
-  ExtUtils::MakeMaker: 6.31
-  Module::Build: 0.3601
+  ExtUtils::MakeMaker: 6.30
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 4.102345, CPAN::Meta::Converter version 2.110930'
+generated_by: 'Dist::Zilla version 4.300006, CPAN::Meta::Converter version 2.113640'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -30,6 +28,9 @@ requires:
   XML::Writer: 0.606
   YAML: 0
   YAML::Syck: 0
+  base: 0
   namespace::autoclean: 0
   overload: 0
-version: 0.018
+  strict: 0
+  warnings: 0
+version: 0.019
