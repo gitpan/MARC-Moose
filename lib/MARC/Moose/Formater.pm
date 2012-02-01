@@ -1,6 +1,6 @@
 package MARC::Moose::Formater;
 {
-  $MARC::Moose::Formater::VERSION = '0.019';
+  $MARC::Moose::Formater::VERSION = '0.020';
 }
 # ABSTRACT: Base class to format Marc record
 
@@ -42,7 +42,7 @@ MARC::Moose::Formater - Base class to format Marc record
 
 =head1 VERSION
 
-version 0.019
+version 0.020
 
 =head1 DESCRIPTION
 
@@ -66,7 +66,8 @@ finished its stream of date by a footer.
 
 =head2 format
 
-Returns a string containing a representation of a Marc record.
+Returns something (a string, another object) containing a representation of a
+Marc record.
 
   # $formater type is Marc::Formater subclass
   # $record type Marc::Record or any subclass
@@ -85,6 +86,7 @@ Returns a string containing a representation of a Marc record.
 * L<MARC::Moose::Formater::Marcxml>
 * L<MARC::Moose::Formater::Text>
 * L<MARC::Moose::Formater::Yaml>
+* L<MARC::Moose::Formater::UnimarcToMarc21>
 
 =head1 AUTHOR
 

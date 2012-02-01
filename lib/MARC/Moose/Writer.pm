@@ -1,6 +1,6 @@
 package MARC::Moose::Writer;
 {
-  $MARC::Moose::Writer::VERSION = '0.019';
+  $MARC::Moose::Writer::VERSION = '0.020';
 }
 # ABSTRACT: A base object to write somewhere MARC::Moose records
 
@@ -62,7 +62,7 @@ MARC::Moose::Writer - A base object to write somewhere MARC::Moose records
 
 =head1 VERSION
 
-version 0.019
+version 0.020
 
 =head1 ATTRIBUTES
 

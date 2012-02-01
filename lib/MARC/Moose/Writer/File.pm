@@ -1,6 +1,6 @@
 package MARC::Moose::Writer::File;
 {
-  $MARC::Moose::Writer::File::VERSION = '0.019';
+  $MARC::Moose::Writer::File::VERSION = '0.020';
 }
 # ABSTRACT: File record writer
 
@@ -72,7 +72,7 @@ MARC::Moose::Writer::File - File record writer
 
 =head1 VERSION
 
-version 0.019
+version 0.020
 
 =head1 DESCRIPTION
 

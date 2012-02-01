@@ -1,6 +1,6 @@
 package MARC::Moose::Field::Std;
 {
-  $MARC::Moose::Field::Std::VERSION = '0.019';
+  $MARC::Moose::Field::Std::VERSION = '0.020';
 }
 # ABSTRACT: Standard Marc Field (tag >= 010)
 
@@ -28,6 +28,15 @@ override 'as_formatted' => sub {
         $self->tag,
         $self->ind1 . $self->ind2,
         map { ("\$$_->[0]", $_->[1]) } @{$self->subf} );
+};
+
+
+override 'clone' => sub {
+    my ($self, $tag) = @_;
+    my $field = MARC::Moose::Field::Std->new( tag => $self->tag );
+    $field->tag($tag) if $tag;
+    $field->subf( [ map { $_ } @{$self->subf} ] );
+    return $field;
 };
 
 
@@ -61,7 +70,7 @@ MARC::Moose::Field::Std - Standard Marc Field (tag >= 010)
 
 =head1 VERSION
 
-version 0.019
+version 0.020
 
 =head1 ATTRIBUTES
 

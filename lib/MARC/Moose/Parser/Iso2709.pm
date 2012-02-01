@@ -1,6 +1,6 @@
 package MARC::Moose::Parser::Iso2709;
 {
-  $MARC::Moose::Parser::Iso2709::VERSION = '0.019';
+  $MARC::Moose::Parser::Iso2709::VERSION = '0.020';
 }
 # ABSTRACT: Parser for ISO2709 records
 
@@ -86,7 +86,7 @@ MARC::Moose::Parser::Iso2709 - Parser for ISO2709 records
 
 =head1 VERSION
 
-version 0.019
+version 0.020
 
 =head1 DESCRIPTION
 

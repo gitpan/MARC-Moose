@@ -1,6 +1,6 @@
 package MARC::Moose::Formater::Json;
 {
-  $MARC::Moose::Formater::Json::VERSION = '0.019';
+  $MARC::Moose::Formater::Json::VERSION = '0.020';
 }
 # ABSTRACT: Record formater into a Json representation
 
@@ -52,7 +52,7 @@ MARC::Moose::Formater::Json - Record formater into a Json representation
 
 =head1 VERSION
 
-version 0.019
+version 0.020
 
 =head1 DESCRIPTION
 
