@@ -1,10 +1,9 @@
 package MARC::Moose::Writer;
 {
-  $MARC::Moose::Writer::VERSION = '0.020';
+  $MARC::Moose::Writer::VERSION = '0.021';
 }
 # ABSTRACT: A base object to write somewhere MARC::Moose records
 
-use namespace::autoclean;
 use Moose;
 
 
@@ -24,26 +23,31 @@ has formater => (
 
 
 
+has fh => ( is => 'rw' );
+
+
+
 sub begin {
     my $self = shift;
-    print $self->formater->begin();
+    my $fh = $self->fh;
+    print $fh $self->formater->begin();
 }
 
 
 
 sub end {
     my $self = shift;
-    print $self->formater->end();
+    my $fh = $self->fh;
+    print $fh $self->formater->end();
 }
 
 
 
 sub write {
-    my ($self, $record) = shift;
-
+    my ($self, $record) = @_;
+    my $fh = $self->fh;
     $self->count( $self->count + 1 );
-
-    print $self->formater->format($record);
+    print $fh $self->formater->format($record);
 }
 
 __PACKAGE__->meta->make_immutable;
@@ -62,7 +66,7 @@ MARC::Moose::Writer - A base object to write somewhere MARC::Moose records
 
 =head1 VERSION
 
-version 0.020
+version 0.021
 
 =head1 ATTRIBUTES
 
@@ -74,6 +78,12 @@ Number of records that have been written with L<write> method.
 
 A L<MARC::Moose::Formater> to be used to format records to write. By defaut,
 it's a L<MARC::Moose::Formater::Text> formater.
+
+=head2 fh
+
+A file handle to which writing records. This can be a string with:
+
+  open my $fh, ">", \$str;
 
 =head1 METHODS
 

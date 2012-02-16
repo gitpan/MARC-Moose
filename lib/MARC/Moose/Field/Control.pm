@@ -1,10 +1,9 @@
 package MARC::Moose::Field::Control;
 {
-  $MARC::Moose::Field::Control::VERSION = '0.020';
+  $MARC::Moose::Field::Control::VERSION = '0.021';
 }
 # ABSTRACT: Control Marc field (tag < 010)
 
-use namespace::autoclean;
 use Moose;
 
 extends 'MARC::Moose::Field';
@@ -33,7 +32,7 @@ MARC::Moose::Field::Control - Control Marc field (tag < 010)
 
 =head1 VERSION
 
-version 0.020
+version 0.021
 
 =head1 AUTHOR
 

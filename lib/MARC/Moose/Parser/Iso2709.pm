@@ -1,11 +1,12 @@
 package MARC::Moose::Parser::Iso2709;
 {
-  $MARC::Moose::Parser::Iso2709::VERSION = '0.020';
+  $MARC::Moose::Parser::Iso2709::VERSION = '0.021';
 }
 # ABSTRACT: Parser for ISO2709 records
 
-use namespace::autoclean;
 use Moose;
+use 5.010;
+use utf8;
 
 extends 'MARC::Moose::Parser';
 
@@ -27,7 +28,7 @@ override 'parse' => sub {
     my ($self, $raw) = @_;
 
     return unless $raw;
-    my $utf8_flag = utf8::is_utf8($raw);
+    my $utf8_flag = utf8::is_utf8($raw) || 1;
 
     my $record = MARC::Moose::Record->new();
 
@@ -86,7 +87,7 @@ MARC::Moose::Parser::Iso2709 - Parser for ISO2709 records
 
 =head1 VERSION
 
-version 0.020
+version 0.021
 
 =head1 DESCRIPTION
 

@@ -1,11 +1,12 @@
 package MARC::Moose::Formater::Iso2709;
 {
-  $MARC::Moose::Formater::Iso2709::VERSION = '0.020';
+  $MARC::Moose::Formater::Iso2709::VERSION = '0.021';
 }
 # ABSTRACT: MARC::Moose record formater into ISO 2709 format
 
-use namespace::autoclean;
 use Moose;
+use 5.010;
+use utf8;
 
 extends 'MARC::Moose::Formater';
 
@@ -31,6 +32,7 @@ override 'format' => sub {
             }
         };
         $fields .= $str;
+        #FIXME: Which of this lines is the correct one?
         my $len = bytes::length($str);
         #my $len = length($str);
         $directory .= sprintf( "%03s%04d%05d", $field->tag, $len, $from );
@@ -62,7 +64,7 @@ MARC::Moose::Formater::Iso2709 - MARC::Moose record formater into ISO 2709 forma
 
 =head1 VERSION
 
-version 0.020
+version 0.021
 
 =head1 AUTHOR
 

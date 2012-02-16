@@ -1,12 +1,12 @@
 package MARC::Moose::Parser;
 {
-  $MARC::Moose::Parser::VERSION = '0.020';
+  $MARC::Moose::Parser::VERSION = '0.021';
 }
 # ABSTRACT: A record parser base class
 
-use namespace::autoclean;
 use Moose;
-
+use 5.010;
+use utf8;
 
 # FIXME Experimental. Not used yet.
 #has converter => (
@@ -51,7 +51,7 @@ MARC::Moose::Parser - A record parser base class
 
 =head1 VERSION
 
-version 0.020
+version 0.021
 
 =head1 METHODS
 

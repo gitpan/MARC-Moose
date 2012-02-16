@@ -1,10 +1,9 @@
 package MARC::Moose::Reader;
 {
-  $MARC::Moose::Reader::VERSION = '0.020';
+  $MARC::Moose::Reader::VERSION = '0.021';
 }
 # ABSTRACT: Base class for a reader returning MARC::Moose records
 
-use namespace::autoclean;
 use Moose;
 
 
@@ -22,10 +21,15 @@ has parser => (
 
 
 
+has fh => ( is => 'rw' );
+
+
+
 sub read {
     my $self = shift;
 
     $self->count( $self->count + 1 );
+
     return 1;
 }
 
@@ -45,7 +49,7 @@ MARC::Moose::Reader - Base class for a reader returning MARC::Moose records
 
 =head1 VERSION
 
-version 0.020
+version 0.021
 
 =head1 ATTRIBUTES
 
@@ -56,6 +60,12 @@ Number of records that have been read with L<read> method.
 =head2 parser
 
 L<MARC::Moose::Parser> parser used to parse record that have been read.
+
+=head2 fh
+
+A file handle from which reading records. This can be a string with:
+
+  open my $fh, "<", \*str;
 
 =head1 METHODS
 

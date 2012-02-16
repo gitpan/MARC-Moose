@@ -4,6 +4,7 @@ MANIFEST
 META.yml
 Makefile.PL
 README
+bin/marcmoose
 dist.ini
 lib/MARC/Moose.pm
 lib/MARC/Moose/Field.pm
@@ -35,7 +36,6 @@ lib/MARC/Moose/Reader/String.pm
 lib/MARC/Moose/Reader/String/Iso2709.pm
 lib/MARC/Moose/Record.pm
 lib/MARC/Moose/Writer.pm
-lib/MARC/Moose/Writer/File.pm
 t/biblios.iso2709
 t/biblios.xml
 t/marc_load.t
@@ -45,5 +45,3 @@ t/parser_iso.mrc
 t/parser_iso.t
 t/test-parsing
 weaver.ini
-xt/perlcritic.t
-xt/podsyntax.t

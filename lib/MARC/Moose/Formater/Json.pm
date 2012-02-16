@@ -1,10 +1,9 @@
 package MARC::Moose::Formater::Json;
 {
-  $MARC::Moose::Formater::Json::VERSION = '0.020';
+  $MARC::Moose::Formater::Json::VERSION = '0.021';
 }
 # ABSTRACT: Record formater into a Json representation
 
-use namespace::autoclean;
 use Moose;
 
 extends 'MARC::Moose::Formater';
@@ -32,7 +31,7 @@ override 'format' => sub {
             );
         } @{ $record->fields } ],
     };
-    return to_json($rec, { pretty => $self->pretty } );
+    return to_json($rec, { pretty => $self->pretty } ) . ",\n";
 };
 
 __PACKAGE__->meta->make_immutable;
@@ -52,7 +51,7 @@ MARC::Moose::Formater::Json - Record formater into a Json representation
 
 =head1 VERSION
 
-version 0.020
+version 0.021
 
 =head1 DESCRIPTION
 

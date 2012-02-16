@@ -1,18 +1,12 @@
 package MARC::Moose::Field::Std;
 {
-  $MARC::Moose::Field::Std::VERSION = '0.020';
+  $MARC::Moose::Field::Std::VERSION = '0.021';
 }
 # ABSTRACT: Standard Marc Field (tag >= 010)
 
-use namespace::autoclean;
 use Moose;
 
 extends 'MARC::Moose::Field';
-
-use overload
-    '%{}' => \&subfield,
-    '${}' => \&subfield;
-
 
 has ind1 => (is => 'rw', isa => 'Str', default => ' ');
 has ind2 => (is => 'rw', isa => 'Str', default => ' ');
@@ -70,7 +64,7 @@ MARC::Moose::Field::Std - Standard Marc Field (tag >= 010)
 
 =head1 VERSION
 
-version 0.020
+version 0.021
 
 =head1 ATTRIBUTES
 

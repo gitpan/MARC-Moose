@@ -1,10 +1,9 @@
 package MARC::Moose::Formater::Yaml;
 {
-  $MARC::Moose::Formater::Yaml::VERSION = '0.020';
+  $MARC::Moose::Formater::Yaml::VERSION = '0.021';
 }
 # ABSTRACT: Marc record formater into YAML representation
 
-use namespace::autoclean;
 use Moose;
 
 extends 'MARC::Moose::Formater';
@@ -37,7 +36,7 @@ MARC::Moose::Formater::Yaml - Marc record formater into YAML representation
 
 =head1 VERSION
 
-version 0.020
+version 0.021
 
 =head1 AUTHOR
 

@@ -1,10 +1,9 @@
 package MARC::Moose::Reader::File;
 {
-  $MARC::Moose::Reader::File::VERSION = '0.020';
+  $MARC::Moose::Reader::File::VERSION = '0.021';
 }
 # ABSTRACT: A reader from a file
 
-use namespace::autoclean;
 use Moose;
 
 use Carp;
@@ -22,19 +21,15 @@ has file => (
             croak "File doesn't exist: " . $file;
         }   
         $self->{file} = $file;
+        open my $fh, '<',$self->file
+             or croak "Impossible to open file: " . $self->file;
+        $self->fh($fh);
     }   
 );
 
+
+
 has fh => ( is => 'rw' );
-
-
-sub BUILD {
-    my $self = shift;
-
-    open my $fh, '<',$self->file
-         or croak "Impossible to open file: " . $self->file;
-    $self->fh($fh);
-}
 
 
 sub read {
@@ -58,14 +53,18 @@ MARC::Moose::Reader::File - A reader from a file
 
 =head1 VERSION
 
-version 0.020
+version 0.021
 
 =head1 ATTRIBUTES
 
 =head2 file
 
 Name of the file to read MARC::Moose::Record from. A error is thrown if the file
-does't exist.
+does't exist. Setting this attribute will set L<fh> attribute
+
+=head2 fh
+
+File handle form which reading records.
 
 =head1 SEE ALSO
 

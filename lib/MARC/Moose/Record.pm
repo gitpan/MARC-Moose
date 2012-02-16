@@ -1,10 +1,9 @@
 package MARC::Moose::Record;
 {
-  $MARC::Moose::Record::VERSION = '0.020';
+  $MARC::Moose::Record::VERSION = '0.021';
 }
 # ABSTRACT: MARC::Moose bibliographic record
 
-use namespace::autoclean;
 use Moose;
 
 use Carp;
@@ -55,6 +54,12 @@ my $parser = {
     legacy          => MARC::Moose::Parser::Legacy->new(),
     yaml            => MARC::Moose::Parser::Yaml->new(),
 };
+
+
+{
+    $MARC::Moose::Record::formater = $formater;
+    $MARC::Moose::Record::parser = $parser;
+}
 
 
 sub set_leader_length {
@@ -177,7 +182,7 @@ MARC::Moose::Record - MARC::Moose bibliographic record
 
 =head1 VERSION
 
-version 0.020
+version 0.021
 
 =head1 DESCRIPTION
 

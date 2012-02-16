@@ -9,7 +9,7 @@ build_requires:
 configure_requires:
   ExtUtils::MakeMaker: 6.30
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 4.300006, CPAN::Meta::Converter version 2.113640'
+generated_by: 'Dist::Zilla version 4.300005, CPAN::Meta::Converter version 2.112150'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -17,10 +17,12 @@ meta-spec:
 name: marc-moose
 requires:
   Carp: 0
+  Getopt::Long: 0
   JSON: 0
   MARC::Record: 0
   Moose: 1.00
   Moose::Util::TypeConstraints: 0
+  Pod::Usage: 0
   Text::Iconv: 1.7
   XML::SAX: 0
   XML::SAX::Base: 0
@@ -29,10 +31,8 @@ requires:
   YAML: 0
   YAML::Syck: 0
   base: 0
-  namespace::autoclean: 0
-  overload: 0
   perl: 5.010
   strict: 0
   utf8: 0
   warnings: 0
-version: 0.020
+version: 0.021

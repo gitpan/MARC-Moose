@@ -20,15 +20,19 @@ my %WriteMakefileArgs = (
     "ExtUtils::MakeMaker" => "6.30"
   },
   "DISTNAME" => "marc-moose",
-  "EXE_FILES" => [],
+  "EXE_FILES" => [
+    "bin/marcmoose"
+  ],
   "LICENSE" => "perl",
   "NAME" => "marc::moose",
   "PREREQ_PM" => {
     "Carp" => 0,
+    "Getopt::Long" => 0,
     "JSON" => 0,
     "MARC::Record" => 0,
     "Moose" => "1.00",
     "Moose::Util::TypeConstraints" => 0,
+    "Pod::Usage" => 0,
     "Text::Iconv" => "1.7",
     "XML::SAX" => 0,
     "XML::SAX::Base" => 0,
@@ -37,13 +41,11 @@ my %WriteMakefileArgs = (
     "YAML" => 0,
     "YAML::Syck" => 0,
     "base" => 0,
-    "namespace::autoclean" => 0,
-    "overload" => 0,
     "strict" => 0,
     "utf8" => 0,
     "warnings" => 0
   },
-  "VERSION" => "0.020",
+  "VERSION" => "0.021",
   "test" => {
     "TESTS" => "t/*.t"
   }

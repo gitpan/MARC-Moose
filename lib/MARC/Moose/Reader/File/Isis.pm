@@ -1,10 +1,9 @@
 package MARC::Moose::Reader::File::Isis;
 {
-  $MARC::Moose::Reader::File::Isis::VERSION = '0.020';
+  $MARC::Moose::Reader::File::Isis::VERSION = '0.021';
 }
 # ABSTRACT: A file reader for ISIS (DOS) encoded records
 
-use namespace::autoclean;
 use Moose;
 
 use Carp;
@@ -15,32 +14,6 @@ extends 'MARC::Moose::Reader::File';
 
 
 
-__END__
-=pod
-
-=encoding UTF-8
-
-=head1 NAME
-
-MARC::Moose::Reader::File::Isis - A file reader for ISIS (DOS) encoded records
-
-=head1 VERSION
-
-version 0.020
-
-=head1 DESCRIPTION
-
-Read next available L<MARC::Moose::Record> from reader file using
-L<MARC::Moose::Parser::Isis> parser.
-
-=head1 ATTRIBUTES
-
-=head2 parser
-
-By default, use L<MARC::Moose::Parser::Isis> to read L<MARC::Moose::Record>
-records from a file.
-
-has '+parser' => ( default => sub { MARC::Moose::Parser::Isis->new() } );
 
 override 'read' => sub {
     my $self = shift;
@@ -62,6 +35,34 @@ override 'read' => sub {
 __PACKAGE__->meta->make_immutable;
 
 1;
+
+
+__END__
+=pod
+
+=encoding UTF-8
+
+=head1 NAME
+
+MARC::Moose::Reader::File::Isis - A file reader for ISIS (DOS) encoded records
+
+=head1 VERSION
+
+version 0.021
+
+=head1 DESCRIPTION
+
+Read next available L<MARC::Moose::Record> from reader file using
+L<MARC::Moose::Parser::Isis> parser.
+
+=head1 ATTRIBUTES
+
+=head2 parser
+
+By default, use L<MARC::Moose::Parser::Isis> to read L<MARC::Moose::Record>
+records from a file.
+
+has '+parser' => ( default => sub { MARC::Moose::Parser::Isis->new() } );
 
 =head1 SEE ALSO
 
