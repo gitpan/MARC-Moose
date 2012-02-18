@@ -1,6 +1,6 @@
 package MARC::Moose::Reader::String::Iso2709;
 {
-  $MARC::Moose::Reader::String::Iso2709::VERSION = '0.021';
+  $MARC::Moose::Reader::String::Iso2709::VERSION = '0.022';
 }
 # ABSTRACT: File reader for MARC::Moose record from ISO2709 string
 
@@ -10,7 +10,7 @@ use Carp;
 use MARC::Moose::Record;
 use MARC::Moose::Parser::Iso2709;
 
-extends 'MARC::Moose::Reader::String';
+with 'MARC::Moose::Reader::String';
 
 
 has parser => ( 
@@ -35,7 +35,7 @@ sub BUILD {
 
 
 
-override 'read' => sub {
+sub read {
     my $self = shift;
 
     my $count = $self->count;
@@ -48,7 +48,7 @@ override 'read' => sub {
     $count++;
     $self->count( $count );
     return $record;
-};
+}
 
 __PACKAGE__->meta->make_immutable;
 
@@ -66,7 +66,7 @@ MARC::Moose::Reader::String::Iso2709 - File reader for MARC::Moose record from I
 
 =head1 VERSION
 
-version 0.021
+version 0.022
 
 =head1 AUTHOR
 

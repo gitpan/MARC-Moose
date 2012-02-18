@@ -1,17 +1,13 @@
 package MARC::Moose::Writer;
 {
-  $MARC::Moose::Writer::VERSION = '0.021';
+  $MARC::Moose::Writer::VERSION = '0.022';
 }
-# ABSTRACT: A base object to write somewhere MARC::Moose records
+# ABSTRACT: A Moose::Role to write somewhere MARC::Moose records
 
 use Moose;
 
+with 'MooseX::RW::Writer';
 
-has count => (
-    is      => 'rw',
-    isa     => 'Int',
-    default => 0
-);
 
 
 
@@ -31,7 +27,7 @@ sub begin {
     my $self = shift;
     my $fh = $self->fh;
     print $fh $self->formater->begin();
-}
+};
 
 
 
@@ -39,18 +35,17 @@ sub end {
     my $self = shift;
     my $fh = $self->fh;
     print $fh $self->formater->end();
-}
+};
 
 
 
-sub write {
+sub write  {
     my ($self, $record) = @_;
     my $fh = $self->fh;
-    $self->count( $self->count + 1 );
     print $fh $self->formater->format($record);
+    $self->count( $self->count + 1);
 }
 
-__PACKAGE__->meta->make_immutable;
 
 1;
 
@@ -62,17 +57,13 @@ __END__
 
 =head1 NAME
 
-MARC::Moose::Writer - A base object to write somewhere MARC::Moose records
+MARC::Moose::Writer - A Moose::Role to write somewhere MARC::Moose records
 
 =head1 VERSION
 
-version 0.021
+version 0.022
 
 =head1 ATTRIBUTES
-
-=head2 count
-
-Number of records that have been written with L<write> method.
 
 =head2 formater
 

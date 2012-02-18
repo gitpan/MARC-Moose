@@ -9,7 +9,7 @@ build_requires:
 configure_requires:
   ExtUtils::MakeMaker: 6.30
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 4.300005, CPAN::Meta::Converter version 2.112150'
+generated_by: 'Dist::Zilla version 4.300006, CPAN::Meta::Converter version 2.113640'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -21,7 +21,11 @@ requires:
   JSON: 0
   MARC::Record: 0
   Moose: 1.00
+  Moose::Role: 0
   Moose::Util::TypeConstraints: 0
+  MooseX::RW::Reader: 0
+  MooseX::RW::Reader::File: 0
+  MooseX::RW::Writer: 0
   Pod::Usage: 0
   Text::Iconv: 1.7
   XML::SAX: 0
@@ -35,4 +39,4 @@ requires:
   strict: 0
   utf8: 0
   warnings: 0
-version: 0.021
+version: 0.022

@@ -45,3 +45,5 @@ t/parser_iso.mrc
 t/parser_iso.t
 t/test-parsing
 weaver.ini
+xt/perlcritic.t
+xt/podsyntax.t

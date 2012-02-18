@@ -1,20 +1,15 @@
 package MARC::Moose::Reader::String;
 {
-  $MARC::Moose::Reader::String::VERSION = '0.021';
+  $MARC::Moose::Reader::String::VERSION = '0.022';
 }
-# ABSTRACT: A reader from a string
+# ABSTRACT: A Moose::Role reader from a string
 
-use Moose;
+use Moose::Role;
 
-use Carp;
-use MARC::Moose::Record;
-
-extends 'MARC::Moose::Reader';
+with 'MARC::Moose::Reader';
 
 has string => ( is => 'rw', isa => 'Str' );
 
-
-__PACKAGE__->meta->make_immutable;
 
 1;
 
@@ -26,11 +21,11 @@ __END__
 
 =head1 NAME
 
-MARC::Moose::Reader::String - A reader from a string
+MARC::Moose::Reader::String - A Moose::Role reader from a string
 
 =head1 VERSION
 
-version 0.021
+version 0.022
 
 =head1 ATTRIBUTES
 

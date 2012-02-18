@@ -1,6 +1,6 @@
 package MARC::Moose::Field;
 {
-  $MARC::Moose::Field::VERSION = '0.021';
+  $MARC::Moose::Field::VERSION = '0.022';
 }
 # ABSTRACT: Marc field base object
 
@@ -9,8 +9,8 @@ use Moose::Util::TypeConstraints;
 
 subtype 'Tag'
     => as 'Str'
-    => where { $_ =~ /^\d{3}$/ }
-    => message { 'A 3 digit is required' };
+    => where { $_ =~ /^\w{3}$/ }
+    => message { 'A 3 alphanumeric characters is required' };
 
 has tag => ( is => 'rw', isa => 'Tag', required => 1, );
 
@@ -45,13 +45,13 @@ MARC::Moose::Field - Marc field base object
 
 =head1 VERSION
 
-version 0.021
+version 0.022
 
 =head1 ATTRIBUTES
 
 =head2 tag
 
-3-digits identifing a field. Required.
+3-alphanumerics identifing a field. Required.
 
 =head1 METHODS
 

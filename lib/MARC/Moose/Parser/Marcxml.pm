@@ -1,6 +1,6 @@
 package MARC::Moose::Parser::Marcxml;
 {
-  $MARC::Moose::Parser::Marcxml::VERSION = '0.021';
+  $MARC::Moose::Parser::Marcxml::VERSION = '0.022';
 }
 # ABSTRACT: Parser for MARXML records
 
@@ -78,7 +78,7 @@ MARC::Moose::Parser::Marcxml - Parser for MARXML records
 
 =head1 VERSION
 
-version 0.021
+version 0.022
 
 =head1 DESCRIPTION
 

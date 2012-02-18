@@ -31,7 +31,11 @@ my %WriteMakefileArgs = (
     "JSON" => 0,
     "MARC::Record" => 0,
     "Moose" => "1.00",
+    "Moose::Role" => 0,
     "Moose::Util::TypeConstraints" => 0,
+    "MooseX::RW::Reader" => 0,
+    "MooseX::RW::Reader::File" => 0,
+    "MooseX::RW::Writer" => 0,
     "Pod::Usage" => 0,
     "Text::Iconv" => "1.7",
     "XML::SAX" => 0,
@@ -45,7 +49,7 @@ my %WriteMakefileArgs = (
     "utf8" => 0,
     "warnings" => 0
   },
-  "VERSION" => "0.021",
+  "VERSION" => "0.022",
   "test" => {
     "TESTS" => "t/*.t"
   }
