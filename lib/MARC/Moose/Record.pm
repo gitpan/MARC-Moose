@@ -1,6 +1,6 @@
 package MARC::Moose::Record;
 {
-  $MARC::Moose::Record::VERSION = '0.022';
+  $MARC::Moose::Record::VERSION = '0.023';
 }
 # ABSTRACT: MARC::Moose bibliographic record
 
@@ -112,6 +112,7 @@ sub append {
 
 my %_field_regex;
 
+
 sub field {
     my $self = shift;
     my @specs = @_;  
@@ -134,6 +135,22 @@ sub field {
     wantarray
         ? @list
         : @list ? $list[0] : undef;
+}
+
+
+sub delete {
+    my $self = shift;
+
+    return unless @_;
+
+    $self->fields( [ grep {
+        my $tag = $_->tag;
+        my $keep = 1;
+        for my $tag_spec ( @_ ) {
+            if ( $tag =~ $tag_spec ) { $keep = 0; last; }
+        }
+        $keep;
+    } @{$self->fields} ] );
 }
 
 
@@ -182,7 +199,7 @@ MARC::Moose::Record - MARC::Moose bibliographic record
 
 =head1 VERSION
 
-version 0.022
+version 0.023
 
 =head1 DESCRIPTION
 
@@ -201,6 +218,18 @@ ArrayRef on MARC::Moose::Field objects: MARC::Moose:Fields::Control and
 MARC::Moose::Field::Std.
 
 =head1 METHODS
+
+=head2 set_leader_length( I<length>, I<offset> )
+
+This method is called to reset leader length of record and offset of data
+section. This means something only for ISO2709 formated records. So this method
+is exlusively called by any formater which has to build a valid ISO2709 data
+stream. It also forces leader position 10 and 20-23 since this variable values
+aren't variable at all for any ordinary MARC record.
+
+Called by L<MARC::Moose::Formater::Iso2709>.
+
+ $record->set_leader_length( $length, $offset );
 
 =head2 append( I<field> )
 
@@ -230,23 +259,19 @@ The field specifier can be a simple number (i.e. "245"), or use the "."
 notation of wildcarding (i.e. subject tags are "6.."). All fields are returned
 if "..." is specified.
 
+=head2 delete(spec1, spec2, ...)
+
+Delete all fields with tags matching the given specification. For example:
+
+ $record->delete('11.', '\d\d9');
+
+will delete all fields with tag begining by '11' and ending with '9'.
+
 =head2 as( I<format> )
 
 Returns a formated version of the record as defined by I<format>. Format are standard
 formater provided by the MARC::Moose::Record package: Iso2709, Text, Marcxml,
 Json, Yaml, Legacy.
-
-=head2 set_leader_length( I<length>, I<offset> )
-
-This method is called to reset leader length of record and offset of data
-section. This means something only for ISO2709 formated records. So this method
-is exlusively called by any formater which has to build a valid ISO2709 data
-stream. It also forces leader position 10 and 20-23 since this variable values
-aren't variable at all for any ordinary MARC record.
-
-Called by L<MARC::Moose::Formater::Iso2709>.
-
- $record->set_leader_length( $length, $offset );
 
 =head1 SYNOPSYS
 

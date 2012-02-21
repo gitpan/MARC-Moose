@@ -1,6 +1,6 @@
 package MARC::Moose::Parser::MarcxmlSaxSimple;
 {
-  $MARC::Moose::Parser::MarcxmlSaxSimple::VERSION = '0.022';
+  $MARC::Moose::Parser::MarcxmlSaxSimple::VERSION = '0.023';
 }
 # ABSTRACT: Parser for MARXML records using SAX::Simple parser
 
@@ -58,7 +58,7 @@ MARC::Moose::Parser::MarcxmlSaxSimple - Parser for MARXML records using SAX::Sim
 
 =head1 VERSION
 
-version 0.022
+version 0.023
 
 =head1 SEE ALSO
 
