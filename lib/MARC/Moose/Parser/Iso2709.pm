@@ -1,6 +1,6 @@
 package MARC::Moose::Parser::Iso2709;
 {
-  $MARC::Moose::Parser::Iso2709::VERSION = '0.025';
+  $MARC::Moose::Parser::Iso2709::VERSION = '0.026';
 }
 # ABSTRACT: Parser for ISO2709 records
 
@@ -33,23 +33,23 @@ override 'parse' => sub {
     my $record = MARC::Moose::Record->new();
 
     my $leader = substr($raw, 0, 24);
-    #print "leader: $leader\n";
     $record->_leader( $leader );
 
     $raw = substr($raw, 24);
-    my $end_directory = index $raw, "\x1e";
-    my $directory = substr $raw, 0, $end_directory;
-    my $content = substr($raw, $end_directory + 1);
-    my $number_of_tag = length($directory) / 12; 
+    my $directory_len = substr($leader, 12, 5) - 25;
+    my $directory = substr $raw, 0, $directory_len;
+    my $content = substr($raw, $directory_len+1);
+    my $number_of_tag = $directory_len / 12; 
     my @fields;
     for (my $i = 0; $i < $number_of_tag; $i++) {
         my $off = $i * 12;
         my $tag = substr($directory, $off, 3);
+        next if $tag !~ /^[a-zA-Z0-9]*$/; # FIXME: it happens!
         my $len = substr($directory, $off+3, 4) - 1;
         my $pos = substr($directory, $off+7, 5) + 0;
-        next if $pos + $len > bytes::length($content);
         my $value = bytes::substr($content, $pos, $len);
         utf8::decode($value) if $utf8_flag;
+        next unless $value;
         #$value = $self->converter->convert($value);
         if ( $value =~ /\x1F/ ) { # There are some letters
             my $i1 = substr($value, 0, 1);
@@ -87,7 +87,7 @@ MARC::Moose::Parser::Iso2709 - Parser for ISO2709 records
 
 =head1 VERSION
 
-version 0.025
+version 0.026
 
 =head1 DESCRIPTION
 

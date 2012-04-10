@@ -1,6 +1,6 @@
 package MARC::Moose::Record;
 {
-  $MARC::Moose::Record::VERSION = '0.025';
+  $MARC::Moose::Record::VERSION = '0.026';
 }
 # ABSTRACT: MARC::Moose bibliographic record
 
@@ -18,6 +18,7 @@ use MARC::Moose::Parser::Iso2709;
 use MARC::Moose::Parser::MarcxmlSax;
 use MARC::Moose::Parser::Legacy;
 use MARC::Moose::Parser::Yaml;
+use MARC::Moose::Parser::Json;
 
 
 has leader => (
@@ -53,6 +54,7 @@ my $parser = {
     marcxml         => MARC::Moose::Parser::MarcxmlSax->new(),
     legacy          => MARC::Moose::Parser::Legacy->new(),
     yaml            => MARC::Moose::Parser::Yaml->new(),
+    json            => MARC::Moose::Parser::Json->new(),
 };
 
 
@@ -199,7 +201,7 @@ MARC::Moose::Record - MARC::Moose bibliographic record
 
 =head1 VERSION
 
-version 0.025
+version 0.026
 
 =head1 DESCRIPTION
 

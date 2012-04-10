@@ -1,6 +1,6 @@
 package MARC::Moose::Reader::File;
 {
-  $MARC::Moose::Reader::File::VERSION = '0.025';
+  $MARC::Moose::Reader::File::VERSION = '0.026';
 }
 # ABSTRACT: A Moose::Role MARC::Moose::Record reader from a file
 
@@ -24,7 +24,7 @@ MARC::Moose::Reader::File - A Moose::Role MARC::Moose::Record reader from a file
 
 =head1 VERSION
 
-version 0.025
+version 0.026
 
 =head1 SEE ALSO
 

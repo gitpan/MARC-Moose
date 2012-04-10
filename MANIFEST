@@ -21,6 +21,7 @@ lib/MARC/Moose/Formater/Yaml.pm
 lib/MARC/Moose/Parser.pm
 lib/MARC/Moose/Parser/Isis.pm
 lib/MARC/Moose/Parser/Iso2709.pm
+lib/MARC/Moose/Parser/Json.pm
 lib/MARC/Moose/Parser/Legacy.pm
 lib/MARC/Moose/Parser/Marcxml.pm
 lib/MARC/Moose/Parser/MarcxmlSax.pm

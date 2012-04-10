@@ -2,7 +2,7 @@
 
 package main;
 {
-  $main::VERSION = '0.025';
+  $main::VERSION = '0.026';
 }
 # PODNAME: marcmoose
 # ABSTRACT: Read and output MARC record file
@@ -103,7 +103,7 @@ marcmoose - Read and output MARC record file
 
 =head1 VERSION
 
-version 0.025
+version 0.026
 
 =head1 DESCRIPTION
 
@@ -117,7 +117,7 @@ read from files or stdin.
  marc-moose marc.iso
  marc-moose --formater text marc.iso
  marc-moose --formater json marc.iso
- marc-moose --converter unimarc2marc21 marc.iso
+ marc-moose --converter unimarctomarc21 marc.iso
  marc-moose --parser marcxml --formater iso2709 --output marc.xml marc.iso
 
 =head1 PARAMETERS
