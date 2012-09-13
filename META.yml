@@ -3,6 +3,7 @@ abstract: 'Moose based MARC records set of tools'
 author:
   - 'Frédéric Demians <f.demians@tamil.fr>'
 build_requires:
+  File::Slurp: 0
   MARC::File::XML: 0
   Test::More: 0
   Time::HiRes: 0
@@ -39,4 +40,4 @@ requires:
   strict: 0
   utf8: 0
   warnings: 0
-version: 0.026
+version: 0.027

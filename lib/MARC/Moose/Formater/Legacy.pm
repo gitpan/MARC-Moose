@@ -1,6 +1,6 @@
 package MARC::Moose::Formater::Legacy;
 {
-  $MARC::Moose::Formater::Legacy::VERSION = '0.026';
+  $MARC::Moose::Formater::Legacy::VERSION = '0.027';
 }
 # ABSTRACT: Record formater into the legacy MARC::Record object
 
@@ -30,17 +30,19 @@ override 'format' => sub {
             for (@{$field->subf}) {
                 my ($letter, $value) = @$_;
                 utf8::decode($value);
-                push @sf, $letter, $value;
+                push @sf, $letter, $value if $value;
             }
-            $nfield = MARC::Field->new( $field->tag, $field->ind1, $field->ind2, @sf );
+            $nfield = MARC::Field->new(
+                $field->tag,
+                $field->ind1 || ' ',
+                $field->ind2 || ' ', @sf ) if @sf;
         }
-        $marc->append_fields($nfield);
+        $marc->append_fields($nfield) if $nfield;
     }
     return $marc;
 };
 
 __PACKAGE__->meta->make_immutable;
-
 1;
 
 __END__
@@ -54,7 +56,7 @@ MARC::Moose::Formater::Legacy - Record formater into the legacy MARC::Record obj
 
 =head1 VERSION
 
-version 0.026
+version 0.027
 
 =head1 AUTHOR
 

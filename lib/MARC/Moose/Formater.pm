@@ -1,6 +1,6 @@
 package MARC::Moose::Formater;
 {
-  $MARC::Moose::Formater::VERSION = '0.026';
+  $MARC::Moose::Formater::VERSION = '0.027';
 }
 # ABSTRACT: Base class to format Marc record
 
@@ -41,7 +41,7 @@ MARC::Moose::Formater - Base class to format Marc record
 
 =head1 VERSION
 
-version 0.026
+version 0.027
 
 =head1 DESCRIPTION
 

@@ -1,6 +1,6 @@
 package MARC::Moose::Formater::Marcxml;
 {
-  $MARC::Moose::Formater::Marcxml::VERSION = '0.026';
+  $MARC::Moose::Formater::Marcxml::VERSION = '0.027';
 }
 #ABSTRACT: MARC::Moose record formater into MARCXML
 
@@ -71,7 +71,7 @@ MARC::Moose::Formater::Marcxml - MARC::Moose record formater into MARCXML
 
 =head1 VERSION
 
-version 0.026
+version 0.027
 
 =head1 AUTHOR
 

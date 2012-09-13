@@ -12,6 +12,7 @@ my %WriteMakefileArgs = (
   "ABSTRACT" => "Moose based MARC records set of tools",
   "AUTHOR" => "Fr\303\251d\303\251ric Demians <f.demians\@tamil.fr>",
   "BUILD_REQUIRES" => {
+    "File::Slurp" => 0,
     "MARC::File::XML" => 0,
     "Test::More" => 0,
     "Time::HiRes" => 0
@@ -49,7 +50,7 @@ my %WriteMakefileArgs = (
     "utf8" => 0,
     "warnings" => 0
   },
-  "VERSION" => "0.026",
+  "VERSION" => "0.027",
   "test" => {
     "TESTS" => "t/*.t"
   }

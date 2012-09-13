@@ -39,12 +39,15 @@ lib/MARC/Moose/Record.pm
 lib/MARC/Moose/Writer.pm
 t/biblios.iso2709
 t/biblios.xml
+t/create-json
 t/marc_load.t
 t/marc_valid.t
+t/onerecord.iso
 t/parser.t
 t/parser_iso.mrc
 t/parser_iso.t
 t/test-parsing
+t/toto
 weaver.ini
 xt/perlcritic.t
 xt/podsyntax.t
