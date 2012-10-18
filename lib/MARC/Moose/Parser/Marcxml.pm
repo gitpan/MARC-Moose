@@ -1,6 +1,6 @@
 package MARC::Moose::Parser::Marcxml;
 {
-  $MARC::Moose::Parser::Marcxml::VERSION = '0.027';
+  $MARC::Moose::Parser::Marcxml::VERSION = '0.028';
 }
 # ABSTRACT: Parser for MARXML records
 
@@ -49,8 +49,8 @@ override 'parse' => sub {
             }
             push @fields, MARC::Moose::Field::Std->new(
                 tag => $tag,
-                ind1 => $ind1,
-                ind2 => $ind2,
+                ind1 => $ind1 || ' ',
+                ind2 => $ind2 || ' ',
                 subf => \@subf );
             shift @parts;
             next;
@@ -78,7 +78,7 @@ MARC::Moose::Parser::Marcxml - Parser for MARXML records
 
 =head1 VERSION
 
-version 0.027
+version 0.028
 
 =head1 DESCRIPTION
 

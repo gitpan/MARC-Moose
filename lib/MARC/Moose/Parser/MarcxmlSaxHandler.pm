@@ -1,6 +1,6 @@
 package MARC::Moose::Parser::MarcxmlSaxHandler;
 {
-  $MARC::Moose::Parser::MarcxmlSaxHandler::VERSION = '0.027';
+  $MARC::Moose::Parser::MarcxmlSaxHandler::VERSION = '0.028';
 }
 # ABSTRACT: SAX handler for parsing MARXML records
 
@@ -35,8 +35,8 @@ sub start_element {
         my $attr = $element->{Attributes};
         $self->{field} = MARC::Moose::Field::Std->new(
             tag  => $attr->{'{}tag'}{Value},
-            ind1 => $attr->{'{}ind1'}{Value} || '',
-            ind2 => $attr->{'{}ind2'}{Value} || '',
+            ind1 => $attr->{'{}ind1'}{Value} || ' ',
+            ind2 => $attr->{'{}ind2'}{Value} || ' ',
         );
     }
     elsif ( $name eq 'subfield' ) {
@@ -91,7 +91,7 @@ MARC::Moose::Parser::MarcxmlSaxHandler - SAX handler for parsing MARXML records
 
 =head1 VERSION
 
-version 0.027
+version 0.028
 
 =head1 AUTHOR
 
