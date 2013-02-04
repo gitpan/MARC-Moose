@@ -1,6 +1,6 @@
 package MARC::Moose::Formater::UnimarcToMarc21;
 {
-  $MARC::Moose::Formater::UnimarcToMarc21::VERSION = '0.028';
+  $MARC::Moose::Formater::UnimarcToMarc21::VERSION = '0.029';
 }
 # ABSTRACT: Convert biblio record from UNIMARC to MARC21
 use Moose;
@@ -523,7 +523,6 @@ override 'format' => sub {
                     }
                 }
                 when ( /f/ ) {
-                    print $unimarc->as('Text');
                     if ( $b_index == -1 ) {
                         $sf[-1]->[1] .= " / " if @sf;
                         push @sf, [ b => $value];
@@ -654,7 +653,7 @@ override 'format' => sub {
                 when ( /l/ ) {
                     $record->append( MARC::Moose::Field::Std->new(
                         tag => '265', ind1 => '1', ind2 => '0',
-                        subf => [ a => $value ] ) );
+                        subf => [ [  a => $value ] ] ) );
                 }
                 when ( /m/ ) {
                     $record->append( MARC::Moose::Field::Std->new(
@@ -1070,8 +1069,8 @@ __PACKAGE__->meta->make_immutable;
 
 1;
 
-
 __END__
+
 =pod
 
 =encoding UTF-8
@@ -1082,7 +1081,7 @@ MARC::Moose::Formater::UnimarcToMarc21 - Convert biblio record from UNIMARC to M
 
 =head1 VERSION
 
-version 0.028
+version 0.029
 
 =head1 SYNOPSYS
 
@@ -1125,10 +1124,9 @@ Frédéric Demians <f.demians@tamil.fr>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2012 by Frédéric Demians.
+This software is copyright (c) 2013 by Frédéric Demians.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-
