@@ -1,6 +1,6 @@
 package MARC::Moose::Reader::String;
 {
-  $MARC::Moose::Reader::String::VERSION = '0.029';
+  $MARC::Moose::Reader::String::VERSION = '0.030';
 }
 # ABSTRACT: A Moose::Role reader from a string
 
@@ -25,7 +25,7 @@ MARC::Moose::Reader::String - A Moose::Role reader from a string
 
 =head1 VERSION
 
-version 0.029
+version 0.030
 
 =head1 ATTRIBUTES
 

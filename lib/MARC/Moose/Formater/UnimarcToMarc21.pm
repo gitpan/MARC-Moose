@@ -1,6 +1,6 @@
 package MARC::Moose::Formater::UnimarcToMarc21;
 {
-  $MARC::Moose::Formater::UnimarcToMarc21::VERSION = '0.029';
+  $MARC::Moose::Formater::UnimarcToMarc21::VERSION = '0.030';
 }
 # ABSTRACT: Convert biblio record from UNIMARC to MARC21
 use Moose;
@@ -175,8 +175,6 @@ push @unchanged, [320, 504],
 override 'format' => sub {
     my ($self, $unimarc) = @_;
 
-    #print $record->as_formatted(), "\n";
-
     my $record = MARC::Moose::Record->new();
 
     $record->_leader("     nam a22     7a 4500");
@@ -309,6 +307,11 @@ override 'format' => sub {
 
     # Language 101 => 041 and 008
     if ( my $field = $unimarc->field('101') ) {
+        # FIXME: à virer
+        if ( ref($field) eq 'MARC::Moose::Field::Control' ) {
+            say $unimarc->as('Text');
+            exit;
+        }
         my @all = @{$field->subf};
         my $count_a = 0;
         my (@sf, @sf_b);
@@ -626,7 +629,7 @@ override 'format' => sub {
                 when ( /f/ ) {
                     unless ( $found{$letter} ) {
                         $found{$letter} = 1;
-                        $sf[-1]->[1] .= ", $value";
+                        $sf[-1]->[1] .= ", $value" if @sf;
                     }
                 }
                 when ( /g/ ) {
@@ -853,6 +856,7 @@ override 'format' => sub {
         [464, 774],
         [470, 787, 8, 'Item reviewed:'],
         [488, 787, 8, 'Reproduced as:'],
+        [491, 774],
     ) ) {
         my ($from, $to, $ind2, $text) = @$ft;
         $ind2 = ' ' unless $ind2;
@@ -907,8 +911,8 @@ override 'format' => sub {
     }
 
     # 605 => 630 - 606 => 650 - 607 => 651 - 608 => 650
-    # On conserve à leur place les lettres a x y et z. j (subdivision de forme)
-    # et déplacée en v.
+    # On conserve à leur place les lettres a x j (subdivision de forme)
+    # On inverse y et z. et déplacée en v.
     # On suppr les $3
     for my $fromto ( ( [605, 630], [606, 650], [607, 651], [608, 650] ) ) {
         my ($from, $to) = @$fromto;
@@ -918,7 +922,15 @@ override 'format' => sub {
                 my ($letter, $value) = @$_;
                 $value =~ s/^ *//, $value =~ s/ *$//;
                 next if $letter =~ /3/;
-                $letter = 'v' if $letter eq 'j';
+                if ( $letter eq 'j' ) {
+                    $letter = 'v';
+                }
+                elsif ( $letter eq 'y' ) {
+                    $letter = 'z';
+                }
+                elsif ( $letter eq 'z' ) {
+                    $letter = 'y';
+                }
                 push @sf, [ $letter => $value ];
             }
             next unless @sf;
@@ -966,7 +978,7 @@ override 'format' => sub {
                         push @sf, [ b => $value ];
                     }
                     when ( 'f' ) {
-                        $sf[-1]->[1] .= ',';
+                        $sf[-1]->[1] .= ',' if @sf;
                         push @sf, [ d => $value ];
                     }
                     when ( 'g' ) {
@@ -1008,7 +1020,7 @@ override 'format' => sub {
                     }
                     when ( 'g' ) {
                         $value = "($value)" unless $value =~ /^\(/;
-                        $sf[-1]->[1] .= " $value";
+                        $sf[-1]->[1] .= " $value" if @sf;
                     }
                     when ( 'h' ) {
                         $sf[-1]->[1] .= " $value";
@@ -1033,7 +1045,7 @@ override 'format' => sub {
                     when ( 'f' ) {
                         $value = $sf[-1]->[0] eq 'n'
                                  ? " :$value"
-                                 : "($value";
+                                 : "($value" if @sf;
                         push @sf, [ d => $value ];
                     }
                     when ( '4' ) {
@@ -1081,7 +1093,7 @@ MARC::Moose::Formater::UnimarcToMarc21 - Convert biblio record from UNIMARC to M
 
 =head1 VERSION
 
-version 0.029
+version 0.030
 
 =head1 SYNOPSYS
 

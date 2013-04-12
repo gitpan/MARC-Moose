@@ -1,6 +1,6 @@
 package MARC::Moose::Reader;
 {
-  $MARC::Moose::Reader::VERSION = '0.029';
+  $MARC::Moose::Reader::VERSION = '0.030';
 }
 # ABSTRACT: Base class for a reader returning MARC::Moose records
 
@@ -30,7 +30,7 @@ MARC::Moose::Reader - Base class for a reader returning MARC::Moose records
 
 =head1 VERSION
 
-version 0.029
+version 0.030
 
 =head1 ATTRIBUTES
 

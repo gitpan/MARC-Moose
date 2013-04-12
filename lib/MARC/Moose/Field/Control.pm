@@ -1,6 +1,6 @@
 package MARC::Moose::Field::Control;
 {
-  $MARC::Moose::Field::Control::VERSION = '0.029';
+  $MARC::Moose::Field::Control::VERSION = '0.030';
 }
 # ABSTRACT: Control Marc field (tag < 010)
 
@@ -43,7 +43,7 @@ MARC::Moose::Field::Control - Control Marc field (tag < 010)
 
 =head1 VERSION
 
-version 0.029
+version 0.030
 
 =head1 AUTHOR
 
