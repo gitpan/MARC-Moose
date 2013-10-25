@@ -1,6 +1,6 @@
 package MARC::Moose::Formater::UnimarcToMarc21;
 {
-  $MARC::Moose::Formater::UnimarcToMarc21::VERSION = '1.0.0';
+  $MARC::Moose::Formater::UnimarcToMarc21::VERSION = '1.0.1';
 }
 # ABSTRACT: Convert biblio record from UNIMARC to MARC21
 use Moose;
@@ -942,6 +942,12 @@ override 'format' => sub {
         }
     }
 
+    # 675 => 080, $v and $z aren't converted
+    for my $field ( $unimarc->field('675') ) {
+        my @sf = grep { $_->[0] !~ /v|z/; } @{$field->subf};
+        $record->append( MARC::Moose::Field::Std->new(  
+            tag => '080', subf => \@sf ) );
+    }
 
     # 676 => 082, $v => $2
     for my $field ( $unimarc->field('676') ) {
@@ -1095,7 +1101,7 @@ MARC::Moose::Formater::UnimarcToMarc21 - Convert biblio record from UNIMARC to M
 
 =head1 VERSION
 
-version 1.0.0
+version 1.0.1
 
 =head1 SYNOPSYS
 

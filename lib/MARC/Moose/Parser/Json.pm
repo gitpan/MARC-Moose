@@ -1,6 +1,6 @@
 package MARC::Moose::Parser::Json;
 {
-  $MARC::Moose::Parser::Json::VERSION = '1.0.0';
+  $MARC::Moose::Parser::Json::VERSION = '1.0.1';
 }
 # ABSTRACT: Parser for JSON records
 
@@ -57,7 +57,7 @@ MARC::Moose::Parser::Json - Parser for JSON records
 
 =head1 VERSION
 
-version 1.0.0
+version 1.0.1
 
 =head1 SEE ALSO
 =for :list

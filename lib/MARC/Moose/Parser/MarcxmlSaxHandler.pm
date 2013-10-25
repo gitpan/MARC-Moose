@@ -1,6 +1,6 @@
 package MARC::Moose::Parser::MarcxmlSaxHandler;
 {
-  $MARC::Moose::Parser::MarcxmlSaxHandler::VERSION = '1.0.0';
+  $MARC::Moose::Parser::MarcxmlSaxHandler::VERSION = '1.0.1';
 }
 # ABSTRACT: SAX handler for parsing MARXML records
 
@@ -91,7 +91,7 @@ MARC::Moose::Parser::MarcxmlSaxHandler - SAX handler for parsing MARXML records
 
 =head1 VERSION
 
-version 1.0.0
+version 1.0.1
 
 =head1 AUTHOR
 

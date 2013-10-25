@@ -1,6 +1,6 @@
 package MARC::Moose::Field::Std;
 {
-  $MARC::Moose::Field::Std::VERSION = '1.0.0';
+  $MARC::Moose::Field::Std::VERSION = '1.0.1';
 }
 # ABSTRACT: Standard Marc Field (tag >= 010)
 
@@ -64,7 +64,7 @@ MARC::Moose::Field::Std - Standard Marc Field (tag >= 010)
 
 =head1 VERSION
 
-version 1.0.0
+version 1.0.1
 
 =head1 ATTRIBUTES
 

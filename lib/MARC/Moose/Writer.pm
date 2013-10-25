@@ -1,6 +1,6 @@
 package MARC::Moose::Writer;
 {
-  $MARC::Moose::Writer::VERSION = '1.0.0';
+  $MARC::Moose::Writer::VERSION = '1.0.1';
 }
 # ABSTRACT: A Moose::Role to write somewhere MARC::Moose records
 
@@ -61,7 +61,7 @@ MARC::Moose::Writer - A Moose::Role to write somewhere MARC::Moose records
 
 =head1 VERSION
 
-version 1.0.0
+version 1.0.1
 
 =head1 ATTRIBUTES
 
