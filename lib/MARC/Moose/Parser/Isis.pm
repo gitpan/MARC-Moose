@@ -1,6 +1,6 @@
 package MARC::Moose::Parser::Isis;
 {
-  $MARC::Moose::Parser::Isis::VERSION = '1.0.1';
+  $MARC::Moose::Parser::Isis::VERSION = '1.0.3';
 }
 # ABSTRACT: ISIS records parser
 use Moose;
@@ -100,7 +100,7 @@ MARC::Moose::Parser::Isis - ISIS records parser
 
 =head1 VERSION
 
-version 1.0.1
+version 1.0.3
 
 =head1 ATTRIBUTES
 

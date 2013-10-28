@@ -36,8 +36,9 @@ requires:
   YAML: 0
   YAML::Syck: 0
   base: 0
+  bytes: 0
   perl: 5.010
   strict: 0
   utf8: 0
   warnings: 0
-version: 1.0.1
+version: 1.0.3

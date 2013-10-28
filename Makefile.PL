@@ -46,11 +46,12 @@ my %WriteMakefileArgs = (
     "YAML" => 0,
     "YAML::Syck" => 0,
     "base" => 0,
+    "bytes" => 0,
     "strict" => 0,
     "utf8" => 0,
     "warnings" => 0
   },
-  "VERSION" => "1.0.1",
+  "VERSION" => "1.0.3",
   "test" => {
     "TESTS" => "t/*.t"
   }
