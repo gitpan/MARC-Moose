@@ -1,6 +1,6 @@
 package MARC::Moose::Formater::UnimarcToMarc21;
 {
-  $MARC::Moose::Formater::UnimarcToMarc21::VERSION = '1.0.3';
+  $MARC::Moose::Formater::UnimarcToMarc21::VERSION = '1.0.4';
 }
 # ABSTRACT: Convert biblio record from UNIMARC to MARC21
 use Moose;
@@ -1082,6 +1082,11 @@ override 'format' => sub {
         $record->append(@fields)
     }
 
+    # 9xx: copied as they are
+    if ( my @fields = $unimarc->field('9..') ) {
+        $record->append(@fields)
+    }
+
     return $record;
 };
 
@@ -1101,7 +1106,7 @@ MARC::Moose::Formater::UnimarcToMarc21 - Convert biblio record from UNIMARC to M
 
 =head1 VERSION
 
-version 1.0.3
+version 1.0.4
 
 =head1 SYNOPSYS
 
@@ -1137,6 +1142,15 @@ into MARC21:
  while ( my $unimarc = $reader->read() ) {
    $writer->write( $tomarc21->format($unimarc) );
  }
+
+=head1 COMMAND LINE
+
+If you don't want to write a Perl script, you can use the L<marcmoose> command.
+This way, you can for example convert a ISO 2709 UNIMARC file named
+C<unimarc.iso> into a ISO 2709 MARC21 file named C<marc.iso>:
+
+  marcmoose --parser iso2709 --formater iso2709 --converter unimarctomarc21
+            --output marc.iso unimarc.iso
 
 =head1 AUTHOR
 

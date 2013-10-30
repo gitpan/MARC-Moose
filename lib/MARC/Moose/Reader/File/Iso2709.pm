@@ -1,6 +1,6 @@
 package MARC::Moose::Reader::File::Iso2709;
 {
-  $MARC::Moose::Reader::File::Iso2709::VERSION = '1.0.3';
+  $MARC::Moose::Reader::File::Iso2709::VERSION = '1.0.4';
 }
 # ABSTRACT: File reader for MARC::Moose record from ISO2709 file
 
@@ -52,7 +52,7 @@ MARC::Moose::Reader::File::Iso2709 - File reader for MARC::Moose record from ISO
 
 =head1 VERSION
 
-version 1.0.3
+version 1.0.4
 
 =head1 AUTHOR
 

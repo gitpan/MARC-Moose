@@ -1,6 +1,6 @@
 package MARC::Moose::Parser::Yaml;
 {
-  $MARC::Moose::Parser::Yaml::VERSION = '1.0.3';
+  $MARC::Moose::Parser::Yaml::VERSION = '1.0.4';
 }
 # ABSTRACT: Parser for YAML records
 
@@ -45,7 +45,7 @@ MARC::Moose::Parser::Yaml - Parser for YAML records
 
 =head1 VERSION
 
-version 1.0.3
+version 1.0.4
 
 =head1 SEE ALSO
 =for :list
