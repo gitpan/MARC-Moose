@@ -1,9 +1,6 @@
 package MARC::Moose::Parser;
-{
-  $MARC::Moose::Parser::VERSION = '1.0.4';
-}
 # ABSTRACT: A record parser base class
-
+$MARC::Moose::Parser::VERSION = '1.0.5';
 use Moose;
 use 5.010;
 use utf8;
@@ -49,7 +46,7 @@ MARC::Moose::Parser - A record parser base class
 
 =head1 VERSION
 
-version 1.0.4
+version 1.0.5
 
 =head1 METHODS
 
@@ -105,7 +102,7 @@ Frédéric Demians <f.demians@tamil.fr>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2013 by Frédéric Demians.
+This software is copyright (c) 2014 by Frédéric Demians.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

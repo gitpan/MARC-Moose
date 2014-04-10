@@ -1,7 +1,5 @@
 package MARC::Moose::Formater::UnimarcToMarc21;
-{
-  $MARC::Moose::Formater::UnimarcToMarc21::VERSION = '1.0.4';
-}
+$MARC::Moose::Formater::UnimarcToMarc21::VERSION = '1.0.5';
 # ABSTRACT: Convert biblio record from UNIMARC to MARC21
 use Moose;
 
@@ -159,7 +157,8 @@ EOS
 # List of moved fields unchanged
 my @unchanged;
 push @unchanged, [$_, 500]  for 300..315;
-push @unchanged, [320, 504],
+push @unchanged, [317, 561],
+                 [320, 504],
                  [321, 500],
                  [322, 508],
                  [323, 511],
@@ -245,6 +244,14 @@ override 'format' => sub {
             tag => '022', subf => \@sf ) ) if @sf;
         $record->append(MARC::Moose::Field::Std->new(
             tag => '365', subf => \@price ) ) if @price;
+    }
+
+    # EAN 076 => 024. Get only $a subfield
+    for my $field ( $unimarc->field('073') ) {
+        my $value = $field->subfield('a');
+        next unless $value;
+        $record->append( MARC::Moose::Field::Std->new(
+            tag => '024', subf => [ [ a => $value ] ] ) );
     }
 
     # 100 => 008
@@ -419,7 +426,7 @@ override 'format' => sub {
                         push @sf, [ b => $value ];
                     }
                     else {
-                        $sf[-1]->[1] .= " $value";
+                        $sf[-1]->[1] .= " = $value";
                     }
                 }
                 when ( 'e' ) {
@@ -622,10 +629,7 @@ override 'format' => sub {
                     push @sf, [ c => $value ];
                 }
                 when ( /e/ ) {
-                    unless ( $found{$letter} ) {
-                        $found{$letter} = 1;
-                        push @sf, [ a => $value ];
-                    }
+                    push @sf, [ e => $value ];
                 }
                 when ( /f/ ) {
                     unless ( $found{$letter} ) {
@@ -858,6 +862,9 @@ override 'format' => sub {
         [470, 787, 8, 'Item reviewed:'],
         [488, 787, 8, 'Reproduced as:'],
         [491, 774],
+        [492, 774],
+        [493, 773],
+        [494, 773],
     ) ) {
         my ($from, $to, $ind2, $text) = @$ft;
         $ind2 = ' ' unless $ind2;
@@ -894,22 +901,34 @@ override 'format' => sub {
     for my $field ( $unimarc->field('600') ) {
         my @names;
         my $date;
+        # Skip $6 and $7
+        my @sf;
+        my $date_available = 0;
         for ( @{$field->subf} ) {
             my ($letter, $value) = @$_;
             $value =~ s/^ *//; $value =~ s/ *$//;
             next unless $value;
             given ($letter) {
                 when ( /6|7/ ) { next; }
-                when ( /a|b/ ) { push @names, $value; }
-                when ( /f/   ) { $date = $value; }
+                when ( /a|b/ ) { push @names, $value; next; }
+                when ( /f/   ) { $date_available = 1; $letter = 'd'; }
+                when ( /y/   ) { $letter = 'z'; }
+                when ( /z/   ) { $letter = 'y'; }
             }
+            push @sf, [ $letter => $value ];
         }
-        if (@names) {
-            my @sf = ( [ a => join(', ', @names) . ($date ? ',' : '') ] );
-            push @sf, [ d => $date ] if $date;
-            $record->append( MARC::Moose::Field::Std->new(
-                tag => '600', subf => \@sf ) );
+        my @sf_complete;
+        my $notpushed = 1;
+        for (@sf) {
+            my ($letter, $value) = @$_;
+            if ($letter gt 'a' && $notpushed) {
+                push @sf_complete, [ a => join(', ', @names) . ($date_available ? ',' : '') ];
+                $notpushed = 0;
+            }
+            push @sf_complete, $_;
         }
+        $record->append( MARC::Moose::Field::Std->new(
+            tag => '600', subf => \@sf_complete ) );
     }
 
     # 605 => 630 - 606 => 650 - 607 => 651 - 608 => 650
@@ -1077,13 +1096,8 @@ override 'format' => sub {
         }
     }
 
-    # 856: copied as it is
-    if ( my @fields = $unimarc->field('856') ) {
-        $record->append(@fields)
-    }
-
-    # 9xx: copied as they are
-    if ( my @fields = $unimarc->field('9..') ) {
+    # Some fields are kept, as they are: 856, 801, 9xx
+    if ( my @fields = $unimarc->field('801|856|9..') ) {
         $record->append(@fields)
     }
 
@@ -1106,7 +1120,7 @@ MARC::Moose::Formater::UnimarcToMarc21 - Convert biblio record from UNIMARC to M
 
 =head1 VERSION
 
-version 1.0.4
+version 1.0.5
 
 =head1 SYNOPSYS
 
@@ -1158,7 +1172,7 @@ Frédéric Demians <f.demians@tamil.fr>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2013 by Frédéric Demians.
+This software is copyright (c) 2014 by Frédéric Demians.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

@@ -1,9 +1,6 @@
 package MARC::Moose::Parser::MarcxmlSaxHandler;
-{
-  $MARC::Moose::Parser::MarcxmlSaxHandler::VERSION = '1.0.4';
-}
 # ABSTRACT: SAX handler for parsing MARXML records
-
+$MARC::Moose::Parser::MarcxmlSaxHandler::VERSION = '1.0.5';
 use strict;
 use warnings;
 
@@ -91,7 +88,7 @@ MARC::Moose::Parser::MarcxmlSaxHandler - SAX handler for parsing MARXML records
 
 =head1 VERSION
 
-version 1.0.4
+version 1.0.5
 
 =head1 AUTHOR
 
@@ -99,7 +96,7 @@ Frédéric Demians <f.demians@tamil.fr>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2013 by Frédéric Demians.
+This software is copyright (c) 2014 by Frédéric Demians.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

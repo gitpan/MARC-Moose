@@ -1,9 +1,6 @@
 package MARC::Moose::Parser::Iso2709;
-{
-  $MARC::Moose::Parser::Iso2709::VERSION = '1.0.4';
-}
 # ABSTRACT: Parser for ISO2709 records
-
+$MARC::Moose::Parser::Iso2709::VERSION = '1.0.5';
 use Moose;
 use 5.010;
 use utf8;
@@ -88,7 +85,7 @@ MARC::Moose::Parser::Iso2709 - Parser for ISO2709 records
 
 =head1 VERSION
 
-version 1.0.4
+version 1.0.5
 
 =head1 DESCRIPTION
 
@@ -114,7 +111,7 @@ Frédéric Demians <f.demians@tamil.fr>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2013 by Frédéric Demians.
+This software is copyright (c) 2014 by Frédéric Demians.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
