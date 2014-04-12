@@ -1,6 +1,6 @@
 package MARC::Moose;
 # ABSTRACT: Moose based MARC records set of tools
-$MARC::Moose::VERSION = '1.0.5';
+$MARC::Moose::VERSION = '1.0.6';
 use Moose 1.00;
 
 use Carp;
@@ -22,7 +22,7 @@ MARC::Moose - Moose based MARC records set of tools
 
 =head1 VERSION
 
-version 1.0.5
+version 1.0.6
 
 =head1 DESCRIPTION
 

@@ -1,5 +1,5 @@
 package MARC::Moose::Formater::UnimarcToMarc21;
-$MARC::Moose::Formater::UnimarcToMarc21::VERSION = '1.0.5';
+$MARC::Moose::Formater::UnimarcToMarc21::VERSION = '1.0.6';
 # ABSTRACT: Convert biblio record from UNIMARC to MARC21
 use Moose;
 
@@ -169,6 +169,12 @@ push @unchanged, [317, 561],
                  [333, 521],
                  [337, 538],
                  [686, '084'];
+
+# NSB/NSE characters
+my $ns_characters = [
+    [ "\x08", "\x09" ],
+    [ "\x88", "\x89" ]
+];
 
 
 override 'format' => sub {
@@ -490,6 +496,20 @@ override 'format' => sub {
                 $ind1 = $unimarc->field('700|710' ) ? 1 : 0;
             }
             default { $ind1 = 1; }
+        }
+        # Calculate second indicator based on UNIMARC NSB/NSE characters
+        unless ( $a_index == -1 ) {
+            my $a = $sf[$a_index][1];
+            for my $ns (@$ns_characters) {
+                my ($nsb, $nse) = @$ns;
+                next if $a !~ /^$nsb(.*)$nse/;
+                my $len = length($1);
+                $ind2 = $len  if $len < 10;
+                $a =~ s/$nsb//g;
+                $a =~ s/$nse//g;
+                $sf[$a_index][1] = $a;
+                last;
+            }
         }
 
         $record->append( MARC::Moose::Field::Std->new(
@@ -1120,7 +1140,7 @@ MARC::Moose::Formater::UnimarcToMarc21 - Convert biblio record from UNIMARC to M
 
 =head1 VERSION
 
-version 1.0.5
+version 1.0.6
 
 =head1 SYNOPSYS
 
