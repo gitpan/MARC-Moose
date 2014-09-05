@@ -1,5 +1,5 @@
 package MARC::Moose::Formater::UnimarcToMarc21;
-$MARC::Moose::Formater::UnimarcToMarc21::VERSION = '1.0.6';
+$MARC::Moose::Formater::UnimarcToMarc21::VERSION = '1.0.7';
 # ABSTRACT: Convert biblio record from UNIMARC to MARC21
 use Moose;
 
@@ -1140,7 +1140,7 @@ MARC::Moose::Formater::UnimarcToMarc21 - Convert biblio record from UNIMARC to M
 
 =head1 VERSION
 
-version 1.0.6
+version 1.0.7
 
 =head1 SYNOPSYS
 
