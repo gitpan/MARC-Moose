@@ -41,11 +41,6 @@ lib/MARC/Moose/Reader/String.pm
 lib/MARC/Moose/Reader/String/Iso2709.pm
 lib/MARC/Moose/Record.pm
 lib/MARC/Moose/Writer.pm
-share/etc/README
-share/etc/paprika.mrc
-share/etc/paprika.mrc.bad
-share/etc/paprika.mrc.log
-share/etc/paprika.mrc.ok
 share/etc/peter.rules
 share/etc/unimarc.rules
 t/biblios.iso2709

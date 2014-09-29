@@ -1,6 +1,6 @@
 package MARC::Moose::Lint::Checker;
 # ABSTRACT: A class to 'lint' biblio record based on a rules file
-$MARC::Moose::Lint::Checker::VERSION = '1.0.9';
+$MARC::Moose::Lint::Checker::VERSION = '1.0.10';
 use Moose;
 use Modern::Perl;
 use YAML;
@@ -181,7 +181,7 @@ MARC::Moose::Lint::Checker - A class to 'lint' biblio record based on a rules fi
 
 =head1 VERSION
 
-version 1.0.9
+version 1.0.10
 
 =head1 ATTRIBUTES
 
@@ -358,6 +358,10 @@ This is for example, a simplified standard UNIMARC validation rules file:
 =item *
 
 L<MARC::Moose>
+
+=item *
+
+L<MARC::Moose::Lint::Processor>
 
 =back
 
