@@ -9,6 +9,7 @@ build_requires:
   Time::HiRes: '0'
 configure_requires:
   ExtUtils::MakeMaker: '6.30'
+  File::ShareDir::Install: '0.03'
 dynamic_config: 0
 generated_by: 'Dist::Zilla version 5.015, CPAN::Meta::Converter version 2.140640'
 license: perl
@@ -17,10 +18,12 @@ meta-spec:
   version: '1.4'
 name: marc-moose
 requires:
+  AnyEvent::Processor: '0'
   Carp: '0'
   Getopt::Long: '0'
   JSON: '0'
   MARC::Record: '0'
+  Modern::Perl: '0'
   Moose: '1.00'
   Moose::Role: '0'
   Moose::Util::TypeConstraints: '0'
@@ -41,4 +44,4 @@ requires:
   strict: '0'
   utf8: '0'
   warnings: '0'
-version: 1.0.7
+version: 1.0.8

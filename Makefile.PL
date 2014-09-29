@@ -7,6 +7,8 @@ use 5.010;
 
 use ExtUtils::MakeMaker 6.30;
 
+use File::ShareDir::Install;
+install_share dist => "share";
 
 
 my %WriteMakefileArgs = (
@@ -14,19 +16,23 @@ my %WriteMakefileArgs = (
   "AUTHOR" => "Fr\x{e9}d\x{e9}ric Demians <f.demians\@tamil.fr>",
   "BUILD_REQUIRES" => {},
   "CONFIGURE_REQUIRES" => {
-    "ExtUtils::MakeMaker" => "6.30"
+    "ExtUtils::MakeMaker" => "6.30",
+    "File::ShareDir::Install" => "0.03"
   },
   "DISTNAME" => "marc-moose",
   "EXE_FILES" => [
+    "bin/marcmoose-lint",
     "bin/marcmoose"
   ],
   "LICENSE" => "perl",
   "NAME" => "marc::moose",
   "PREREQ_PM" => {
+    "AnyEvent::Processor" => 0,
     "Carp" => 0,
     "Getopt::Long" => 0,
     "JSON" => 0,
     "MARC::Record" => 0,
+    "Modern::Perl" => 0,
     "Moose" => "1.00",
     "Moose::Role" => 0,
     "Moose::Util::TypeConstraints" => 0,
@@ -53,7 +59,7 @@ my %WriteMakefileArgs = (
     "Test::More" => 0,
     "Time::HiRes" => 0
   },
-  "VERSION" => "1.0.7",
+  "VERSION" => "1.0.8",
   "test" => {
     "TESTS" => "t/*.t"
   }
@@ -61,12 +67,14 @@ my %WriteMakefileArgs = (
 
 
 my %FallbackPrereqs = (
+  "AnyEvent::Processor" => 0,
   "Carp" => 0,
   "File::Slurp" => 0,
   "Getopt::Long" => 0,
   "JSON" => 0,
   "MARC::File::XML" => 0,
   "MARC::Record" => 0,
+  "Modern::Perl" => 0,
   "Moose" => "1.00",
   "Moose::Role" => 0,
   "Moose::Util::TypeConstraints" => 0,
@@ -102,5 +110,10 @@ delete $WriteMakefileArgs{CONFIGURE_REQUIRES}
 
 WriteMakefile(%WriteMakefileArgs);
 
+{
+package
+MY;
+use File::ShareDir::Install qw(postamble);
+}
 
 

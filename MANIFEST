@@ -6,6 +6,7 @@ META.yml
 Makefile.PL
 README
 bin/marcmoose
+bin/marcmoose-lint
 dist.ini
 lib/MARC/Moose.pm
 lib/MARC/Moose/Field.pm
@@ -19,6 +20,8 @@ lib/MARC/Moose/Formater/Marcxml.pm
 lib/MARC/Moose/Formater/Text.pm
 lib/MARC/Moose/Formater/UnimarcToMarc21.pm
 lib/MARC/Moose/Formater/Yaml.pm
+lib/MARC/Moose/Lint/Checker.pm
+lib/MARC/Moose/Lint/Processor.pm
 lib/MARC/Moose/Parser.pm
 lib/MARC/Moose/Parser/Isis.pm
 lib/MARC/Moose/Parser/Iso2709.pm
@@ -38,6 +41,12 @@ lib/MARC/Moose/Reader/String.pm
 lib/MARC/Moose/Reader/String/Iso2709.pm
 lib/MARC/Moose/Record.pm
 lib/MARC/Moose/Writer.pm
+share/etc/README
+share/etc/paprika.mrc
+share/etc/paprika.mrc.bad
+share/etc/paprika.mrc.log
+share/etc/paprika.mrc.ok
+share/etc/unimarc.rules
 t/biblios.iso2709
 t/biblios.xml
 t/create-json

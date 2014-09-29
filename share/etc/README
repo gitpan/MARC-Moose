@@ -1,0 +1,16 @@
+This directory containes rules files used by MARC::Moose::Lint to validate MARC
+biblio records.
+
+
+
+100_  #       #   a(36)
+101_  0,1,2   #   a(3)+,b(3)+,c(3)+,d(3)+,e(3)+,f(3)+,g(3),h(3)+,i(3)+,j(3)+
+102   #       #   a+,b+,c+,2+
+105   #       #   a(13)
+106   #       #   a(1)
+200_  0,1     #   a_+,b+,c+,d+,e+,f+,g+,h+,i+,v,z+,5+
+205+  #       #   a,b+,d+,f+g+
+206+  #,0     #   a,b+,c,d,e,f
+207   #       0,1 a+,z(7)+
+
+
