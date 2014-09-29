@@ -46,6 +46,7 @@ share/etc/paprika.mrc
 share/etc/paprika.mrc.bad
 share/etc/paprika.mrc.log
 share/etc/paprika.mrc.ok
+share/etc/peter.rules
 share/etc/unimarc.rules
 t/biblios.iso2709
 t/biblios.xml

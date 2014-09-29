@@ -1,6 +1,6 @@
 package MARC::Moose::Formater::Legacy;
 # ABSTRACT: Record formater into the legacy MARC::Record object
-$MARC::Moose::Formater::Legacy::VERSION = '1.0.8';
+$MARC::Moose::Formater::Legacy::VERSION = '1.0.9';
 use Moose;
 
 extends 'MARC::Moose::Formater';
@@ -54,7 +54,7 @@ MARC::Moose::Formater::Legacy - Record formater into the legacy MARC::Record obj
 
 =head1 VERSION
 
-version 1.0.8
+version 1.0.9
 
 =head1 AUTHOR
 

@@ -3,9 +3,9 @@
 
 
 package main;
-# PODNAME: marcmoose
-# ABSTRACT: Read and output MARC record file
-$main::VERSION = '1.0.8';
+# PODNAME: marcmoose-lint
+# ABSTRACT: Lint ISO2709 file againt validation rules
+$main::VERSION = '1.0.9';
 use Modern::Perl;
 use Pod::Usage;
 use Getopt::Long;
@@ -47,11 +47,11 @@ __END__
 
 =head1 NAME
 
-marcmoose - Read and output MARC record file
+marcmoose-lint - Lint ISO2709 file againt validation rules
 
 =head1 VERSION
 
-version 1.0.8
+version 1.0.9
 
 =head1 DESCRIPTION
 

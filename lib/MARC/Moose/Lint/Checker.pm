@@ -1,6 +1,6 @@
 package MARC::Moose::Lint::Checker;
 # ABSTRACT: A class to 'lint' biblio record based on a rules file
-$MARC::Moose::Lint::Checker::VERSION = '1.0.8';
+$MARC::Moose::Lint::Checker::VERSION = '1.0.9';
 use Moose;
 use Modern::Perl;
 use YAML;
@@ -24,26 +24,28 @@ sub BUILD {
     open my $fh, "<", $file;
     my @rules;
     my @parts;
+    my $linenumber = 0;
     while (<$fh>) {
+        $linenumber++;
         chop;
         s/ *$//;
         last if /^====/;
 
-        if ( $_ ) {
+        if ( length($_) ) {
             push @parts, $_;
             next;
         }
         #say;
-        if (@parts < 4) {
+        if (@parts < 4 && @parts != 1) {
             say;
-            say "Invalid rule: must contain at least four parts";
+            say "Line $linenumber: Invalid rule: must contain at least four parts: $_";
             exit;
         }
         my ($tag, $ind1, $ind2) = (shift @parts, shift @parts, shift @parts);
         my @rule = ();
         if ( $tag !~ /^[0-9]{3}[_|\+]*/ ) {
             say;
-            say "Invalid tag portion";
+            say "Line $linenumber: Invalid tag portion";
             exit;
         }
 
@@ -71,6 +73,7 @@ sub BUILD {
         push @rules, \@rule;
         @parts = ();
     }
+    $self->rules(\@rules);
 
     my $code;
     if ( /^====/ ) {
@@ -90,8 +93,6 @@ sub BUILD {
             s/ *$//;
         }
     }
-
-    $self->rules(\@rules);
 }
 
 
@@ -180,7 +181,7 @@ MARC::Moose::Lint::Checker - A class to 'lint' biblio record based on a rules fi
 
 =head1 VERSION
 
-version 1.0.8
+version 1.0.9
 
 =head1 ATTRIBUTES
 
