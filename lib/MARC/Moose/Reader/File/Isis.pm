@@ -1,6 +1,6 @@
 package MARC::Moose::Reader::File::Isis;
 # ABSTRACT: A file reader for ISIS (DOS) encoded records
-$MARC::Moose::Reader::File::Isis::VERSION = '1.0.10';
+$MARC::Moose::Reader::File::Isis::VERSION = '1.0.11';
 use Moose;
 
 use Carp;
@@ -45,7 +45,7 @@ MARC::Moose::Reader::File::Isis - A file reader for ISIS (DOS) encoded records
 
 =head1 VERSION
 
-version 1.0.10
+version 1.0.11
 
 =head1 DESCRIPTION
 

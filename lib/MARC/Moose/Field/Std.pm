@@ -1,6 +1,6 @@
 package MARC::Moose::Field::Std;
 # ABSTRACT: Standard Marc Field (tag >= 010)
-$MARC::Moose::Field::Std::VERSION = '1.0.10';
+$MARC::Moose::Field::Std::VERSION = '1.0.11';
 use Moose;
 
 extends 'MARC::Moose::Field';
@@ -38,7 +38,7 @@ sub subfield {
 
     my @values;
     for ( @{$self->subf} ) {
-        push @values, $_->[1] if $_->[0] eq $letter;
+        push @values, $_->[1] if $_->[0] =~ $letter;
     }
 
     return unless @values;
@@ -61,7 +61,7 @@ MARC::Moose::Field::Std - Standard Marc Field (tag >= 010)
 
 =head1 VERSION
 
-version 1.0.10
+version 1.0.11
 
 =head1 ATTRIBUTES
 
@@ -78,10 +78,10 @@ or
 
 =head1 METHODS
 
-=head2 field( I<letter> )
+=head2 subfield( I<regexp> )
 
-In scalar context, returns the first I<letter> subfield content. In list
-context, returns all I<letter> subfields content.
+In scalar context, returns the first content of subfield which letter match
+regular expression C<regexp> . In list context, returns all subfields content.
 
 For example:
 
@@ -91,9 +91,10 @@ For example:
       [ a => 'Part 1' ],
       [ x => '2010' ],
       [ a => 'Part 2' ],
+      [ b => 'Part 3' ],
     ] );
-  my $value = $field->subfield('a'); # Get 'Part 1'
-  my @values = $field->subfield('a'); # Get ('Part1', 'Part 2')
+  my $value = $field->subfield('a|b'); # Get 'Part 1'
+  my @values = $field->subfield('a|b'); # Get ('Part1', 'Part 2')
 
 =head1 AUTHOR
 
