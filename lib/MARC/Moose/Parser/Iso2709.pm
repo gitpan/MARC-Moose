@@ -1,6 +1,6 @@
 package MARC::Moose::Parser::Iso2709;
 # ABSTRACT: Parser for ISO2709 records
-$MARC::Moose::Parser::Iso2709::VERSION = '1.0.11';
+$MARC::Moose::Parser::Iso2709::VERSION = '1.0.12';
 use Moose;
 use 5.010;
 use utf8;
@@ -85,7 +85,7 @@ MARC::Moose::Parser::Iso2709 - Parser for ISO2709 records
 
 =head1 VERSION
 
-version 1.0.11
+version 1.0.12
 
 =head1 DESCRIPTION
 
