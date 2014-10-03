@@ -1,6 +1,6 @@
 package MARC::Moose::Formater::Iso2709;
 # ABSTRACT: MARC::Moose record formater into ISO 2709 format
-$MARC::Moose::Formater::Iso2709::VERSION = '1.0.15';
+$MARC::Moose::Formater::Iso2709::VERSION = '1.0.16';
 use Moose;
 use 5.010;
 use utf8;
@@ -61,7 +61,7 @@ MARC::Moose::Formater::Iso2709 - MARC::Moose record formater into ISO 2709 forma
 
 =head1 VERSION
 
-version 1.0.15
+version 1.0.16
 
 =head1 AUTHOR
 
