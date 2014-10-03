@@ -1,6 +1,6 @@
 package MARC::Moose::Reader;
 # ABSTRACT: Base class for a reader returning MARC::Moose records
-$MARC::Moose::Reader::VERSION = '1.0.13';
+$MARC::Moose::Reader::VERSION = '1.0.14';
 use Moose::Role;
 
 with 'MooseX::RW::Reader';
@@ -27,7 +27,7 @@ MARC::Moose::Reader - Base class for a reader returning MARC::Moose records
 
 =head1 VERSION
 
-version 1.0.13
+version 1.0.14
 
 =head1 ATTRIBUTES
 

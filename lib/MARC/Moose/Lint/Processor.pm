@@ -1,6 +1,6 @@
 package MARC::Moose::Lint::Processor;
 # ABSTRACT: Processor to lint iso2709 file
-$MARC::Moose::Lint::Processor::VERSION = '1.0.13';
+$MARC::Moose::Lint::Processor::VERSION = '1.0.14';
 use Moose;
 use Modern::Perl;
 use MARC::Moose::Reader::File::Iso2709;
@@ -103,7 +103,7 @@ MARC::Moose::Lint::Processor - Processor to lint iso2709 file
 
 =head1 VERSION
 
-version 1.0.13
+version 1.0.14
 
 =head1 ATTRIBUTES
 
