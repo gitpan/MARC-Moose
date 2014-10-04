@@ -21,6 +21,7 @@ lib/MARC/Moose/Formater/Text.pm
 lib/MARC/Moose/Formater/UnimarcToMarc21.pm
 lib/MARC/Moose/Formater/Yaml.pm
 lib/MARC/Moose/Lint/Checker.pm
+lib/MARC/Moose/Lint/Checker/RulesFile.pm
 lib/MARC/Moose/Lint/Processor.pm
 lib/MARC/Moose/Parser.pm
 lib/MARC/Moose/Parser/Isis.pm

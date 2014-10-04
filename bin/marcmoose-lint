@@ -3,11 +3,11 @@
 package main;
 # PODNAME: marcmoose-lint
 # ABSTRACT: Lint ISO2709 file against validation rules
-$main::VERSION = '1.0.16';
+$main::VERSION = '1.0.17';
 use Modern::Perl;
 use Pod::Usage;
 use Getopt::Long;
-use MARC::Moose::Lint::Checker;
+use MARC::Moose::Lint::Checker::RulesFile;
 use MARC::Moose::Lint::Processor;
 
 
@@ -25,7 +25,7 @@ unless (-f $file) {
     exit;
 }
 my $processor = MARC::Moose::Lint::Processor->new(
-    lint    => MARC::Moose::Lint::Checker->new( file => $rule ),
+    lint    => MARC::Moose::Lint::Checker::RulesFile->new( file => $rule ),
     file    => $file,
     verbose => $verbose,
 );
@@ -48,7 +48,7 @@ marcmoose-lint - Lint ISO2709 file against validation rules
 
 =head1 VERSION
 
-version 1.0.16
+version 1.0.17
 
 =head1 DESCRIPTION
 
