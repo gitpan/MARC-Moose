@@ -1,6 +1,6 @@
 package MARC::Moose::Parser::Json;
 # ABSTRACT: Parser for JSON records
-$MARC::Moose::Parser::Json::VERSION = '1.0.17';
+$MARC::Moose::Parser::Json::VERSION = '1.0.18';
 use Moose;
 extends 'MARC::Moose::Parser';
 use JSON;
@@ -36,6 +36,7 @@ override 'parse' => sub {
     my $record = MARC::Moose::Record->new(
         leader => $json->{leader},
         fields => \@fields );
+    $record->lint($self->lint) if $record->lint;
     return $record;
 };
 
@@ -54,7 +55,7 @@ MARC::Moose::Parser::Json - Parser for JSON records
 
 =head1 VERSION
 
-version 1.0.17
+version 1.0.18
 
 =head1 SEE ALSO
 =for :list

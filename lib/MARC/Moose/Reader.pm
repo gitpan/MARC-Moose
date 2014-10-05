@@ -1,7 +1,8 @@
 package MARC::Moose::Reader;
 # ABSTRACT: Base class for a reader returning MARC::Moose records
-$MARC::Moose::Reader::VERSION = '1.0.17';
+$MARC::Moose::Reader::VERSION = '1.0.18';
 use Moose::Role;
+use MARC::Moose::Lint::Checker;
 
 with 'MooseX::RW::Reader';
 
@@ -11,6 +12,7 @@ with 'MooseX::RW::Reader';
 has parser => (
     is => 'rw', isa => 'MARC::Moose::Parser',
 );
+
 
 
 1;
@@ -27,13 +29,13 @@ MARC::Moose::Reader - Base class for a reader returning MARC::Moose records
 
 =head1 VERSION
 
-version 1.0.17
+version 1.0.18
 
 =head1 ATTRIBUTES
 
 =head2 parser
 
-L<MARC::Moose::Parser> parser used to parse record that have been read.
+L<MARC::Moose::Parser> parser used to parse records that have been read.
 
 =head1 AUTHOR
 

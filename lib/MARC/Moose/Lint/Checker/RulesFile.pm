@@ -1,11 +1,10 @@
 package MARC::Moose::Lint::Checker::RulesFile;
 # ABSTRACT: A class to 'lint' biblio record based on a rules file
-$MARC::Moose::Lint::Checker::RulesFile::VERSION = '1.0.17';
+$MARC::Moose::Lint::Checker::RulesFile::VERSION = '1.0.18';
 use Moose;
 use Modern::Perl;
-use YAML;
 
-extends 'MARC::Moose::Lint::Checker';
+with 'MARC::Moose::Lint::Checker';
 
 
 has file => (is => 'ro', isa => 'Str', trigger => \&_set_file );
@@ -109,7 +108,7 @@ sub _set_file {
 sub check {
     my ($self, $record) = @_;
 
-    my @warnings = $self->SUPER::check($record);;
+    my @warnings = ();
     my $tag;        # Current tag
     my @fields;     # Array of fields;
     my $i_field;    # Indice in the current array of fields
@@ -241,7 +240,7 @@ MARC::Moose::Lint::Checker::RulesFile - A class to 'lint' biblio record based on
 
 =head1 VERSION
 
-version 1.0.17
+version 1.0.18
 
 =head1 DESCRIPTION
 

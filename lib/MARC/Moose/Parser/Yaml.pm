@@ -1,6 +1,6 @@
 package MARC::Moose::Parser::Yaml;
 # ABSTRACT: Parser for YAML records
-$MARC::Moose::Parser::Yaml::VERSION = '1.0.17';
+$MARC::Moose::Parser::Yaml::VERSION = '1.0.18';
 use Moose;
 
 extends 'MARC::Moose::Parser';
@@ -23,7 +23,9 @@ override 'parse' => sub {
 
     #print "\nRAW: $raw\n";
     return unless $raw;
-    return Load( $raw );
+    my $record = Load( $raw );
+    $record->lint($self->lint) if $self->lint;
+    return $record;
 };
 
 __PACKAGE__->meta->make_immutable;
@@ -42,7 +44,7 @@ MARC::Moose::Parser::Yaml - Parser for YAML records
 
 =head1 VERSION
 
-version 1.0.17
+version 1.0.18
 
 =head1 SEE ALSO
 =for :list

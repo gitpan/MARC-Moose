@@ -1,5 +1,9 @@
 Revision history for Perl module MARC::Moose
 
+1.0.18 2015-10-05
+
+  - 'lint' added to parser in order to type record
+
 1.0.11 2014-09-30
 
   - Add a MARC biblio record 'lint' checker, processor, and command line script

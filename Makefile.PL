@@ -33,7 +33,7 @@ my %WriteMakefileArgs = (
     "JSON" => 0,
     "MARC::Record" => 0,
     "Modern::Perl" => 0,
-    "Moose" => "1.00",
+    "Moose" => 0,
     "Moose::Role" => 0,
     "Moose::Util::TypeConstraints" => 0,
     "MooseX::RW::Reader" => 0,
@@ -59,7 +59,7 @@ my %WriteMakefileArgs = (
     "Test::More" => 0,
     "Time::HiRes" => 0
   },
-  "VERSION" => "1.0.17",
+  "VERSION" => "1.0.18",
   "test" => {
     "TESTS" => "t/*.t"
   }
@@ -75,7 +75,7 @@ my %FallbackPrereqs = (
   "MARC::File::XML" => 0,
   "MARC::Record" => 0,
   "Modern::Perl" => 0,
-  "Moose" => "1.00",
+  "Moose" => 0,
   "Moose::Role" => 0,
   "Moose::Util::TypeConstraints" => 0,
   "MooseX::RW::Reader" => 0,

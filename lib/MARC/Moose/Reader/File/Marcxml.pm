@@ -1,6 +1,6 @@
 package MARC::Moose::Reader::File::Marcxml;
 # ABSTRACT: File reader for MARCXML file
-$MARC::Moose::Reader::File::Marcxml::VERSION = '1.0.17';
+$MARC::Moose::Reader::File::Marcxml::VERSION = '1.0.18';
 use Moose;
 
 use Carp;
@@ -32,7 +32,7 @@ sub read {
     # End of file
     return unless $raw =~ /<record>/;
 
-    return $self->parser->parse( $raw );
+    $self->parser->parse( $raw );
 }
 
 __PACKAGE__->meta->make_immutable;
@@ -51,7 +51,7 @@ MARC::Moose::Reader::File::Marcxml - File reader for MARCXML file
 
 =head1 VERSION
 
-version 1.0.17
+version 1.0.18
 
 =head1 DESCRIPTION
 

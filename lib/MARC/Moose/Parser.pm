@@ -1,9 +1,8 @@
 package MARC::Moose::Parser;
 # ABSTRACT: A record parser base class
-$MARC::Moose::Parser::VERSION = '1.0.17';
+$MARC::Moose::Parser::VERSION = '1.0.18';
 use Moose;
-use 5.010;
-use utf8;
+use Modern::Perl;
 
 # FIXME Experimental. Not used yet.
 #has converter => (
@@ -11,6 +10,9 @@ use utf8;
 #    isa     => 'Text::IconvPtr',
 #    default => sub { Text::Iconv->new( "cp857", "utf8" ) }
 #);
+
+
+has lint => (is => 'rw', isa => 'MARC::Moose::Lint::Checker');
 
 
 
@@ -27,7 +29,7 @@ sub end {
 
 
 sub parse {
-return MARC::Moose::Record->new();
+    return MARC::Moose::Record->new();
 };
 
 __PACKAGE__->meta->make_immutable;
@@ -46,9 +48,15 @@ MARC::Moose::Parser - A record parser base class
 
 =head1 VERSION
 
-version 1.0.17
+version 1.0.18
 
 =head1 METHODS
+
+=head2 lint
+
+A <MARC::Moose::Lint::Checker> which is associated with parsed records. This
+'lint' object is assigned to each record, so the 'check' method is available
+for them: C<$record->check()>.
 
 =head2 begin
 

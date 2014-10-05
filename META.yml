@@ -24,7 +24,7 @@ requires:
   JSON: '0'
   MARC::Record: '0'
   Modern::Perl: '0'
-  Moose: '1.00'
+  Moose: '0'
   Moose::Role: '0'
   Moose::Util::TypeConstraints: '0'
   MooseX::RW::Reader: '0'
@@ -44,4 +44,4 @@ requires:
   strict: '0'
   utf8: '0'
   warnings: '0'
-version: 1.0.17
+version: 1.0.18

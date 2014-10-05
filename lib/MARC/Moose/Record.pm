@@ -1,8 +1,9 @@
 package MARC::Moose::Record;
 # ABSTRACT: MARC::Moose bibliographic record
-$MARC::Moose::Record::VERSION = '1.0.17';
+$MARC::Moose::Record::VERSION = '1.0.18';
 use Moose;
 
+use Modern::Perl;
 use Carp;
 use MARC::Moose::Formater::Iso2709;
 use MARC::Moose::Formater::Json;
@@ -17,6 +18,11 @@ use MARC::Moose::Parser::Legacy;
 use MARC::Moose::Parser::Yaml;
 use MARC::Moose::Parser::Json;
 
+with 'MARC::Moose::Lint::Checker';
+
+has lint => (
+    is => 'rw',
+);
 
 has leader => (
     is      => 'ro', 
@@ -169,15 +175,7 @@ sub new_from {
 
 sub check {
     my $self = shift;
-
-    for my $field ( @{$self->fields} ) {
-        for my $subf ( @{$field->subf} ) {
-            if ( @$subf != 2 ) {
-                print "NON !!!\n";
-                exit;
-            }
-        }
-    }
+    $self->lint ? $self->lint->check($self) : ();
 }
 
 
@@ -197,7 +195,7 @@ MARC::Moose::Record - MARC::Moose bibliographic record
 
 =head1 VERSION
 
-version 1.0.17
+version 1.0.18
 
 =head1 DESCRIPTION
 
@@ -205,6 +203,12 @@ MARC::Moose::Record is an object, Moose based object, representing a MARC::Moose
 bibliographic record. It can be a MARC21, UNIMARC, or whatever biblio record.
 
 =head1 ATTRIBUTES
+
+=head2 lint
+
+A L<MARC::Moose::Lint::Checker> object which allow to check record based on a
+set of validation rules. Generally, the 'lint' attribute of record is inherited
+from the reader used to get the record.
 
 =head2 leader
 

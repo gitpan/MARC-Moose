@@ -1,6 +1,6 @@
 package MARC::Moose::Lint::Processor;
-# ABSTRACT: Processor to lint iso2709 file
-$MARC::Moose::Lint::Processor::VERSION = '1.0.17';
+# ABSTRACT: Processor to lint a biblio records file
+$MARC::Moose::Lint::Processor::VERSION = '1.0.18';
 use Moose;
 use Modern::Perl;
 use MARC::Moose::Reader::File::Iso2709;
@@ -18,7 +18,8 @@ has file => (
     trigger => sub {
         my ($self, $file) = @_;
         $self->reader( MARC::Moose::Reader::File::Iso2709->new(
-            file => $file ) );
+            file => $file,
+            parser => MARC::Moose::Parser::Iso2709->new( lint => $self->lint ) ) );
         $self->writer_ok( MARC::Moose::Writer->new(
             formater => MARC::Moose::Formater::Iso2709->new(),
             fh => IO::File->new("$file.ok", ">:encoding(utf8)")
@@ -59,7 +60,7 @@ sub process {
 
     $record = $self->cleaner->format($record) if $self->cleaner;
 
-    if ( my @result = $self->lint->check($record) ) {
+    if ( my @result = $record->check() ) {
         $self->writer_bad->write($record);
         my $rectext = $record->as('Text');
         chop $rectext;
@@ -107,15 +108,15 @@ __END__
 
 =head1 NAME
 
-MARC::Moose::Lint::Processor - Processor to lint iso2709 file
+MARC::Moose::Lint::Processor - Processor to lint a biblio records file
 
 =head1 VERSION
 
-version 1.0.17
+version 1.0.18
 
 =head1 ATTRIBUTES
 
-=head2 lint
+=head2 linter
 
 A L<MARC::Moose::Lint::Checker> to be used to validate biblio record.
 
@@ -126,8 +127,8 @@ processor object is created with this attribute, other attributes are
 automatically constructed: C<reader> as L<MARC::Moose::Reader::File::Iso2709>
 object reading the file, C<writer_ok> and C<writer_bad> as
 L<MARC::Moose::Writer> object with an ISO2709 formater writing to files named
-'file.ok' and 'file.bad', and C<fh_log> as a L<IO::File>, writing a text file
-named 'file.log'.
+F<file.ok> and F<file.bad>, and C<fh_log> as a L<IO::File>, writing a text file
+named F<file.log>.
 
 =head2 cleaner
 
@@ -145,11 +146,11 @@ A L<MARC::Moose::Writer> object in which valid biblio records are written.
 
 =head2 writer_bad
 
-A L<MARC::Moose::Writer> object in which unvalid biblio records are written.
+A L<MARC::Moose::Writer> object in which invalid biblio records are written.
 
 =head2 writer_bad
 
-A L<IO::File> file handle which is used to write unvalid biblio records with
+A L<IO::File> file handle which is used to write invalid biblio records with
 generated warnings.
 
 =head1 SYNOPSYS
@@ -179,29 +180,31 @@ generated warnings.
  };
  $processor->run();
 
-The above script validates an ISO2709 file named C<biblio.mrc> on a rules file
-named C<unimarc.rules>. As a result, 3 files are created: (1) C<biblio.mrc.ok>,
-an ISO2709 containing biblio records complying to the rules, (2)
-C<biblio.mrc.bad> containing biblios violating the rules, and (3)
-C<biblio.mrc.log> containing a textual representation of biblio records
+The above script validates an ISO2709 file named F<biblio.mrc> on a rules file
+named F<unimarc.rules>. As a result, 3 files are created: (1)
+F<biblio.mrc.ok>, an ISO2709 containing biblio records complying to the rules,
+(2) F<biblio.mrc.bad> containing biblios violating the rules, and (3)
+F<biblio.mrc.log> containing a textual representation of biblio records
 violating the rules + a description of violated rules.
 
 A more specific construction is also possible:
 
+ my $lint => MARC::Moose::Lint::Checker::RulesFile->new( file => 'marc21.rules' );
  my $processor = MARC::Moose::Lint::Processor->new(
-     lint => MARC::Moose::Lint::Checker::RulesFile->new( file => 'unimarc.rules',
-     reader => MARC::Moose::Reader::File::Marcxml->new('biblio.xml'),
+     reader => MARC::Moose::Reader::File::Marcxml->new(
+         file => 'biblio.xml',
+         parser => MARC::Moose::Parser::Marcxml->new( lint => $lint ),
      writer_ok => MARC::Moose::Writer->new(
          formater => MARC::Moose::Formater::Marcxml->new(),
          fh => IO::File->new('ok.xml', '>:encoding(utf8')
      ),
      writer_bad => MARC::Moose::Writer->new(
          formater => MARC::Moose::Formater::Marcxml->new(),
-         fh => IO::File->new('bad.xml', '>:encoding(utf8')
+         fh => IO::File->new('bad.xml', '>:encoding(utf8'))
      ),
-     fh_log => IO::File->new('warnings.log', '>:encoding(utf8'),
+     fh_log => IO::File->new('warnings.log', '>:encoding(utf8')),
      verbose => 1,
- };
+ );
  $processor->run();
 
 =head1 SEE ALSO
@@ -214,7 +217,11 @@ L<MARC::Moose>
 
 =item *
 
-L<MARC::Moose::Lint::Checker
+L<MARC::Moose::Lint::Checker>
+
+=item *
+
+L<MARC::Moose::Lint::Checker::RulesFile>
 
 =back
 

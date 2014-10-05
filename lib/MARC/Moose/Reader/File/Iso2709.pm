@@ -1,17 +1,20 @@
 package MARC::Moose::Reader::File::Iso2709;
 # ABSTRACT: File reader for MARC::Moose record from ISO2709 file
-$MARC::Moose::Reader::File::Iso2709::VERSION = '1.0.17';
+$MARC::Moose::Reader::File::Iso2709::VERSION = '1.0.18';
 use Moose;
-use 5.010;
-use utf8;
-use Carp;
+use Modern::Perl;
 use MARC::Moose::Record;
 use MARC::Moose::Parser::Iso2709;
 
 with 'MARC::Moose::Reader::File';
 
 
-has '+parser' => ( default => sub { MARC::Moose::Parser::Iso2709->new() } );
+has '+parser' => (
+    default => sub {
+        my $parser = MARC::Moose::Parser::Iso2709->new();
+        return $parser;
+    }
+);
 
 
 sub read {
@@ -29,7 +32,7 @@ sub read {
     # remove illegal garbage that sometimes occurs between records
     $raw =~ s/^[ \x00\x0a\x0d\x1a]+//;
 
-    return $self->parser->parse( $raw );
+    $self->parser->parse( $raw );
 }
 
 
@@ -49,7 +52,7 @@ MARC::Moose::Reader::File::Iso2709 - File reader for MARC::Moose record from ISO
 
 =head1 VERSION
 
-version 1.0.17
+version 1.0.18
 
 =head1 AUTHOR
 

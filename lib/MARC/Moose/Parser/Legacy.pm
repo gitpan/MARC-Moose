@@ -1,6 +1,6 @@
 package MARC::Moose::Parser::Legacy;
 # ABSTRACT: Parser for MARC::Record legacy records
-$MARC::Moose::Parser::Legacy::VERSION = '1.0.17';
+$MARC::Moose::Parser::Legacy::VERSION = '1.0.18';
 use Moose;
 
 extends 'MARC::Moose::Parser';
@@ -28,6 +28,7 @@ override 'parse' => sub {
                 subf => [ $field->subfields() ] )
     }
     $record->fields( \@fields );
+    $record->lint($self->lint) if $self->lint;
     return $record;
 };
 
@@ -47,7 +48,7 @@ MARC::Moose::Parser::Legacy - Parser for MARC::Record legacy records
 
 =head1 VERSION
 
-version 1.0.17
+version 1.0.18
 
 =head1 SYNOPSYS
 
