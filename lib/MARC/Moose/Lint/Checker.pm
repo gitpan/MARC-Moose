@@ -1,6 +1,6 @@
 package MARC::Moose::Lint::Checker;
 # ABSTRACT: A Moose::Role to 'lint' biblio record
-$MARC::Moose::Lint::Checker::VERSION = '1.0.18';
+$MARC::Moose::Lint::Checker::VERSION = '1.0.19';
 use Moose::Role;
 
 
@@ -24,7 +24,7 @@ MARC::Moose::Lint::Checker - A Moose::Role to 'lint' biblio record
 
 =head1 VERSION
 
-version 1.0.18
+version 1.0.19
 
 =head1 DESCRIPTION
 
@@ -42,7 +42,7 @@ biblio record is a L<MARC::Moose::Record> object. An array of validation
 errors/warnings is returned. Those errors are just plain text explanation on
 the reasons why the record doesn't comply with validation rules. This role
 could be applied directly to a L<MARC::Moose::Record> object or to
-L<MARC::Moose::Reader> object.
+L<MARC::Moose::Parser> object.
 
 =head1 SYNOPSYS
 

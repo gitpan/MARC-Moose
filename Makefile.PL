@@ -59,7 +59,7 @@ my %WriteMakefileArgs = (
     "Test::More" => 0,
     "Time::HiRes" => 0
   },
-  "VERSION" => "1.0.18",
+  "VERSION" => "1.0.19",
   "test" => {
     "TESTS" => "t/*.t"
   }
